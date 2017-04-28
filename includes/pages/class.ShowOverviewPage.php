@@ -9,7 +9,7 @@
 if(!defined('INSIDE')) {die(header("location:../../"));}
 
 class ShowOverviewPage
-{
+{ 
 	function __construct ( $CurrentUser , $CurrentPlanet )
 	{
 		global $planetrow, $lang,$messageColor;
