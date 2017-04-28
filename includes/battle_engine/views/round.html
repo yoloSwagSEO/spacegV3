@@ -1,0 +1,10 @@
+<font size=4><cite><?php echo LangManager::getInstance()->getRoundLibelle() . ' ' . $_i ?></cite></font>
+<br><br>
+<?php $_st = LangManager::getInstance()->getAttackerLibelle(); $_playerGroup =  $_round->getAfterBattleAttackers(); include('playerGroup.html');?> 
+<br>
+<?php $_st = LangManager::getInstance()->getDefenderLibelle(); $_playerGroup =  $_round->getAfterBattleDefenders(); include('playerGroup.html');?>
+<br>
+<?php include('round_info.html'); ?>
+
+_____________________________________________________
+<br>

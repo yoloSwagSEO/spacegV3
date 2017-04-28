@@ -1,0 +1,52 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+window.onload = function()
+{
+    var canvas = document.getElementById('mon_canvas');
+        if(!canvas)
+        {
+            alert("Impossible de récupérer le canvas");
+            return;
+        }
+
+    var context = canvas.getContext('2d');
+        if(!context)
+        {
+            alert("Impossible de récupérer le context du canvas");
+            return;
+        }
+
+var mon_image = new Image();
+mon_image.src = "http://62.210.103.142/styles/testFlag/flags/flag-0016.png";
+mon_image.onload = function(){
+context.drawImage(mon_image, 0, 0,400,400);
+
+
+var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+var pixelArray = imageData.data;
+var length = pixelArray.length / 4; // 4 components - red, green, blue and alpha
+
+for (var i = 0; i < length; i++) {
+    var index = 4 * i;
+
+    var r = pixelArray[index];
+    var g = pixelArray[++index];
+    var b = pixelArray[++index];
+    var a = pixelArray[++index];
+
+    if (r === 255 && g === 0 && b === 0 & a === 255) { // pixel is red
+        pixelArray[--index] = 255; // blue is set to 100%
+        pixelArray[--index] = 255; // green is set to 100%
+        // resulting color is white
+    }
+}
+
+context.putImageData(imageData, 0, 0);
+ };
+    //C'est ici que l'on placera tout le code servant à nos dessins.
+}
+</script>
+        <canvas id="mon_canvas" width="500" height="500">
+            Message pour les navigateurs ne supportant pas encore canvas.
+        </canvas>

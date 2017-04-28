@@ -1,0 +1,23 @@
+version: 1
+creator: xdebug 2.5.3 (PHP 7.1.4-1+deb.sury.org~xenial+1)
+cmd: Command line code
+part: 1
+positions: line
+
+events: Time
+
+fl=(1) php:internal
+fn=(1) php::ini_get_all
+1 91
+
+fl=(2) Command line code
+fn=(2) {main}
+
+summary: 371
+
+1 280
+cfl=(1)
+cfn=(1)
+calls=1 0 0
+1 91
+

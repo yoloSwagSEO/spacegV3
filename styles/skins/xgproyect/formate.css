@@ -1,0 +1,434 @@
+., #, td, th, textarea, body, table
+{
+  font-family	: Tahoma,sans-serif;
+  font-size	: 11px;
+}
+
+img
+{
+  border               : 0px;
+}
+
+p table
+{
+  border               : 0px;
+}
+
+p td
+{
+  text-align           : center;
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+}
+
+table table
+{
+  border               : 0px;
+}
+
+table table td
+{
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+  color:#333;
+}
+
+body
+{
+  color                : #E6EBFB;
+  margin-top           : 1px;
+  margin-left          : 1px;
+  background-color     : #040e1e;
+  background-image     : url(img/background.jpg);
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; 
+  background-attachment: fixed;
+  scrollbar-arrow-color: #E6EBFB;
+  scrollbar-base-color: #344566;
+  scrollbar-track-color: #344566;
+  scrollbar-face-color: #344566;
+  scrollbar-highlight-color: #344566;
+  scrollbar-3dlight-color: #465673;
+  scrollbar-darkshadow-color: #344566;
+  scrollbar-shadow-color: #465673;
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+}
+
+body.style{
+	background-image: none;
+}
+
+body.style table {
+	margin:0px;
+}
+
+body form table th table input
+{
+  width: 60px;
+}
+
+th, td.a, td.b, td.c, td.f, input, select,
+td.g, td.h, td.i, td.j, td.k, td.l, td.m,
+td.n, td.o, td.q, td.r, td.v, .style td,
+textarea, p td, table.s th img
+{
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+}
+
+th
+{
+  text-align           : center;
+  padding-left         : 3px;
+  padding-right        : 3px;
+  color:#333;
+}
+table.table thead td,table.table thead th,table.table tbody td{
+  color:#E6EBFB;;
+}
+td.a
+{
+  height               : 39px;
+  text-align           : center;
+}
+
+td.b
+{
+  padding              : 3px;
+}
+
+td.c
+{
+  font-weight          : bold;
+  color                : #E6EBFB;
+  padding-left         : 3px;
+ background-color: #101211; 
+}
+
+td.f, input, select, textarea
+{
+  color                : #E6EBFB;
+  background-color     : #344566;
+}
+
+textarea
+{
+  width                : 100%;
+}
+
+td.k input
+{
+  text-align           : left;
+}
+
+td.g
+{
+  font-weight          : bold;
+  text-align           : right;
+  color                : #E6EBFB;
+}
+
+td.h
+{
+  text-align           : center;
+  color                : #E6EBFB;
+}
+
+td.i
+{
+  text-align           : center;
+  color                : #E6EBFB;
+}
+
+td.j
+{
+  text-align           : center;
+  color                : #E6EBFB;
+}
+
+td.k, td.k input
+{
+  text-align           : center;
+  color                : #E6EBFB;
+}
+
+td.l
+{
+  color                : #E6EBFB;
+  vertical-align       : top;
+  padding              : 3px;
+background-image: url('../../images/bk.png');
+}
+
+td.m
+{
+  font-weight          : bold;
+  text-align           : right;
+  width                : 86px;
+  color                : #E6EBFB;
+}
+
+td.n
+{
+  font-weight          : bold;
+  text-align           : right;
+  width                : 89px;
+  text-align           : center;
+  color                : #E6EBFB;
+}
+
+td.o
+{
+  text-align           : center;
+  color                : #E6EBFB;
+}
+
+td.q
+{
+  font-weight          : bold;
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+  text-align           : center;
+  vertical-align       : middle;
+  color                : #E6EBFB;
+}
+
+td.r
+{
+  text-align           : right;
+  color                : #E6EBFB;
+}
+
+td.v
+{
+  font-weight          : bold;
+  text-align           : right;
+  color                : #f7f7f7;
+}
+
+td.s
+{
+  color                : #E6EBFB;
+}
+
+table.s th
+{
+  border               : 0px;
+}
+
+table.s th img
+{
+  width                : 89px;
+  height               : 89px;
+}
+
+div.z
+{
+  font-weight          : bold;
+  color                : #E6EBFB;
+}
+
+a
+{
+  color                : #E6EBFB;
+  text-decoration      : none;
+  font-weight          : bold;
+}
+
+a.s
+{
+  color                : #E6EBFB;
+}
+
+a.t
+{
+  color                : #E6EBFB;
+}
+
+a:hover
+{
+  color                : #CDD7F8;
+  text-decoration      : underline;
+}
+
+.style td
+{
+  color                : #E6EBFB;
+  border-top           : 0px;
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+}
+
+.style div a
+{
+  height               : 100%;
+  width                : 100%;
+  color                : #f2f2f2;
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+}
+
+.style div a:link
+{
+  height               : 100%;
+  width                : 100%;
+  color                : #f2f2f2;
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+}
+
+.style div a:visited
+{
+  height               : 100%;
+  width                : 100%;
+  color                : #f2f2f2;
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+}
+
+.style div a:hover
+{
+  background-color     : #415680;
+  height               : 100%;
+  width                : 100%;
+  text-decoration      : none;
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+  color                : #E6EBFB;
+}
+
+.style
+{
+  margin-top           : 15px;
+}
+
+h1
+{
+  font-size            : 11px;
+  font-family          : Tahoma,sans-serif;
+  border-bottom        : 0px #344566 solid;
+  width                : 98%;
+  text-align           : center;
+}
+
+
+.sgButton{
+    display:inline-block;;
+    height:38px;
+    width:38px;
+}
+.sgButton:hover{
+    background-position-x: 38px;
+}
+
+.sgButton:active{
+    background-position-x: 76px;
+}
+.sgButtonSmall{
+    display:inline-block;;
+    background-size: 91px;
+    height: 30px;
+    width: 30px;
+}
+.sgButtonSmall:hover{
+    background-position-x: 30px;
+}
+
+.sgButtonSmall:active{
+    background-position-x: 60px;
+}
+
+.glow-box {
+  background-color: rgb(0, 231, 255);
+  width: 3px;
+  height: 19px;
+  display: inline-block;
+  vertical-align: middle;
+  box-shadow: 0 0 15px #09F;
+}
+.glow-sep {
+  background: #31a0cb;
+  width: 1px;
+  height: 20px;
+  margin: 0 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.top-bar {
+  width: 100px;
+  height: 2px;
+  background-color: #00e6ff;
+}
+.bgLR{
+    background: url(img/bgleft.png) repeat-y left, url(img/bgright.png) repeat-y right, rgba(4, 27, 37, 0.6);
+}
+.bgL{
+    background: url(img/bgleft.png) repeat-y left, rgba(4, 27, 37, 0.6);
+}
+.bgR{
+    background: url(img/bgright.png) repeat-y right, rgba(4, 27, 37, 0.6);
+}
+.bdDotted{
+  border-left: 1px dotted #005e7e;
+  border-right: 1px dotted #005e7e;
+}
+.bdTop{
+  border-top: 1px solid #065e81;
+}
+.addFleet{
+    background-image: url(icons/addShip.png);
+}
+.removeFleet{
+    background-image: url(icons/removeShip.png);
+}
+.delete{
+    background-image: url(icons/delete.png);
+}
+.fusionFleet{
+    background-image: url(icons/fusionFleet.png);
+}
+.goFleet{
+    background-image: url(icons/goFleet.png);
+}
+.separaFleet{
+    background-image: url(icons/separateFleet.png);
+}
+.close{
+    background-image: url(icons/close.png);
+}
+.fleetAttak{
+     background-image: url(icons/fleetAttak.png);
+ }
+.fleetColonise{
+    background-image: url(icons/fleetColonise.png);
+}
+.fleetConvert{
+    background-image: url(icons/fleetConvert.png);
+}
+.fleetSpy{
+    background-image: url(icons/fleetSpy.png);
+}
+.rowDown{
+    background-image: url(icons/rowDown.png);
+}
+.rowRight{
+    background-image: url(icons/rowRight.png);
+}
+.rowUp{
+    background-image: url(icons/rowUp.png);
+}
+.shipSpy{
+    background-image: url(icons/shipSpy.png);
+}
+
+
+
+
+.trans-02s {
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}

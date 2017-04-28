@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery MiniColors</title>
+    <meta charset="utf-8">
+
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- MiniColors -->
+    <script src="jquery.minicolors.js"></script>
+    <link rel="stylesheet" href="jquery.minicolors.css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+
+    <script>
+	
+	function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+
+        $(document).ready( function() {
+
+		var img = 'flag-0003';
+		
+$('.logo').click(function(){
+    img = $(this).attr('data-value');
+	$('#img').val(img);
+    $('#result').attr('src','image.php?r1='+$('#r1').val()+'&g1='+$('#g1').val()+'&b1='+$('#b1').val()+'&r2='+$('#r2').val()+'&g2='+$('#g2').val()+'&b2='+$('#b2').val()+'&img='+$('#img').val()+'&embl='+$('#emblem').val());
+        
+});		
+$('.emblem').click(function(){
+    img = $(this).attr('data-value');
+	$('#emblem').val(img);
+	console.log($('#emblem').val());
+    $('#result').attr('src','image.php?r1='+$('#r1').val()+'&g1='+$('#g1').val()+'&b1='+$('#b1').val()+'&r2='+$('#r2').val()+'&g2='+$('#g2').val()+'&b2='+$('#b2').val()+'&img='+$('#img').val()+'&embl='+$('#emblem').val());
+        
+});	
+$('.minicolor1').minicolors({
+        animationSpeed: 50,
+        animationEasing: 'swing',
+        change: null,
+        changeDelay: 0,
+        control: 'hue',
+        dataUris: true,
+        defaultValue: '',
+        format: 'hex',
+        hide: null,
+        hideSpeed: 100,
+        inline: false,
+        keywords: '',
+        letterCase: 'lowercase',
+        opacity: false,
+        position: 'bottom left',
+        show: null,
+        showSpeed: 100,
+        theme: 'default',
+        swatches: [],
+		change: function(value, opacity) {
+		    var color = hexToRgb(value);
+		    r1 = color.r;
+            g1 = color.g;
+		    b1 = color.b;
+			r1 = $('#r1').val(r1);
+			g1 = $('#g1').val(g1);
+			b1 = $('#b1').val(b1);
+			
+			$('#result').attr('src','image.php?r1='+$('#r1').val()+'&g1='+$('#g1').val()+'&b1='+$('#b1').val()+'&r2='+$('#r2').val()+'&g2='+$('#g2').val()+'&b2='+$('#b2').val()+'&img='+$('#img').val()+'&embl='+$('#emblem').val());
+        }
+    });
+$('.minicolor2').minicolors({
+        animationSpeed: 50,
+        animationEasing: 'swing',
+        change: null,
+        changeDelay: 0,
+        control: 'hue',
+        dataUris: true,
+        defaultValue: '',
+        format: 'hex',
+        hide: null,
+        hideSpeed: 100,
+        inline: false,
+        keywords: '',
+        letterCase: 'lowercase',
+        opacity: false,
+        position: 'bottom left',
+        show: null,
+        showSpeed: 100,
+        theme: 'default',
+        swatches: [],
+		change: function(value, opacity) {
+		    var color = hexToRgb(value);
+
+			r2 = $('#r2').val(color.r);
+			g2 = $('#g2').val(color.g);
+			b2 = $('#b2').val(color.b);
+			
+			
+			$('#result').attr('src','image.php?r1='+$('#r1').val()+'&g1='+$('#g1').val()+'&b1='+$('#b1').val()+'&r2='+$('#r2').val()+'&g2='+$('#g2').val()+'&b2='+$('#b2').val()+'&img='+$('#img').val()+'&embl='+$('#emblem').val());
+        }
+    });
+	 $( "#tabs" ).tabs();
+        });
+    </script>
+	<style>
+	.clear{
+	    clear:both;
+	}
+	</style>
+</head>
+<body>
+
+<input type="hidden" id="r1" value="5"/>
+<input type="hidden" id="g1" value="5"/>
+<input type="hidden" id="b1" value="5"/>
+<input type="hidden" id="r2" value="140"/>
+<input type="hidden" id="g2" value="23"/> 
+<input type="hidden" id="b2" value="23"/> 
+<input type="hidden" id="img" value="flag-0003" />
+<input type="hidden" id="emblem" value="emblem-0003" />
+   <input class="minicolor1" />
+   <input class="minicolor2" />
+   
+   
+   <img id="result" src="image.php?r1=84&g1=21&b1=21&r2=0&g2=0&b2=0&img=flag-0003&embl=emblem-0003" />
+   
+   
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Background</a></li>
+    <li><a href="#tabs-2">Emblem</a></li>
+  </ul>
+  <div id="tabs-1">
+  <img class="logo" data-value="flag-0001" src="flags/flag-0001.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0002" src="flags/flag-0002.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0003" src="flags/flag-0003.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0004" src="flags/flag-0004.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0005" src="flags/flag-0005.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0006" src="flags/flag-0006.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0007" src="flags/flag-0007.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0008" src="flags/flag-0008.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0009" src="flags/flag-0009.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0010" src="flags/flag-0010.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0011" src="flags/flag-0011.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0012" src="flags/flag-0012.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0013" src="flags/flag-0013.png" style="float:left;width:64px;margin-right:2px;" />
+<img class="logo" data-value="flag-0014" src="flags/flag-0014.png" style="float:left;width:64px;margin-right:2px;" />
+<div class="clear"></div>
+  </div>
+  <div id="tabs-2">
+      <img class="emblem" data-value="emblem-0001" src="emblem/emblem-0001.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0002" src="emblem/emblem-0002.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0003" src="emblem/emblem-0003.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0004" src="emblem/emblem-0004.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0005" src="emblem/emblem-0005.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0006" src="emblem/emblem-0006.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0007" src="emblem/emblem-0007.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0008" src="emblem/emblem-0008.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0009" src="emblem/emblem-0009.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0010" src="emblem/emblem-0010.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0011" src="emblem/emblem-0011.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0012" src="emblem/emblem-0012.png" style="float:left;width:64px;margin-right:2px;" />
+      <img class="emblem" data-value="emblem-0013" src="emblem/emblem-0013.png" style="float:left;width:64px;margin-right:2px;" />
+	<div class="clear"></div>
+    </div>
+</div>
+</body>
+</html>
