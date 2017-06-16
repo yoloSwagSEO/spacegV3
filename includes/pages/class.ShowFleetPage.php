@@ -166,7 +166,7 @@ class ShowFleetPage
 
 		$parse['fleetpagerow'] = $flying_fleets;
 
-		$OrbitFleet = doquery(SELECT);
+		//$OrbitFleet = doquery(SELECT);
 		if ($MaxFlottes == $MaxFlyingFleets)//Nombre max de flotte en vol
 		{
 			$parse['message_nofreeslot'] .= parsetemplate ( gettemplate ( 'fleet/fleet_noslots_row' ) , $parse );
