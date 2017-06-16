@@ -32,17 +32,13 @@
 				<td>
 					<table class="table table-striped">
 						<tr>
-							<td>{fl_number}</td>
-							<td>{fl_mission}</td>
-							<td>{fl_ammount}</td>
-							<td>{fl_beginning}</td>
-							<td>{fl_departure}</td>
-							<td>{fl_destiny}</td>
-							<td>{fl_objective}</td>
-							<td>{fl_arrival}</td>
-							<td>{fl_order}</td>
+							<td>Id</td>
+							<td>Nom</td>
+                            <td>Proprio</td>
+							<td>Vaisseaux</td>
+							<td>Statut</td>
 						</tr>
-						{fleetpagerow}
+						{fleetOrbitpagerow}
 						{message_nofreeslot}
 					</table>
 				</td>

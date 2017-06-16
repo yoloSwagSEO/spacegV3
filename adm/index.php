@@ -31,4 +31,3 @@ if ($user['authlevel'] < 1) die(message ($lang['404_page']));
 	$page .= "</body>\n";
 	$page .= "</noframes></html>\n";
 	echo $page;
-?>

@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="On explicit save action" serverName="spaceg" promptOnLocalOverwrite="false">
     <serverData>
+      <paths name="1001Montagnes">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="spaceg">
         <serverdata>
           <mappings>
@@ -16,6 +23,13 @@
         </serverdata>
       </paths>
       <paths name="studiohookipa.com">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="xcharmes">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

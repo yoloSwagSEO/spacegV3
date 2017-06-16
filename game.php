@@ -116,7 +116,7 @@ switch ( ( isset ( $_GET['page'] ) ? $_GET['page'] : NULL ) )
 				$FleetBuildingPage = new ShowShipyardPage();
 				$FleetBuildingPage->FleetBuildingPage ($planetrow, $user);
 			break;
-                        case 'casern':
+                case 'casern':
 				include_once(XGP_ROOT . 'includes/pages/class.ShowCasernePage.php');
 				$FleetBuildingPage = new ShowCasernPage();
 				$FleetBuildingPage->CasernBuildingPage ($planetrow, $user);

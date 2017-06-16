@@ -1,3 +1,4 @@
+<script src="js/pages/createFleet.js" ></script>
 <div id="content">
 	<div id="list-bat">
         <div class="row">
@@ -11,7 +12,14 @@
             </div>
 
             <div class="col-md-9">
-                <div class="col-md-12">Nom de la flotte : <input type="input" name"fleetName" /></div>
+                <div class="col-md-12">
+                    <div class="col-md-9">
+                        Nom de la flotte : <input type="text" id="fleetNameForm" name"fleetName" />
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" id="submitFleet" class="btns btn-116-24">Créer la flotte</a>
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <span>Vaisseaux de la flotte.</span>
                     <table class="table">
@@ -22,11 +30,11 @@
                                 <th>Vitesse</th>
                                 <th>Consomation</th>
                                 <th>Capacité</th>
-                                <th>Actions</th>
+                                <th colspan="2">Actions</th>
                             </tr>
                         </thead>
-                        <tbody id="fleetList">
-                            {shipRows}
+                        <tbody id="NewfleetList">
+
                         </tbody>
                     </table>
                 </div>
@@ -55,6 +63,9 @@
                 </div>
             </div>
         </div>
+        <form id="newFleetForm" action="game.php?page=createFleet&action=saveFleet" method="post">
+
+        </form>
 		<div class="clear"></div>
 	</div>
 </div>

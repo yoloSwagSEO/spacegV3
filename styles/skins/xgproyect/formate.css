@@ -1,4 +1,4 @@
-., #, td, th, textarea, body, table
+td, th, textarea, body, table
 {
   font-family	: Tahoma,sans-serif;
   font-size	: 11px;
@@ -423,6 +423,121 @@ h1
 }
 
 
+/* Button */
+.btns{
+   display: inline-block;
+   text-decoration:none;
+  text-align: center;
+ }
+.btns:hover{
+  text-decoration:none;
+}
+.btns:active{
+  text-decoration:none;
+  color: #E6EBFB;
+}
+.btns:focus{
+  text-decoration:none;
+  color: #E6EBFB;
+}
+.btns:visited{
+  text-decoration:none;
+  color: #E6EBFB;
+}
+.btn-35-24{
+  background-image: url(img/button/button_35_24.png);
+  height: 24px;
+  width: 35px;
+  padding-top: 4px;
+  background-position: 0 -12px;
+}
+.btn-35-24:hover{
+  background-position: 47px -12px;
+}
+.btn-35-24:active{
+  background-position: 106px -12px;
+}
+
+.btn-60{
+  background-image: url(img/button/button_60.png);
+  height: 29px;
+  width: 60px;
+  background-position: 0 -12px;
+}
+.btn-60:hover{
+  background-position: 72px -12px; /* 60 + 12*/
+}
+.btn-60:active{
+  background-position: 156px -12px;
+}
+
+.btn-75-24{
+  background-image: url(img/button/button_75_24.png);
+  height: 24px;
+  width: 75px;
+  padding-top: 4px;
+  background-position: 0 -12px;
+}
+.btn-75-24:hover{
+  background-position: 87px -12px; /* 60 + 12*/
+}
+.btn-75-24:active{
+  background-position: 186px -12px;
+}
+
+.btn-95-24{
+  background-image: url(img/button/button_95_24.png);
+  height: 24px;
+  width: 95px;
+  padding-top: 4px;
+  background-position: 0 -12px;
+}
+.btn-95-24:hover{
+  background-position: 107px -12px; /* 60 + 12*/
+}
+.btn-95-24:active{
+  background-position: 226px -12px;
+}
+
+.btn-110{
+  background-image: url(img/button/button_110.png);
+  height: 34px;
+  width: 110px;
+  background-position: 0 -12px;
+}
+.btn-110:hover{
+  background-position: 122px -12px; /* 60 + 12*/
+}
+.btn-110:active{
+  background-position: 256px -12px;
+}
+
+.btn-116{
+  background-image: url(img/button/button_116.png);
+  height: 34px;
+  width: 116px;
+  background-position: 0 -12px;
+}
+.btn-116:hover{
+  background-position: 128px -12px; /* 60 + 12*/
+}
+.btn-116:active{
+  background-position: 268px -12px;
+}
+
+.btn-116-24{
+  background-image: url(img/button/button_116_24.png);
+  height: 24px;
+  width: 116px;
+  padding-top: 4px;
+  background-position: 0 -12px;
+}
+.btn-116-24:hover{
+  background-position: 128px -12px; /* 60 + 12*/
+}
+.btn-116-24:active{
+  background-position: 268px -12px;
+}
 
 
 .trans-02s {
