@@ -40,13 +40,18 @@ class CreateFleet
                 }
             }
         }
+        ___d($arrFleet);
         ___d($CurrentPlanet);
         $arrFleet = serialize($arrFleet);
         $sql = 'INSERT INTO {{table}} (fleetName,fleetPosition, fleet_owner, fleet_statut, fleet_amount,fleet_array) 
                 VALUES ("'.$_POST['fleetName'].'",'.$CurrentPlanet['id'].','.$CurrentUser['id'].',0,'.$amount.',\''.$arrFleet.'\')';
+
+        echo $sql;
         //doquery($sql,'FleetsOrbit');
         //header('Location:game.php?page=fleet');
     }
+
+    
     public function makeFleetPage($CurrentUser,&$CurrentPlanet){
         global $lang, $resource, $reslist, $_GET;
 

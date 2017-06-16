@@ -66,12 +66,7 @@ jQuery(document).ready(function($){
                 nbRem = nbShip;
 
             }
-
-
             $('#amount_'+shipId).val(parseInt($('#amount_'+shipId).val())+nbRem);
-
-
-
         }
     });
 
