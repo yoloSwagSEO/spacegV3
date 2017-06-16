@@ -334,9 +334,9 @@ function parsetemplate ( $template , $array )
 // 			              '( ( isset($array[\'\1\']) ) ? 
 //                            $array[\'\1\'] : \'\' );' , $template );
 	//Fix PHP7
-	$template = preg_replace_callback( '#\{([a-z0-9\-_]*?)\}#Ssi',
+	@$template = preg_replace_callback( '#\{([a-z0-9\-_]*?)\}#Ssi',
 			function($match) use ($array){
-				return(isset($array[$match[1]]))?$array[$match[1]]: '';
+				return (isset($array[$match[1]]))?$array[$match[1]]: '';
 			},$template);
 	return  $template;
 }

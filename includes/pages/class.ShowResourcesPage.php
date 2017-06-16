@@ -15,6 +15,16 @@ class ShowResourcesPage
 		global $lang, $ProdGrid, $resource, $reslist, $itemDb, $pricelist;
                 
                 $ArrayScreen = array();
+
+		//FIX NOTICE
+		$ArrayScreen['bonus']['geologue']['metal'] = 0;
+		$ArrayScreen['bonus']['geologue']['deuterium'] = 0;
+		$ArrayScreen['bonus']['geologue']['cristal'] = 0;
+		$ArrayScreen['bonus']['geologue']['energie'] = 0;
+		$ArrayScreen['bonus']['geologie']['metal'] = 0;
+		$ArrayScreen['bonus']['geologie']['cristal'] = 0;
+		$ArrayScreen['bonus']['engineer']['energie']   = 0;
+		$ArrayScreen['bonus']['energie']['energie']    = 0;
                 
 		$parse 					= 	$lang;
 		$game_metal_basic_income		=	read_config ( 'metal_basic_income' );
@@ -226,7 +236,9 @@ class ShowResourcesPage
                                 $ArrayScreen['bonus']['engineer']['name'] = "Ministre de l'&eacute;nergie";
                                 $ArrayScreen['bonus']['geologie']['name'] = "Technologie g&eacute;ologie";
                                 $ArrayScreen['bonus']['energie']['name'] = "Technologie &eacute;nergie";
-                                
+
+
+
                                 $ArrayScreen['bonus']['geologue']['metal'] += Production::production_amount ( $metal_prod , $geologe_boost );
                                 $ArrayScreen['bonus']['geologie']['metal'] += Production::production_amount ( $metal_prod , $geologieTech_boost );
 
@@ -429,7 +441,8 @@ class ShowResourcesPage
             $totalProd['cristal']   =   0;
             $totalProd['deuterium'] =   0;
             $totalProd['credit']    =   0;
-            
+			$totalProd['energie']	=	0;
+			$parse = array('batiment_line'=>"",'bonus_line'=>"",'material_line'=>"");
             foreach ($ArrayScreen['batiments'] as $key ) {
             	//echo $key['credits'].'<br />';
                 if($key['metal'] > 0 || $key['cristal'] > 0 || $key['deuterium'] > 0 || $key['credits'] != 0){
@@ -460,11 +473,11 @@ class ShowResourcesPage
                 $pordBonus['energie'] = Format::color_number(Format::pretty_number((isset($key['energie']))?$key['energie']:0));
                 $parse['bonus_line'] .= parsetemplate( gettemplate('prod/prod_bonus_line'),$pordBonus);
                 
-                $totalProd['metal']     += $key['metal'];
-                $totalProd['cristal']   += $key['cristal'];
-                $totalProd['deuterium'] += $key['deuterium'];
-                $totalProd['credit']    += $key['credit']; 
-                $totalProd['energie']   += $key['energie'];
+                $totalProd['metal']     += (isset($key['metal']))?$key['metal']:0;
+                $totalProd['cristal']   += (isset($key['cristal']))?$key['cristal']:0;
+                $totalProd['deuterium'] += (isset($key['deuterium']))?$key['deuterium']:0;
+                $totalProd['credit']    += (isset($key['credit']))?$key['credit']:0;
+                $totalProd['energie']   += (isset($key['energie']))?$key['energie']:0;
             }
             foreach ($ArrayScreen['matos'] as $key){
                 $matosBonus['name'] = (isset($key['name']))?$key['name']:0;
