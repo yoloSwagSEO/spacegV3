@@ -258,7 +258,6 @@ class ShowFleetPage
             for($i=0,$j=count($vaisseaux);$i<$j;$i++){
                $parseOrbit['fleet_ships'] .= '<li>'.$lang['tech_rc'][$vaisseaux[$i]['ship']].' x '.$vaisseaux[$i]['nb'].'</li>';
             }
-
 		    $parse['fleetOrbitpagerow'] .= parsetemplate(gettemplate('fleet/fleet_orbit_row'),$parseOrbit);
         }
 
