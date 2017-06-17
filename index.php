@@ -7,6 +7,7 @@ $InLogin = TRUE;
 include(XGP_ROOT . 'global.php');
 includeLang ( 'PUBLIC' );
 $parse = $lang;
+echo 'yolo';
 switch ( ( isset ( $_GET['page'] ) ) )
 {
 	case'lostpassword':
