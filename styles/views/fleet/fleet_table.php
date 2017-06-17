@@ -34,8 +34,8 @@
 						<tr>
 							<td>Id</td>
 							<td>Nom</td>
-                            <td>Proprio</td>
-							<td>Vaisseaux</td>
+                            <td>Proprietaire</td>
+							<td>Composition</td>
 							<td>Statut</td>
 						</tr>
 						{fleetOrbitpagerow}
