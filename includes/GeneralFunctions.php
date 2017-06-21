@@ -252,7 +252,7 @@ function StdUserHeader ($metatags = '',$bgStyle="")
 	$parse['-meta-']	= "<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">\n";
 	$parse['class'] 	= $_GET['page'];
 	if(isset($_GET['mode'])){
-		$parse['class'] = $_GET['page']."_".$_GET['mode'];
+		$parse['class'] = $_GET['page']." ".$_GET['page']."_".$_GET['mode'];
 	}
 	if(!defined('LOGIN'))
 	{
