@@ -64,6 +64,7 @@ class ShowUniversityPage
 
 			$save[$i]['name'] = $listC['name'];
 			$save[$i]['lvl'] = $listC['lvl'];
+			$save[$i]['sexe'] = $sexe;
 
 			$parse['choiseList'] .= parsetemplate(gettemplate('university/recrutList'), $listC) ;
 		}
