@@ -72,7 +72,7 @@ class ShowUniversityPage
 		$time = time() + (24*60*60);
 
 		doquery('INSERT INTO {{table}} (`array_tirage`,`idPlanet`,`validite`) VALUE ("'.$save.'", '.$CurrentPlanet['id'].','.$time.')','recrutment');
-		display2(parsetemplate(gettemplate('university/showChoiseRecrut'), $parse));
+		display(parsetemplate(gettemplate('university/showChoiseRecrut'), $parse));
 	}
 
 	public function showExistingRecrut($tirage){
@@ -85,7 +85,7 @@ class ShowUniversityPage
 			$listC['lvl'] = $tirage[$i]['lvl'];
 			$parse['choiseList'] .= parsetemplate(gettemplate('university/recrutList'), $listC) ;
 		}
-		display2(parsetemplate(gettemplate('university/showChoiseRecrut'), $parse));
+		display(parsetemplate(gettemplate('university/showChoiseRecrut'), $parse));
 	}
 	//vrai si j'ai deja un tirage valide
 	//Faux si je n'ais pas de tirage
