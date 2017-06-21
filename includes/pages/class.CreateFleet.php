@@ -25,6 +25,7 @@ class CreateFleet
         //On controle que les vaisseaux sont bien sur la planete
         $arrFleet = array();
         $amount = 0;
+        $arrOnPlanet = array();
         foreach ($_POST['ship'] as $key =>$ship){
             if(!is_numeric($key)){
                 $key = str_replace('s_','',$key);
@@ -33,22 +34,25 @@ class CreateFleet
                         die(header('Location:game.php?page=createFleet'));
                     }else{//Tout est good \o/
                         $amount += $ship;
-                       $arrFleet[] = array('ship'=> $key,'nb' => $ship);
+                        $arrFleet[] = array('ship'=> $key,'nb' => $ship);
+                        $arrOnPlanet[] = '`'.$resource[$key].'` = `'.$resource[$key].'` - '.$ship;
                     }
                 }else{//Ce n'est pas un vaisseaux
                     die(header('Location:game.php?page=createFleet'));
                 }
             }
         }
-        ___d($arrFleet);
-        ___d($CurrentPlanet);
+       // ___d($arrFleet);
+       // ___d($CurrentPlanet);
+
         $arrFleet = serialize($arrFleet);
         $sql = 'INSERT INTO {{table}} (fleetName,fleetPosition, fleet_owner, fleet_statut, fleet_amount,fleet_array) 
                 VALUES ("'.$_POST['fleetName'].'",'.$CurrentPlanet['id'].','.$CurrentUser['id'].',0,'.$amount.',\''.$arrFleet.'\')';
+        $sql2 = 'UPDATE {{table}} SET '.implode(',',$arrOnPlanet).' WHERE id = '.$CurrentPlanet['id'];
 
-        echo $sql;
-        //doquery($sql,'FleetsOrbit');
-        //header('Location:game.php?page=fleet');
+        doquery($sql,'FleetsOrbit');
+        doquery($sql2,'planets');
+        header('Location:game.php?page=fleet');
     }
 
     

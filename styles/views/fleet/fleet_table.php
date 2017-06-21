@@ -26,7 +26,9 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="c">Liste des flottes disponible</td>
+				<td class="c">
+                   Liste des flottes disponible <a href="game.php?page=createFleet" class="btns btn-116-24 right">Créer une flotte</a>
+                </td>
 			</tr>
 			<tr>
 				<td>
@@ -34,8 +36,8 @@
 						<tr>
 							<td>Id</td>
 							<td>Nom</td>
-                            <td>Proprio</td>
-							<td>Vaisseaux</td>
+                            <td>Proprietaire</td>
+							<td>Composition</td>
 							<td>Statut</td>
 						</tr>
 						{fleetOrbitpagerow}
@@ -44,33 +46,8 @@
 				</td>
 			</tr>
 		</table>
-	</div>
-</div>
-
-
-
-
-{acs_members}
+	{acs_members}
 <form action="game.php?page=fleet1" method="POST">
-	<div style="float:left;width:505px">
-		<table width="505" border="0" cellpadding="0" cellspacing="0">
-			<tr height="20">
-				<td colspan="4" class="c">{fl_new_mission_title}</td>
-			</tr>
-			<tr height="20">
-				<th>{fl_ship_type}</th>
-				<th>{fl_ship_available}</th>
-				<th>-</th>
-				<th>-</th>
-			</tr>
-			{body}
-			</tr>
-			{none_max_selector}
-			{noships_row}
-			{continue_button}
-		</table>
-		<div class="clear"></div>
-	</div>
 	<div style="float:left;width:241px">
 		<table width="240" border="0" cellpadding="0" cellspacing="1">
 			<tr height="20">
@@ -118,5 +95,5 @@
 </div>
 </div>
 
-<td style="background-color: transparent;">{fl_fleets} {flyingfleets} / {maxfleets}</td>
-<td style="background-color: transparent;" align="right">{currentexpeditions} / {maxexpeditions} {fl_expeditions}</td>
+</div>
+</div>

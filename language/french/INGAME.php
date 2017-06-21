@@ -23,6 +23,12 @@ $lang['type_mission'][12]  					= 'Invasion';
 $lang['type_mission'][15] 					= 'Exp&eacute;ditions';
 $lang['type_mission'][16] 					= 'Analiser';
 
+
+$lang['fleetOrbitStatut'][0]				= "Disponible";
+$lang['fleetOrbitStatut'][1]				= "Protection";
+$lang['fleetOrbitStatut'][2]				= "Blocus";
+$lang['fleetOrbitStatut'][3]				= "Invasion";
+
 $lang['type_diplo'][1]  					= 'Pacte de non agréssion';
 $lang['type_diplo'][2]  					= 'Pacte de défence';
 $lang['type_diplo'][3]  					= 'Alliance';

@@ -230,7 +230,39 @@ class ShowFleetPage
 			}
 		}
 
-		$parse['body'] 					= $ships_row;
+		$fleetOrbit = doquery(
+		    'SELECT f.fleetName as fleetName,
+                           f.fleet_owner as fleet_owner,
+                           f.fleet_statut as fleet_statut,
+                           f.fleet_id as id ,
+                           f.fleet_array as ship,
+                           u.username as username 
+                           FROM xgp_FleetsOrbit as f
+                           LEFT JOIN xgp_users as u on u.id = f.fleet_owner
+
+            WHERE fleetPosition = '.$CurrentPlanet['id'],'FleetsOrbit');
+
+
+		$ii = 1;
+        $parse['fleetOrbitpagerow'] = "";
+		while($data = mysqli_fetch_array($fleetOrbit)){
+		    $parseOrbit['num'] = $ii;
+		    $parseOrbit['fleet_name'] = $data['fleetName'];
+
+		    $parseOrbit['fleet_proprio'] = $data['username'];
+		    $parseOrbit['fleet_statut'] = $lang['fleetOrbitStatut'][$data['fleet_statut']];
+
+		    $parseOrbit['fleet_ships'] = '';
+            $vaisseaux = unserialize($data['ship']);
+            //___d($vaisseaux);
+            for($i=0,$j=count($vaisseaux);$i<$j;$i++){
+               $parseOrbit['fleet_ships'] .= '<li>'.$lang['tech_rc'][$vaisseaux[$i]['ship']].' x '.$vaisseaux[$i]['nb'].'</li>';
+            }
+		    $parse['fleetOrbitpagerow'] .= parsetemplate(gettemplate('fleet/fleet_orbit_row'),$parseOrbit);
+        }
+
+        //___d($fleetOrbit);
+        $parse['body'] 					= $ships_row;
 		$parse['shipdata'] 				= $ship_inputs;
 		$parse['galaxy']				= $galaxy;
 		$parse['system']				= $system;

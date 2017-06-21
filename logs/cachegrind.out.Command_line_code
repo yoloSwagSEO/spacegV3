@@ -8,16 +8,16 @@ events: Time
 
 fl=(1) php:internal
 fn=(1) php::ini_get_all
-1 101
+1 90
 
 fl=(2) Command line code
 fn=(2) {main}
 
-summary: 382
+summary: 346
 
-1 281
+1 256
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-1 101
+1 90
 

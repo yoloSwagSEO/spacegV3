@@ -7,6 +7,7 @@ $InLogin = TRUE;
 include(XGP_ROOT . 'global.php');
 includeLang ( 'PUBLIC' );
 $parse = $lang;
+
 switch ( ( isset ( $_GET['page'] ) ) )
 {
 	case'lostpassword':
@@ -90,8 +91,8 @@ switch ( ( isset ( $_GET['page'] ) ) )
 				unset ( $dbsettings );
 				$_SESSION['userid'] = $login["id"];
 				if (!empty($_SESSION['userid'])) {
-  $userid = $_SESSION['userid'];
-}
+ 					$userid = $_SESSION['userid'];
+				}
 
 
 				header ( 'location:game.php?page=overview' );
