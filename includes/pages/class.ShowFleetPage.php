@@ -254,7 +254,7 @@ class ShowFleetPage
 
 		    $parseOrbit['fleet_ships'] = '';
             $vaisseaux = unserialize($data['ship']);
-            ___d($vaisseaux);
+            //___d($vaisseaux);
             for($i=0,$j=count($vaisseaux);$i<$j;$i++){
                $parseOrbit['fleet_ships'] .= '<li>'.$lang['tech_rc'][$vaisseaux[$i]['ship']].' x '.$vaisseaux[$i]['nb'].'</li>';
             }

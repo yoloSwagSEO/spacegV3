@@ -4,6 +4,9 @@ td, th, textarea, body, table
   font-size	: 11px;
 }
 
+td.c{
+  vertical-align: middle;
+}
 img
 {
   border               : 0px;
@@ -539,6 +542,10 @@ h1
   background-position: 268px -12px;
 }
 
+
+.right{
+  float: right;
+}
 
 .trans-02s {
   -webkit-transition-duration: 0.2s;

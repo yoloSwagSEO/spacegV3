@@ -91,8 +91,8 @@ switch ( ( isset ( $_GET['page'] ) ) )
 				unset ( $dbsettings );
 				$_SESSION['userid'] = $login["id"];
 				if (!empty($_SESSION['userid'])) {
-  $userid = $_SESSION['userid'];
-}
+ 					$userid = $_SESSION['userid'];
+				}
 
 
 				header ( 'location:game.php?page=overview' );
