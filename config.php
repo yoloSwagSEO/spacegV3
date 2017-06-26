@@ -7,4 +7,4 @@ $dbsettings = Array(
 "name"       => "spaceg", // MySQL database name.
 "prefix"     => "xgp_", // Tables prefix.
 "secretword" => "XGProyect739763445"); // Cookies.
-?> 
+?>
