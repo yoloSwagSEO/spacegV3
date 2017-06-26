@@ -21,7 +21,7 @@ $image->opaquePaintImage ( 'rgb(0,255,6)' ,'rgb('.$_GET['r2'].','.$_GET['g2'].',
 
 
 $image->oilPaintImage(5);
-$image->edgeImage();
+//$image->edgeImage();
 $image->enhanceImage();
 $image->resizeImage(212, 212, Imagick::FILTER_LANCZOS, 1);
 if($_GET['embl'] != "none" || !empty($_GET['embl']) ){
