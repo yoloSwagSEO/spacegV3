@@ -60,5 +60,5 @@ file_put_contents ($_SERVER["DOCUMENT_ROOT"].'/styles/images/emblem/mini/'.$id.'
 
 $imageMini->resizeImage(32, 32, Imagick::FILTER_LANCZOS, 1);
 file_put_contents ($_SERVER["DOCUMENT_ROOT"].'/styles/images/emblem/mini/'.$id.'_32.png', $imageMini);
-echo '<script>parent.window.location.reload();</script>';
+//echo '<script>parent.window.location.reload();</script>';
 
