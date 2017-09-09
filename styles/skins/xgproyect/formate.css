@@ -42,7 +42,7 @@ body
   margin-top           : 1px;
   margin-left          : 1px;
   background-color     : #040e1e;
-  background-image     : url(img/background.jpg);
+  background-image     : url(img/bg2.jpg);
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; 
   background-attachment: fixed;
