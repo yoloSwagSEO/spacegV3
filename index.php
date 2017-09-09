@@ -94,7 +94,6 @@ switch ( ( isset ( $_GET['page'] ) ) )
  					$userid = $_SESSION['userid'];
 				}
 
-
 				header ( 'location:game.php?page=overview' );
 				exit;
 			}
@@ -105,7 +104,6 @@ switch ( ( isset ( $_GET['page'] ) ) )
 		}
 		else
 		{
-			
 			$parse['year']		   = date ( "Y" );
 			$parse['version']	   = VERSION;
 			$parse['servername']   = read_config ( 'game_name' );
