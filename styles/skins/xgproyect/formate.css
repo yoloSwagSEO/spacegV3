@@ -364,7 +364,7 @@ h1
   background-color: #00e6ff;
 }
 .bgLR{
-    background: url(img/bgleft.png) repeat-y left, url(img/bgright.png) repeat-y right, rgba(4, 27, 37, 0.6);
+    background:url(img/corner_top_left.png) no-repeat top left,url(img/corner_top_right.png) no-repeat top right, url(img/bgleft.png) repeat-y left, url(img/bgright.png) repeat-y right, rgba(4, 27, 37, 0.6);
 }
 .bgL{
     background: url(img/bgleft.png) repeat-y left, rgba(4, 27, 37, 0.6);
