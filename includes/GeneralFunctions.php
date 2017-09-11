@@ -117,10 +117,10 @@ function display ($page, $topnav = TRUE, $metatags = '', $AdminPage = FALSE, $me
 			if ($CurPlanet["destruyed"] == 0 && $CurPlanet['planet_type'] != 3)
 			{
 				$parse['planetlist'] .= '<div class="row">';
-				$parse['planetlist'] .= '<div class="col-md-3">
+				$parse['planetlist'] .= '<div class="col-md-3 colPlanet">
                                              <img class="img-responsive" src="styles/skins/xgproyect/planeten/small/s_'.$CurPlanet['image'].'.jpg" />
                                          </div>';
-				$parse['planetlist'] .= '<div class="col-md-9">
+				$parse['planetlist'] .= '<div class="col-md-9 colName">
                                              <div class="coloname">
                                                  <a href="game.php?page='.$page.'&gid='.$gid.'&cp='.$CurPlanet['id'].'&mode='.$mode.'&re=0">'.$CurPlanet['name'].'</a>
                                                 <br />&nbsp;['.$CurPlanet['galaxy'].':'.$CurPlanet['system'].':'.$CurPlanet['planet'].']
@@ -158,13 +158,13 @@ function display ($page, $topnav = TRUE, $metatags = '', $AdminPage = FALSE, $me
  			}
  		}
         
-		$DisplayPage .= '<div class="col-md-3" id="newPlanetList">
+		$DisplayPage .= '<div class="col-md-3" id="newPlanetList" >
                              <div id="trie-button2">
                                  <button class="coloCh active">Colonies</button>
                                  <button class="sectorsCh">Secteurs</button>
                              </div>
-                             <div class="menuColo">'.$parse['planetlist'].'</div>
-                             <div class="menuSecteur" style="display:none;">'.$parse['sectors'].'</div>
+                             <div class="menuColo" data-simplebar >'.$parse['planetlist'].'</div>
+                             <div class="menuSecteur" data-simplebar style="display:none;">'.$parse['sectors'].'</div>
                           </div>';
 		$DisplayPage .=  '<div class="col-md-9">'.$pageToDisplay.'</div>';
 	}else{
