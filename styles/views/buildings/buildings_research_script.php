@@ -1,4 +1,4 @@
-<div id="brp" class="z"></div>
+<div id="brp" class="z2"></div>
 <script   type="text/javascript">
 v = new Date();
 var brp = document.getElementById('brp');

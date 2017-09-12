@@ -781,11 +781,9 @@ height: 120px;
 
 
 #list-bat{
-
     border: 1px solid #454545;
     margin-top: 3px;
     margin-bottom: 4px;
-
 }
 #buildlistingBatNew{
 
@@ -1005,6 +1003,12 @@ line-height: 24px;
 	right:0px;
 }
 
+.item_batiment img{
+    position:relative;
+}
+
+
+
 body.buildings, body.buildings_buildings{
 	background:url('../skins/xgproyect/img/backcity.jpg');
 	background-size: cover;
@@ -1028,6 +1032,14 @@ div.z {
     background: url(../skins/xgproyect/img/bg_dark.png);
     width: 110px;
     text-align: right;
+}
+div.z2 {
+    position: absolute;
+    background: url(../skins/xgproyect/img/bg_dark.png);
+    width: 52px;
+    text-align: left;
+    top:90px;
+    left:2px;
 }
 div.zz {
     position: absolute;

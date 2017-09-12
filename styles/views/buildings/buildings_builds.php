@@ -12,9 +12,6 @@
             <button class="exo">Exo-Structures</button>
         </div>
     </div>
-    <div class="col-md-12 ">
-
-    </div>
 	<div class="col-md-12 bgLR" id="buildlistingBatNew">
 	{BuildList}
 	</div>
