@@ -145,10 +145,10 @@ function display ($page, $topnav = TRUE, $metatags = '', $AdminPage = FALSE, $me
  			if ($CurSecteur["destruyed"] == 0)
  			{
 				$parse['sectors'] .= '<div class="row">';
-				$parse['sectors'] .= '<div class="col-md-3">
+				$parse['sectors'] .= '<div class="col-md-3 colPlanet">
                                              <img class="img-responsive" src="styles/skins/xgproyect/planeten/small/s_'.$CurSecteur['image'].'.jpg" />
                                          </div>';
-				$parse['sectors'] .= '<div class="col-md-9">
+				$parse['sectors'] .= '<div class="col-md-9 colName">
                                              <div class="coloname">
                                                  <a href="game.php?page='.$page.'&gid='.$gid.'&cp='.$CurSecteur['id'].'&mode='.$mode.'&re=0">'.$CurSecteur['name'].'</a>
                                                 <br />&nbsp;['.$CurSecteur['galaxy'].':'.$CurSecteur['system'].':'.$CurSecteur['planet'].']
@@ -163,8 +163,8 @@ function display ($page, $topnav = TRUE, $metatags = '', $AdminPage = FALSE, $me
                                  <button class="coloCh active">Colonies</button>
                                  <button class="sectorsCh">Secteurs</button>
                              </div>
-                             <div class="menuColo" data-simplebar >'.$parse['planetlist'].'</div>
-                             <div class="menuSecteur" data-simplebar style="display:none;">'.$parse['sectors'].'</div>
+                             <div class="menuColo scrollbar scroll-1">'.$parse['planetlist'].'</div>
+                             <div class="menuSecteur scrollbar scroll-1" style="display:none;">'.$parse['sectors'].'</div>
                           </div>';
 		$DisplayPage .=  '<div class="col-md-9">'.$pageToDisplay.'</div>';
 	}else{

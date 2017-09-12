@@ -371,21 +371,22 @@ div#lune_col, #over_message_name, #over_control_name, #over_profile_general, #pr
     color: white;
     text-align: center;
     font-weight: bold;
+    border-bottom: 2px solid #007385;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-transform: uppercase;
 }
 
 #over_message {
     margin-top: 8px;
     float: left;
     min-height: 300px;
-
-    overflow-y: scroll;
 }
 
 #over_fleet {
     margin-top: 8px;
     float: left;
     height: 300px;
-    overflow-y: scroll;
 }
 
 #colonie_name {
@@ -436,4 +437,34 @@ div#lune_col, #over_message_name, #over_control_name, #over_profile_general, #pr
     padding: 0;
     font-size: 10px;
     margin-right: -35px;
+}
+
+
+.scroll-1::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.scroll-1::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: transparent;
+}
+
+.scroll-1::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+.scrollbar
+{
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+.colName{
+    padding-left: 0;
 }

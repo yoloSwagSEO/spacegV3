@@ -1,5 +1,6 @@
 <div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
 <div id="header-noir">
+    <div id="gamelogo">SPACEG</div>
 	<div id="ressourcesHeader">
 		<img border="0" src="{dpath}images/metall.png" width="28" style="float:left;margin-top: 4px;"> <span id="metal_val" style="display:block;margin-top: 8px;float:left;margin-left: 3px;">{metal}</span>  
 		<img border="0" src="{dpath}images/cristal.png" width="28" style="float:left;"> <span id="crystal_val" style="display:block;margin-top: 8px;float:left;margin-right: 5px;">{crystal}</span>  

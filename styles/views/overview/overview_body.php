@@ -44,13 +44,15 @@
 		    <div class="col-md-12 "><div id="event_header"></div></div>
 			<div class="col-md-8 bgLR bdDotted" id="over_message">
 				<div id="over_message_name">Messagerie</div>
-				{message}
+                <div class="scrollbar scroll-1">{message}</div>
 			</div>
 			<div class="col-md-4 bgLR bdDotted" id="over_fleet">
 				<div id="over_control_name">Tour de contrôle</div>
-					<table>
-						{fleet_list}	
-					</table>
+				    <div class="scrollbar scroll-1">
+                        <table>
+						    {fleet_list}
+                        </table>
+                    </div>
 				</div>
 		</div>
 	</div>
