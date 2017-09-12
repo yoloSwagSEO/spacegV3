@@ -454,13 +454,19 @@ class ShowOverviewPage
                                         
                                         //echo $data['message_subject'].'<br />';
                                         $imgread = ($data['read'] == 0)?'<img src="styles/images/true.png" />':'<img src="styles/images/false.png" />';
-					$parse['message'] .= '<tr id="mess_'.$data['message_id'].'">
-                                                                                        <td id="rMess_'.$data['message_id'].'">'.$imgread.'</td>
-											<td style="'.$background.'">'.$data['message_from'].'</td>
-											<td style="'.$background.'"><a class="message" id="link_'.$data['message_id'].'" href="'.$data['message_hef'].'">'.$data['message_subject'].'</a></td>
-											<td style="'.$background.'">'.date('d/m/Y', $data['message_time']).' &agrave; '.date('H:i:s', $data['message_time']).'</td>
-                                                                                        <td><a href="" class="delMess" id="Dmess_'.$data['message_id'].'"><img src="styles/images/r1.png" /></a></td>
-                                                               </tr>';
+					$parse['message'] .= '
+					<div class="row message-row" id="mess_'.$data['message_id'].'" style="'.$background.'">
+                    	<div class="col-md-1" id="rMess_'.$data['message_id'].'">'.$imgread.'</div>
+						<div class="col-md-6">
+							'.$data['message_from'].' <a class="message" id="link_'.$data['message_id'].'" href="'.$data['message_hef'].'">'.$data['message_subject'].'</a>
+						</div>	
+						<div class="col-md-4 message-date">
+							'.date('d/m/Y', $data['message_time']).' &agrave; '.date('H:i:s', $data['message_time']).'
+                   		</div>
+                   		<div class="col-md-1">
+                   			<a href="" class="delMess" id="Dmess_'.$data['message_id'].'"><img src="styles/images/r1.png" /></a>
+                   		</div>
+                    </div>';
 				}
 				return display(parsetemplate(gettemplate('overview/overview_body'),$parse));
 				break;
