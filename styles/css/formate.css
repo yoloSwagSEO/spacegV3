@@ -1007,8 +1007,16 @@ line-height: 24px;
     position:relative;
 }
 
-
-
+.message-date{
+    text-align: right;
+}
+.message-row{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#over_message .scrollbar{
+    max-height: 263px;
+}
 body.buildings, body.buildings_buildings{
 	background:url('../skins/xgproyect/img/backcity.jpg');
 	background-size: cover;
