@@ -341,10 +341,14 @@ class ShowBuildingsPage
 						$ListIDRow .= "<div class=\"ElementQueu\">";
 						if ($BuildMode == 'build')
 						{
+
+						    //fix batiment multiname
+                            $BuildLevelTxt = $BuildLevel;
 						    if(is_array($ElementTitle)){
-                                $ElementTitle = $ElementTitle[$BuildLevel];
+                                $BuildLevelTxt = "";
+						        $ElementTitle = $ElementTitle[$BuildLevel];
                             }
-							$ListIDRow .= "	<div class=\"l\"><center style=\"margin-bottom: 4px;\">".mb_strimwidth(str_replace('&apos;',"'",html_entity_decode($ElementTitle)), 0 , 15,'...')." ". $BuildLevel ."</center></div>";
+							$ListIDRow .= "	<div class=\"l\"><center style=\"margin-bottom: 4px;\">".mb_strimwidth(str_replace('&apos;',"'",html_entity_decode($ElementTitle)), 0 , 15,'...')." ". $BuildLevelTxt ."</center></div>";
 						}
 						else
 						{
@@ -430,12 +434,12 @@ class ShowBuildingsPage
 				$bDoItNow = TRUE;
 			}
 	
-			if ($Element == 31 && $CurrentUser["b_tech_planet"] != 0)
+			if ( isset ( $Element ) && $Element == 31 && $CurrentUser["b_tech_planet"] != 0)
 			{
 				$bDoItNow = FALSE;
 			}
 
-			if ( ( $Element == 21 or $Element == 14 or $Element == 15 ) && $CurrentPlanet["b_hangar"] != 0)
+			if ( isset ( $Element ) && ( $Element == 21 or $Element == 14 or $Element == 15 ) && $CurrentPlanet["b_hangar"] != 0)
 			{
 				$bDoItNow = FALSE;
 			}
