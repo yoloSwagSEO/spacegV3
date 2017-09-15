@@ -304,7 +304,13 @@ class ShowOverviewPage
 								$BuildElement = $CurrentBuild[0];
 								$BuildLevel = $CurrentBuild[1];
 								$BuildRestTime = Format::pretty_time($CurrentBuild[3] - time());
-								$AllPlanets .= '' . $lang['tech'][$BuildElement] . ' (' . $BuildLevel . ')';
+								$buildTxt = $lang['tech'][$BuildElement];
+                                if(is_array($buildTxt)){
+                                    $BuildLevelTxt = "";
+                                    $buildTxt = (count($buildTxt) < $BuildLevel)?$buildTxt[count($buildTxt)-1]:$buildTxt[$BuildLevel];
+                                }
+
+								$AllPlanets .= '' . $buildTxt . ' (' . $BuildLevel . ')';
 								$AllPlanets .= "<br><font color=\"#7f7f7f\">(" . $BuildRestTime . ")</font>";
 							}
 							else
@@ -400,7 +406,17 @@ class ShowOverviewPage
 						$RestTime = $CurrentPlanet['b_building'] - time();
 						$PlanetID = $CurrentPlanet['id'];
 						$Build = InsertBuildListScript("overview");
-						$Build .= $lang['tech'][$CurrBuild[0]] . ' (' . ($CurrBuild[1]) . ')';
+
+
+                        $buildTxt = $lang['tech'][$CurrBuild[0]];
+                        if(is_array($buildTxt)){
+                            $BuildLevelTxt = "";
+                            $buildTxt = (count($buildTxt) < $BuildLevel)?$buildTxt[count($buildTxt)-1]:$buildTxt[$BuildLevel];
+                        }
+
+
+
+                        $Build .= $buildTxt . ' (' . ($CurrBuild[1]) . ')';
 						$Build .= "<br /><div id=\"blc\" class=\"z\">" . Format::pretty_time($RestTime) . "</div>";
 						$Build .= "\n<script language=\"JavaScript\">";
 						$Build .= "\n	pp = \"" . $RestTime . "\";\n";
