@@ -346,7 +346,7 @@ class ShowBuildingsPage
                             $BuildLevelTxt = $BuildLevel;
 						    if(is_array($ElementTitle)){
                                 $BuildLevelTxt = "";
-						        $ElementTitle = $ElementTitle[$BuildLevel];
+                                $ElementTitle = (count($ElementTitle) < $BuildLevel)?$ElementTitle[count($ElementTitle)-1]:$ElementTitle[$BuildLevel];
                             }
 							$ListIDRow .= "	<div class=\"l\"><center style=\"margin-bottom: 4px;\">".mb_strimwidth(str_replace('&apos;',"'",html_entity_decode($ElementTitle)), 0 , 15,'...')." ". $BuildLevelTxt ."</center></div>";
 						}
@@ -517,7 +517,12 @@ class ShowBuildingsPage
 					$parse['i']            	= $Element;
 					$BuildingLevel         	= $CurrentPlanet[$resource[$Element]];
 					$parse['nivel']        	= ($BuildingLevel == 0) ? "" : " (" . $BuildingLevel .")";
-					$parse['n']            	= (is_array($ElementName))?$ElementName[$BuildingLevel]:$ElementName;
+
+					if(is_array($ElementName)){
+                        $ElementName = (count($ElementName) < $BuildingLevel)?$ElementName[count($ElementName)-1]:$ElementName[$BuildingLevel];
+                    }
+					$parse['n']            	= $ElementName;
+
 					$parse['descriptions'] 	= $lang['res']['descriptions'][$Element];
 /* OLD CODE ---------------------------------------------------- OLD CODE ------------------------------------- //
 					$ElementBuildTime      	= GetBuildingTime($CurrentUser, $CurrentPlanet, $Element);
