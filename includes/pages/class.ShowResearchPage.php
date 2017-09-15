@@ -67,7 +67,7 @@ class ShowResearchPage
 			{
 				$CurrentUser[$resource[$ThePlanet['b_tech_id']]]++;
 
-				do_action('pre-research-end',array());
+				do_action('pre-research-end',array('element'=>$resource[$ThePlanet['b_tech_id']],'lvl'=>$CurrentUser[$resource[$ThePlanet['b_tech_id']]]));
 
 				$QryUpdatePlanet  = "UPDATE {{table}} SET ";
 				$QryUpdatePlanet .= "`b_tech` = '0', ";

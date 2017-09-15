@@ -33,9 +33,10 @@
  *    Description: Call a la fin de la construction/destruction d'un batiment aprés l'enregistrement en DB
  *
  * pre-research-end
- *   void
+ *   (int) @element : Id de l'éléments rechercher
+ *   (int) @lvl : Niveau de la technologie APRES la recherche.
  *
- *   Description: Call a la fin de la recherche d'une technologie au déblocage du centre de recherche
+ *   Description: Call a la fin de la recherche d'une technologie AVANT l'envoi en DB
  *
  */
 
