@@ -341,6 +341,9 @@ class ShowBuildingsPage
 						$ListIDRow .= "<div class=\"ElementQueu\">";
 						if ($BuildMode == 'build')
 						{
+						    if(is_array($ElementTitle)){
+                                $ElementTitle = $ElementTitle[$BuildLevel];
+                            }
 							$ListIDRow .= "	<div class=\"l\"><center style=\"margin-bottom: 4px;\">".mb_strimwidth(str_replace('&apos;',"'",html_entity_decode($ElementTitle)), 0 , 15,'...')." ". $BuildLevel ."</center></div>";
 						}
 						else
