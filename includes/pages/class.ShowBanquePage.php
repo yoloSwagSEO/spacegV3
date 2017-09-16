@@ -34,12 +34,17 @@ class ShowBanquePage
                     if($action == 'transfer' ){
                         $this->moneyTransfer($CurrentPlanet, $_POST['recepteur'], $valeurTrans,true);
                     }elseif($action == 'transferE'){
-                        echo 'hey hey hey';
-                        $result = doquery("SELECT id FROM {{table}} WHERE galaxy = ".$_POST['secteur']." AND system = ".$_POST['sys']." AND planet = ".$_POST['planet']." AND control_type = 1 AND banque >= 1",'planets');
+                        //becho 'hey hey hey';
+                        $result = doquery("SELECT id,banque FROM {{table}} WHERE galaxy = ".$_POST['secteur']." AND system = ".$_POST['sys']." AND planet = ".$_POST['planet']." AND control_type = 1 AND banque >= 1",'planets');
 
                         if(mysqli_num_rows($result)>0){
                             $data = mysqli_fetch_array($result);
-                            $this->moneyTransfer($CurrentPlanet, $data['id'], $valeurTrans);
+                            if($data['banque']>=1){
+                                $this->moneyTransfer($CurrentPlanet, $data['id'], $valeurTrans);
+                            }else{
+                                $error['error'] = 'La colonie cible n\'as pas de banque';
+                                $parse['message'] = parsetemplate(gettemplate('general/erreur'), $error);
+                            }
                         }
 
                     }
