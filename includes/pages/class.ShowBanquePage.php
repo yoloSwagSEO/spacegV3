@@ -78,5 +78,6 @@ class ShowBanquePage
         //FIX -- FUKING DEV XNOVA --
         $CurrentPlanet['credit'] = $CurrentPlanet['credit'] - $amount;
     }
+
 }
 ?>
