@@ -34,7 +34,7 @@
 			}
 			$(document).ready(function(){
 
-                $.notify("yoloooooo");
+                $.notify("yoloooooo",{autoHide: false,className: 'success'});
 
 				$("#tabs_banque").tabs();
                                 

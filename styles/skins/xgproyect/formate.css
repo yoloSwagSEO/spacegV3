@@ -560,3 +560,12 @@ h1
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
+
+.notifyjs-container .notifyjs-bootstrap-base{
+  border-radius: 0;
+  background: url(img/corner_top_left_simple.png) no-repeat top left, url(img/corner_top_right.png) no-repeat top right, url(img/bottom-round-bg.png) no-repeat bottom right, url(img/bottom-round-bg.png) no-repeat bottom left, url(img/bgleft.png) repeat-y left, url(img/bgright.png) repeat-y right, rgba(4, 27, 37, 0.6);
+  border: none;
+  color: white;
+  border-left: 1px dotted #005e7e;
+  border-right: 1px dotted #005e7e;
+}
