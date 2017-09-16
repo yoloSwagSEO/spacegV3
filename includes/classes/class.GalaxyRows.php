@@ -436,6 +436,8 @@ class GalaxyRows
 	{
 		global $user, $lang;
 
+		$parse = "";
+
 		if ($GalaxyInfo && $GalaxyInfo["destruyed"] == 0 && $GalaxyInfo["username"] != '')
 		{
 			$MyGameLevel		= $user['total_points'];
