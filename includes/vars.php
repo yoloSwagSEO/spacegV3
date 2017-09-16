@@ -182,7 +182,7 @@ if ( defined('INSIDE'))
      51 => "exo"
         );
     $limit = array(
-		1 => 5
+		1 => 40
 	);  
 	$requeriments = array(
 		 12 => array(   3 =>   5, 113 =>   3),
