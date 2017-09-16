@@ -403,6 +403,7 @@ class ShowOverviewPage
 					{
 						$BuildQueue = explode(";",$CurrentPlanet['b_building_id']);
 						$CurrBuild = explode(",",$BuildQueue[0]);
+						//print_r($CurrBuild);
 						$RestTime = $CurrentPlanet['b_building'] - time();
 						$PlanetID = $CurrentPlanet['id'];
 						$Build = InsertBuildListScript("overview");
