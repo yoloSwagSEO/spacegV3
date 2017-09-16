@@ -20,7 +20,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     {-style-}
 		<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-	
+        <script src="js/notify.min.js"></script>
 
 		<script src="js/jquery.colorbox-min.js"></script>
 		<script>
@@ -33,8 +33,9 @@
 				return returnString;
 			}
 			$(document).ready(function(){
-                            
-                                
+
+                $.notify("yoloooooo");
+
 				$("#tabs_banque").tabs();
                                 
 				$(".infoshow").click(function(){
