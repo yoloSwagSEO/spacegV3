@@ -1,8 +1,4 @@
 <?php
-require ( XGP_ROOT . 'vendor/autoload.php' );
-
-global $debugbar;
-
 //print_r($debugbarRenderer->render());
 // SETEADO PARA EVITAR ERRORRES EN VERSION DE PHP MAYORES A 5.3.0
 //error_reporting ( E_ALL & ~E_NOTICE );
@@ -39,7 +35,8 @@ function ___d($debug){
 }
 if ( filesize ( XGP_ROOT . 'config.php' ) === 0 && ( ( !defined ( 'INSTALL' ) ) OR ( !INSTALL ) ) )
 {
-	exit ( header ( 'location:' . XGP_ROOT .  'install/' ) );
+	header ( 'location:' . XGP_ROOT .  'install/' ) ;
+	exit();
 }
 
 if ( filesize ( XGP_ROOT . 'config.php' ) != 0 )
@@ -131,17 +128,10 @@ if ( INSTALL != TRUE )
 		mysqli_free_result ( $_fleets);
 		unset ( $_fleets );
 
-		if ( defined ( 'IN_ADMIN' ) )
-		{
-			includeLang ( 'ADMIN' );
-			include ( '../adm/AdminFunctions/Autorization.php' );
 
-			define('DPATH' , "../". DEFAULT_SKINPATH );
-		}
-		else
-		{
-			define('DPATH' , ( ( !$user["dpath"] ) ? DEFAULT_SKINPATH : SKIN_PATH . $user["dpath"] . '/' ) );
-		}
+
+		define('DPATH' , ( ( !$user["dpath"] ) ? DEFAULT_SKINPATH : SKIN_PATH . $user["dpath"] . '/' ) );
+
             
 		include ( XGP_ROOT . 'includes/functions/SetSelectedPlanet.php' );
 		SetSelectedPlanet ( $user );
@@ -162,5 +152,3 @@ else
 {
 	define('DPATH' , "../". DEFAULT_SKINPATH );
 }
-
-?>
