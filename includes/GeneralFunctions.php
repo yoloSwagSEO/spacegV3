@@ -395,7 +395,7 @@ function doquery ( $query , $table , $fetch = FALSE )
 	if (!$retour)
 	{
 		echo $sql.'<br />';
-		echo("Error description: " . mysqli_error($link));
+		echo("Error description: " . mysqli_error($link)); 
 	}else{
 		if ( $fetch )
 		{
