@@ -107,8 +107,10 @@ if(!defined('INSIDE')){ die(header("location:../../"));}
 		$parse['total_credit'] = $CurrentPlanet["credit"];
                 
 		$parse['darkmatter'] 		= Format::pretty_number($CurrentUser["darkmatter"]);
+		if(isset($_SESSION['prompteur']) && is_array($_SESSION['prompteur'])){
+            $parse['prompteur'] = implode(' - ',$_SESSION['prompteur']);
+        }
 		$TopBar 			 		= parsetemplate(gettemplate('general/topnav'), $parse);
 
 		return $TopBar;
 	}
-?>

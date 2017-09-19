@@ -1,5 +1,6 @@
 <script language="JavaScript" src="js/flotten-min.js"></script>
 <script language="JavaScript" src="js/ocnt-min.js"></script>
+
 <div id="content">
 	<div id="list-bat">
 		<table class="table table-striped">
@@ -96,4 +97,41 @@
 </div>
 
 </div>
+</div>
+
+
+
+<div class="row" id="rowBuilding">
+	<div class="col-md-12 bgLR" id="labelFlyingFleet">
+		<p>Liste des flottes en vol</p>
+		<table class="table table-striped">
+			<tr>
+				<td>{fl_number}</td>
+				<td>{fl_mission}</td>
+				<td>{fl_ammount}</td>
+				<td>{fl_beginning}</td>
+				<td>{fl_departure}</td>
+				<td>{fl_destiny}</td>
+				<td>{fl_objective}</td>
+				<td>{fl_arrival}</td>
+				<td>{fl_order}</td>
+			</tr>
+			{fleetpagerow}
+			{message_nofreeslot}
+		</table>
+	</div>
+	<div class="col-md-12 bgLR" id="labelDispoFleet">
+		<p>Liste des flottes en vol</p>
+		<table class="table table-striped">
+			<tr>
+				<td>Id</td>
+				<td>Nom</td>
+				<td>Proprietaire</td>
+				<td>Composition</td>
+				<td>Statut</td>
+			</tr>
+			{fleetOrbitpagerow}
+			{message_nofreeslot}
+		</table>
+	</div>
 </div>

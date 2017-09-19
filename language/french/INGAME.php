@@ -419,7 +419,9 @@ $lang['tr_not_put_necessaire']				= 'Vous devez ajouter des ressources �&eacut
 $lang['tt_requirements']					= 'Requis';
 $lang['tt_lvl']								= 'niveau ';
 
-
+$lang['prompteur'] = array(
+	'end_construct' => ' construction terminé'
+);
 $lang['tech'] = array(
 0 => "Construction",
 1 => "Mine de m&eacute;tal",
