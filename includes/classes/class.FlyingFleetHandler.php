@@ -5,7 +5,7 @@
  * @copyright Copyright (C) 2008 - 2016
  */
 if (!defined('INSIDE'))
-    die(header("location:../../"));
+    header("location:../../");
 class FlyingFleetHandler {
     public static function calculateAKSSteal($attackFleets, $defenderPlanet, $ForSim = FALSE) {
         //Steal-Math by Slaver for 2Moons(http://www.titanspace.org) based on http://www.owiki.de/Beute
@@ -1627,7 +1627,6 @@ class FlyingFleetHandler {
     }
     
     public function __construct(&$planet) {
-        global $resource;
         doquery("LOCK TABLE {{table}}aks WRITE, {{table}}rw WRITE, {{table}}errors WRITE, {{table}}messages WRITE, {{table}}fleets WRITE,  {{table}}planets WRITE, {{table}}galaxy WRITE ,{{table}}users WRITE", "");
         $QryFleet = "SELECT * FROM {{table}} ";
         $QryFleet .= "WHERE (";
@@ -1680,6 +1679,7 @@ class FlyingFleetHandler {
                     break;
                 case 12:
                 	$this->MissionCaseInvasion($CurrentFleet);
+                    break;
                 case 15:
                     $this->MissionCaseExpedition($CurrentFleet);
                     break;
@@ -1693,4 +1693,3 @@ class FlyingFleetHandler {
         doquery("UNLOCK TABLES", "");
     }
 }
-?>

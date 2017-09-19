@@ -1,11 +1,14 @@
-<div style="top: 10px;background: url('styles/skins/xgproyect/img/bg_dark.png');" id="content">
 {galaxyscripts}
-
-    {galaxyselector}
-    {mip}
-	<div id="vue_gal">
-    	{galaxytitles}
+<div class="row" id="rowBuilding">
+    <div class="col-md-12 bgLR" id="labelshipyard">
+        <p>Galaxy 2d</p>
+        <div id="trie-button">
+            {galaxyselector}
+        </div>
+    </div>
+    <div class="col-md-12 bgLR" id="list-bat">
+        {galaxytitles}
         {galaxyrows}
         {galaxyfooter}
-	</div>
-</div>  
+    </div>
+</div>

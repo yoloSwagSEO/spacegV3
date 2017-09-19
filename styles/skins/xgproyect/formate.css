@@ -547,16 +547,37 @@ h1
 .btn-116-24:active{
   background-position: 268px -12px;
 }
-
-
 .right{
   float: right;
 }
-
 .trans-02s {
   -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
   -ms-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
+}
+.notifyjs-container .notifyjs-bootstrap-base{
+  border-radius: 0;
+  background: url(img/corner_top_left_simple.png) no-repeat top left, url(img/corner_top_right.png) no-repeat top right, url(img/bottom-round-bg.png) no-repeat bottom right, url(img/bottom-round-bg.png) no-repeat bottom left, url(img/bgleft.png) repeat-y left, url(img/bgright.png) repeat-y right, rgba(4, 27, 37, 0.6);
+  border: none;
+  color: white;
+  border-left: 1px dotted #005e7e;
+  border-right: 1px dotted #005e7e;
+}
+
+#actionColonyHeader p{
+  font-size: 15px;
+  opacity: 1;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-left: 13px;
+  font-weight: 600;
+  color: white;
+  float: left;
+  margin-bottom: 5px;
+}
+
+#prompteur{
+  margin-bottom: 4px;
 }

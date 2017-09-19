@@ -364,13 +364,13 @@ class GalaxyRows
 			$parse['system']	= $System;
 			$parse['planet']	= $Planet;
 			$parse['image']		= $GalaxyInfo["image"];
-			$parse['links'] 	= $MissionType6Link;
-			$parse['links']    .= $PhalanxTypeLink;
-			$parse['links']    .= $MissionType1Link;
-			$parse['links']    .= $MissionType5Link;
-			$parse['links']    .= $MissionType4Link;
-			$parse['links']    .= $MissionType3Link;
-			$parse['links']    .= $MissionType10Link;
+			$parse['links'] 	= $MissionType6Link ?? "";
+			$parse['links']    .= $PhalanxTypeLink ?? "";
+			$parse['links']    .= $MissionType1Link ?? "";
+			$parse['links']    .= $MissionType5Link ?? "";
+			$parse['links']    .= $MissionType4Link ?? "";
+			$parse['links']    .= $MissionType3Link ?? "";
+			$parse['links']    .= $MissionType10Link ?? "";
 
 		}
 		return parsetemplate(gettemplate('galaxy/galaxy_planet_block'), $parse);
@@ -435,6 +435,8 @@ class GalaxyRows
 	public function GalaxyRowUser($GalaxyInfo, $Galaxy, $System, $Planet)
 	{
 		global $user, $lang;
+
+		$parse = "";
 
 		if ($GalaxyInfo && $GalaxyInfo["destruyed"] == 0 && $GalaxyInfo["username"] != '')
 		{

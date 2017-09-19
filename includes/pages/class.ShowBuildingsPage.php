@@ -341,7 +341,14 @@ class ShowBuildingsPage
 						$ListIDRow .= "<div class=\"ElementQueu\">";
 						if ($BuildMode == 'build')
 						{
-							$ListIDRow .= "	<div class=\"l\"><center style=\"margin-bottom: 4px;\">".mb_strimwidth(str_replace('&apos;',"'",html_entity_decode($ElementTitle)), 0 , 15,'...')." ". $BuildLevel ."</center></div>";
+
+						    //fix batiment multiname
+                            $BuildLevelTxt = $BuildLevel;
+						    if(is_array($ElementTitle)){
+                                $BuildLevelTxt = "";
+                                $ElementTitle = (count($ElementTitle) < $BuildLevel)?$ElementTitle[count($ElementTitle)-1]:$ElementTitle[$BuildLevel];
+                            }
+							$ListIDRow .= "	<div class=\"l\"><center style=\"margin-bottom: 4px;\">".mb_strimwidth(str_replace('&apos;',"'",html_entity_decode($ElementTitle)), 0 , 15,'...')." ". $BuildLevelTxt ."</center></div>";
 						}
 						else
 						{
@@ -427,12 +434,12 @@ class ShowBuildingsPage
 				$bDoItNow = TRUE;
 			}
 	
-			if ($Element == 31 && $CurrentUser["b_tech_planet"] != 0)
+			if ( isset ( $Element ) && $Element == 31 && $CurrentUser["b_tech_planet"] != 0)
 			{
 				$bDoItNow = FALSE;
 			}
 
-			if ( ( $Element == 21 or $Element == 14 or $Element == 15 ) && $CurrentPlanet["b_hangar"] != 0)
+			if ( isset ( $Element ) && ( $Element == 21 or $Element == 14 or $Element == 15 ) && $CurrentPlanet["b_hangar"] != 0)
 			{
 				$bDoItNow = FALSE;
 			}
@@ -510,7 +517,12 @@ class ShowBuildingsPage
 					$parse['i']            	= $Element;
 					$BuildingLevel         	= $CurrentPlanet[$resource[$Element]];
 					$parse['nivel']        	= ($BuildingLevel == 0) ? "" : " (" . $BuildingLevel .")";
-					$parse['n']            	= (is_array($ElementName))?$ElementName[$BuildingLevel]:$ElementName;
+
+					if(is_array($ElementName)){
+                        $ElementName = (count($ElementName) < $BuildingLevel)?$ElementName[count($ElementName)-1]:$ElementName[$BuildingLevel];
+                    }
+					$parse['n']            	= $ElementName;
+
 					$parse['descriptions'] 	= $lang['res']['descriptions'][$Element];
 /* OLD CODE ---------------------------------------------------- OLD CODE ------------------------------------- //
 					$ElementBuildTime      	= GetBuildingTime($CurrentUser, $CurrentPlanet, $Element);
