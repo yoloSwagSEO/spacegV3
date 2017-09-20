@@ -71,7 +71,7 @@
          <li><a href="game.php?page=fleet">Spacioport</a></li>
          <li><a href="game.php?page=galaxy&mode=0">Carte galactique</a></li>
       </ul>
-      
+       
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
