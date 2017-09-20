@@ -8,7 +8,7 @@ class MysqlConnect
     private $database; // DataBase Name
     private $idConnexion; // Connexion id
     private $isConnected; // True or False
-
+    private $dbPrefix = 'xgp_';
 
     public function __construct()
     {
@@ -20,8 +20,7 @@ class MysqlConnect
         $this->isConnected = FALSE;
         $this->listdbArray = array();
     }
-
-
+    
     public function doConnect()
     {
         if ($this->isConnected == FALSE) {
@@ -56,6 +55,36 @@ class MysqlConnect
         }
         return $columns;
     }
+
+
+    public function makeClass(string $name){
+        $className = str_replace($this->dbPrefix,'',$name);
+        $classContent = file_get_contents('tpl/class.html');
+        $classContent = str_replace('{{className}}',$className,$classContent);
+        $fieldFormated = $this->makeAttributes($name);
+        $classContent = str_replace('{{attribute}}',$fieldFormated,$classContent);
+        $methodFormated = $this->makeMethods();
+        $classContent = str_replace('{{functions}}',$methodFormated,$classContent);
+        $classContent = str_replace('{{table}}',$name,$classContent);
+
+        echo $classContent;
+    }
+
+    private function makeMethods():string {
+        $methods = "";
+        $methods .= file_get_contents('tpl/get.html');
+        $methods .= file_get_contents('tpl/save.html');
+        return $methods;
+    }
+    private function makeAttributes(string $table):string {
+        $fieldFormated = "";
+        foreach($this->get_fields($table) as $field){
+            $attrName = file_get_contents('tpl/attribute.html');
+            $fieldFormated .= str_replace('{{attributeName}}',$field,$attrName);
+        }
+        return $fieldFormated;
+    }
+    
     public function getHost():string{
         return $this->host; // Server Name
     }
@@ -96,8 +125,9 @@ $test->setDatabase('spaceg')
      ->doConnect();
 
 foreach($test->get_tables() as $table){
-    echo $table.'<br />';
-    echo '<pre>';
-    print_r($test->get_fields($table));
-    echo '</pre>';
+    $test->makeClass($table);
+   // echo $table.'<br />';
+   // echo '<pre>';
+   // print_r($test->get_fields($table));
+   // echo '</pre>';
 }
