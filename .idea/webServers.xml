@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="b59956d3-5d0f-4bbb-a1ff-eaf03ccb89a2" name="vps" url="http://vps353426.ovh.net">
-        <fileTransfer host="vps353426.ovh.net" port="22" rootFolder="/var/www/html" accessType="SFTP">
+        <fileTransfer host="vps353426.ovh.net" port="22" rootFolder="/var/www/html" accessType="SFTP" password="df92df9bdffcdfebdf99dfcbdfc3dff3" username="root">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
