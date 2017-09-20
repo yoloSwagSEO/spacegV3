@@ -10,6 +10,7 @@
  * ------GLOBAL POSSIBLE------
  * $planetrow => Planete courante
  * $user => Joueur
+ * $lang => Fichier de langue
  *
  * ------ACTIONS------
  * ------Building------
@@ -27,7 +28,7 @@
  *
  * post-building-end
  *    (int) @element : Id de l'éléments construit
- *    (int) @lvl : Niveau du batiment APRES la destruction.
+ *    (int) @lvl : Niveau du batiment APRES la construction.
  *    (bool)@destruc : si c'est une destruction
  *
  *    Description: Call a la fin de la construction/destruction d'un batiment aprés l'enregistrement en DB
@@ -40,10 +41,16 @@
  *
  */
 
-add_action( 'pre-building-end', 'an_action_function' );
+//add_action( 'pre-building-end', 'an_action_function' );
 
-function an_action_function($name) {
-    echo $name['element'].'<br />';
+
+add_action('post-building-end','add_building_to_prompteur');
+
+function add_building_to_prompteur($param){
+    global $lang;
+    if(!$param['destruc']){
+        $_SESSION['prompteur'][] =  $lang['tech'][$param['element']].'('.$param['lvl'].')'.$lang['prompteur']['end_construct'];
+    }
 }
 
 
