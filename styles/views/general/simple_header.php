@@ -18,6 +18,8 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" type="text/javascript"></script>
+
     {-style-}
 		<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
         <script src="js/notify.min.js"></script>
@@ -82,7 +84,7 @@
 						);
 					}  
 				});
-
+                $('.prompt').marquee({duration: 15000});
 				$('.coloCh').on('click',function(event){
 					$('.coloCh').addClass('active');
 					$('.sectorsCh').removeClass('active');
@@ -133,6 +135,7 @@
 					}
 				});
 			});
+
 		</script>
 
 {-meta-}
@@ -144,7 +147,7 @@
 <body class="{class}" onLoad="" onUnload="">
 <div class="container">
 <!-- <h1 style="color:red">Travaux sur la liste des planete</h1> -->
-{-postBody-}
+    {-postBody-}
 
 
 

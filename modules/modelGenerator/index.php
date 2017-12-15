@@ -20,7 +20,8 @@ class MysqlConnect
         $this->isConnected = FALSE;
         $this->listdbArray = array();
     }
-    
+
+
     public function doConnect()
     {
         if ($this->isConnected == FALSE) {
@@ -114,7 +115,20 @@ class MysqlConnect
         $this->database = $database;
         return $this;
     }
-  
+
+    public function connect(string $host, string $username, string $password, string $database, bool $autoconnect = TRUE):MysqlConnect{
+        $this->setHost($host);
+        $this->setUser($username);
+        $this->setPassword($password);
+        $this->setDatabase($database);
+
+        if($autoconnect){
+            return $this->doConnect();
+        }else{
+            return $this;
+        }
+
+    }
 }
 
 $test = new MysqlConnect();

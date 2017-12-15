@@ -6,7 +6,6 @@ define('XGP_ROOT',	'./');
 $InLogin = TRUE;
 include(XGP_ROOT . 'global.php');
 includeLang ( 'PUBLIC' );
-
 $parse = $lang;
 
 switch ( ( isset ( $_GET['page'] ) ) )

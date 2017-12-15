@@ -1,16 +1,17 @@
 <script src="js/pages/createFleet.js" ></script>
-<div id="content">
-	<div id="list-bat">
-        <div class="row">
-            <div class="col-md-12">Nouvelle flottes</div>
-        </div>
+
+
+<div class="row" id="rowBuilding">
+    <div class="col-md-12 bgLR" id="labelshipyard">
+        <p>Nouvelle flottes</p>
+    </div>
+    <div class="col-md-12 bgLR" id="buildlistingBatNew">
         <div class="row">
             <div class="col-md-3">
                 Nom Flotte.
                 Amiral
                 Informations
             </div>
-
             <div class="col-md-9">
                 <div class="col-md-12">
                     <div class="col-md-9">
@@ -24,14 +25,14 @@
                     <span>Vaisseaux de la flotte.</span>
                     <table class="table">
                         <thead>
-                            <tr>
-                                <th>Vaisseau</th>
-                                <th>Nb</th>
-                                <th>Vitesse</th>
-                                <th>Consomation</th>
-                                <th>Capacité</th>
-                                <th colspan="2">Actions</th>
-                            </tr>
+                        <tr>
+                            <th>Vaisseau</th>
+                            <th>Nb</th>
+                            <th>Vitesse</th>
+                            <th>Consomation</th>
+                            <th>Capacité</th>
+                            <th colspan="2">Actions</th>
+                        </tr>
                         </thead>
                         <tbody id="NewfleetList">
 
@@ -66,6 +67,6 @@
         <form id="newFleetForm" action="game.php?page=createFleet&action=saveFleet" method="post">
 
         </form>
-		<div class="clear"></div>
-	</div>
+    </div>
+
 </div>

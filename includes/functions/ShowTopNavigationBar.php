@@ -108,8 +108,14 @@ if(!defined('INSIDE')){ die(header("location:../../"));}
                 
 		$parse['darkmatter'] 		= Format::pretty_number($CurrentUser["darkmatter"]);
 		if(isset($_SESSION['prompteur']) && is_array($_SESSION['prompteur'])){
+
+		   // print_r($_SESSION['prompteur']);
             $parse['prompteur'] = implode(' - ',$_SESSION['prompteur']);
+
+        }else{
+            $parse['prompteur'] = '';
         }
+
 		$TopBar 			 		= parsetemplate(gettemplate('general/topnav'), $parse);
 
 		return $TopBar;
