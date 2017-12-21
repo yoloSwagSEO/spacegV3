@@ -8,11 +8,11 @@ events: Time
 
 fl=(1) php:internal
 fn=(1) php::define
-2 31
+2 30
 
 fl=(1)
 fn=(1)
-3 14
+3 15
 
 fl=(1)
 fn=(1)
@@ -20,35 +20,35 @@ fn=(1)
 
 fl=(1)
 fn=(1)
-5 5
+5 7
 
 fl=(2) /var/www/html/vendor/composer/autoload_real.php
 fn=(2) require_once::/var/www/html/vendor/composer/autoload_real.php
-1 3
+1 2
 
 fl=(1)
 fn=(3) php::spl_autoload_register
-22 179
+22 87
 
 fl=(3) /var/www/html/vendor/composer/ClassLoader.php
 fn=(4) require::/var/www/html/vendor/composer/ClassLoader.php
-1 3
+1 2
 
 fl=(2)
 fn=(5) ComposerAutoloaderInitf7fea02dbbc38145c144d7f975c73fa4::loadClassLoader
-9 118
+9 140
 cfl=(3)
 cfn=(4)
 calls=1 0 0
-12 3
+12 2
 
 fl=(1)
 fn=(6) php::spl_autoload_call
-23 36
+23 39
 cfl=(2)
 cfn=(5)
 calls=1 0 0
-23 122
+23 143
 
 fl=(1)
 fn=(7) php::{zend_pass}
@@ -56,7 +56,7 @@ fn=(7) php::{zend_pass}
 
 fl=(1)
 fn=(8) php::spl_autoload_unregister
-24 7
+24 6
 
 fl=(4) /var/www/html/vendor/composer/autoload_static.php
 fn=(9) require_once::/var/www/html/vendor/composer/autoload_static.php
@@ -64,19 +64,19 @@ fn=(9) require_once::/var/www/html/vendor/composer/autoload_static.php
 
 fl=(1)
 fn=(10) php::Closure::bind
-58 4
+58 5
 
 fl=(4)
 fn=(11) Composer\Autoload\ComposerStaticInitf7fea02dbbc38145c144d7f975c73fa4::getInitializer
-51 63
+51 58
 cfl=(1)
 cfn=(10)
 calls=1 0 0
-58 4
+58 5
 
 fl=(4)
 fn=(12) Composer\Autoload\ClassLoader::Composer\Autoload\{closure}
-53 15
+53 17
 
 fl=(1)
 fn=(3)
@@ -84,7 +84,7 @@ fn=(3)
 
 fl=(3)
 fn=(13) Composer\Autoload\ClassLoader->register
-279 46
+279 41
 cfl=(1)
 cfn=(3)
 calls=1 0 0
@@ -92,55 +92,55 @@ calls=1 0 0
 
 fl=(1)
 fn=(14) php::function_exists
-14 12
+14 14
 
 fl=(5) /var/www/html/vendor/symfony/polyfill-mbstring/bootstrap.php
 fn=(15) require::/var/www/html/vendor/symfony/polyfill-mbstring/bootstrap.php
-1 34
+1 36
 cfl=(1)
 cfn=(14)
 calls=1 0 0
-14 12
+14 14
 
 fl=(2)
 fn=(16) composerRequiref7fea02dbbc38145c144d7f975c73fa4
-63 124
+63 288
 cfl=(5)
 cfn=(15)
 calls=1 0 0
-66 46
+66 50
 
 fl=(1)
 fn=(14)
-14 0
+14 1
 
 fl=(6) /var/www/html/vendor/symfony/var-dumper/Resources/functions/dump.php
 fn=(17) require::/var/www/html/vendor/symfony/var-dumper/Resources/functions/dump.php
-1 13
+1 17
 cfl=(1)
 cfn=(14)
 calls=1 0 0
-14 0
+14 1
 
 fl=(2)
 fn=(16)
-63 43
+63 70
 cfl=(6)
 cfn=(17)
 calls=1 0 0
-66 14
+66 19
 
 fl=(2)
 fn=(18) ComposerAutoloaderInitf7fea02dbbc38145c144d7f975c73fa4::getLoader
-16 360
+16 375
 cfl=(1)
 cfn=(3)
 calls=1 0 0
-22 179
+22 87
 cfl=(1)
 cfn=(6)
 calls=1 0 0
-23 159
+23 182
 cfl=(1)
 cfn=(7)
 calls=1 0 0
@@ -148,7 +148,7 @@ calls=1 0 0
 cfl=(1)
 cfn=(8)
 calls=1 0 0
-24 7
+24 6
 cfl=(4)
 cfn=(9)
 calls=1 0 0
@@ -156,51 +156,51 @@ calls=1 0 0
 cfl=(4)
 cfn=(11)
 calls=1 0 0
-30 67
+30 63
 cfl=(4)
 cfn=(12)
 calls=1 0 0
-30 15
+30 17
 cfl=(3)
 cfn=(13)
 calls=1 0 0
-48 51
+48 46
 cfl=(2)
 cfn=(16)
 calls=1 0 0
-56 171
+56 338
 cfl=(2)
 cfn=(16)
 calls=1 0 0
-56 57
+56 89
 
 fl=(7) /var/www/html/vendor/autoload.php
 fn=(19) require::/var/www/html/vendor/autoload.php
-1 175
+1 131
 cfl=(2)
 cfn=(2)
 calls=1 0 0
-5 3
+5 2
 cfl=(2)
 cfn=(18)
 calls=1 0 0
-7 1070
+7 1209
 
 fl=(1)
 fn=(20) php::ini_set
-9 40
+9 20
 
 fl=(1)
 fn=(21) php::error_reporting
-10 16
+10 10
 
 fl=(1)
 fn=(22) php::session_start
-11 397
+11 634
 
 fl=(1)
 fn=(1)
-12 6
+12 7
 
 fl=(1)
 fn=(1)
@@ -256,7 +256,7 @@ fn=(1)
 
 fl=(1)
 fn=(1)
-44 0
+44 1
 
 fl=(1)
 fn=(1)
@@ -268,19 +268,19 @@ fn=(1)
 
 fl=(1)
 fn=(1)
-51 1
+51 0
 
 fl=(1)
 fn=(1)
-52 1
+52 0
 
 fl=(1)
 fn=(1)
-53 4
+53 5
 
 fl=(1)
 fn=(1)
-56 0
+56 1
 
 fl=(1)
 fn=(1)
@@ -300,11 +300,11 @@ fn=(1)
 
 fl=(1)
 fn=(1)
-61 1
+61 0
 
 fl=(1)
 fn=(1)
-64 1
+64 0
 
 fl=(1)
 fn=(1)
@@ -316,11 +316,11 @@ fn=(1)
 
 fl=(8) /var/www/html/includes/constants.php
 fn=(23) include_once::/var/www/html/includes/constants.php
-1 305
+1 355
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-12 6
+12 7
 cfl=(1)
 cfn=(1)
 calls=1 0 0
@@ -376,7 +376,7 @@ calls=1 0 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-44 0
+44 1
 cfl=(1)
 cfn=(1)
 calls=1 0 0
@@ -388,19 +388,19 @@ calls=1 0 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-51 1
+51 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-52 1
+52 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-53 4
+53 5
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-56 0
+56 1
 cfl=(1)
 cfn=(1)
 calls=1 0 0
@@ -420,11 +420,11 @@ calls=1 0 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-61 1
+61 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-64 1
+64 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
@@ -436,7 +436,7 @@ calls=1 0 0
 
 fl=(1)
 fn=(24) php::strtr
-347 9
+347 10
 
 fl=(1)
 fn=(25) php::strrpos
@@ -448,11 +448,11 @@ fn=(24)
 
 fl=(3)
 fn=(26) Composer\Autoload\ClassLoader->findFileWithExtension
-344 393
+344 92
 cfl=(1)
 cfn=(24)
 calls=1 0 0
-347 9
+347 10
 cfl=(1)
 cfn=(25)
 calls=1 0 0
@@ -464,27 +464,27 @@ calls=1 0 0
 
 fl=(1)
 fn=(27) php::defined
-332 0
+332 2
 
 fl=(3)
 fn=(28) Composer\Autoload\ClassLoader->findFile
-314 59
+314 55
 cfl=(3)
 cfn=(26)
 calls=1 0 0
-329 407
+329 108
 cfl=(1)
 cfn=(27)
 calls=1 0 0
-332 0
+332 2
 
 fl=(3)
 fn=(29) Composer\Autoload\ClassLoader->loadClass
-298 26
+298 24
 cfl=(3)
 cfn=(28)
 calls=1 0 0
-300 468
+300 166
 
 fl=(1)
 fn=(6)
@@ -492,7 +492,7 @@ fn=(6)
 cfl=(3)
 cfn=(29)
 calls=1 0 0
-2 494
+2 190
 
 fl=(1)
 fn=(30) php::class_exists
@@ -500,7 +500,7 @@ fn=(30) php::class_exists
 cfl=(1)
 cfn=(6)
 calls=1 0 0
-2 513
+2 209
 
 fl=(1)
 fn=(14)
@@ -520,15 +520,15 @@ fn=(14)
 
 fl=(9) /var/www/html/includes/classes/class.Hook.php
 fn=(31) Hook->__construct
-17 0
+17 1
 
 fl=(9)
 fn=(32) include_once::/var/www/html/includes/classes/class.Hook.php
-1 80
+1 77
 cfl=(1)
 cfn=(30)
 calls=1 0 0
-2 528
+2 224
 cfl=(1)
 cfn=(14)
 calls=1 0 0
@@ -548,7 +548,7 @@ calls=1 0 0
 cfl=(9)
 cfn=(31)
 calls=1 0 0
-228 0
+228 1
 
 fl=(1)
 fn=(14)
@@ -556,7 +556,7 @@ fn=(14)
 
 fl=(10) /var/www/html/includes/GeneralFunctions.php
 fn=(33) include_once::/var/www/html/includes/GeneralFunctions.php
-1 22
+1 27
 cfl=(1)
 cfn=(14)
 calls=1 0 0
@@ -576,7 +576,7 @@ fn=(1)
 
 fl=(1)
 fn=(1)
-18 5
+18 0
 
 fl=(1)
 fn=(1)
@@ -616,11 +616,11 @@ fn=(1)
 
 fl=(1)
 fn=(1)
-28 0
+28 1
 
 fl=(1)
 fn=(1)
-29 1
+29 0
 
 fl=(1)
 fn=(1)
@@ -632,7 +632,7 @@ fn=(1)
 
 fl=(11) /var/www/html/includes/classes/class.simple_html_dom.php
 fn=(34) include_once::/var/www/html/includes/classes/class.simple_html_dom.php
-1 163
+1 159
 cfl=(1)
 cfn=(1)
 calls=1 0 0
@@ -648,7 +648,7 @@ calls=1 0 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-18 5
+18 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
@@ -688,11 +688,11 @@ calls=1 0 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-28 0
+28 1
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-29 1
+29 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
@@ -716,19 +716,19 @@ fn=(37) include_once::/var/www/html/includes/classes/class.Format.php
 
 fl=(15) /var/www/html/includes/classes/class.NoobsProtection.php
 fn=(38) include_once::/var/www/html/includes/classes/class.NoobsProtection.php
-1 0
+1 3
 
 fl=(16) /var/www/html/includes/classes/class.Production.php
 fn=(39) include_once::/var/www/html/includes/classes/class.Production.php
-1 5
+1 6
 
 fl=(17) /var/www/html/includes/classes/class.Fleets.php
 fn=(40) include_once::/var/www/html/includes/classes/class.Fleets.php
-1 9
+1 6
 
 fl=(18) /var/www/html/includes/classes/class.Plugin.php
 fn=(41) include_once::/var/www/html/includes/classes/class.Plugin.php
-1 1
+1 0
 
 fl=(19) /var/www/html/includes/classes/class.PluginsManager.php
 fn=(42) include_once::/var/www/html/includes/classes/class.PluginsManager.php
@@ -740,43 +740,43 @@ fn=(43) debug->__construct
 
 fl=(1)
 fn=(44) php::filesize
-40 38
+40 35
 
 fl=(1)
 fn=(44)
-45 1
+45 0
 
 fl=(1)
 fn=(45) php::simplexml_load_file
-41 537
+41 643
 
 fl=(13)
 fn=(46) xml->__construct
-38 37
+38 39
 cfl=(1)
 cfn=(45)
 calls=1 0 0
-41 537
+41 643
 
 fl=(13)
 fn=(47) xml::getInstance
-132 22
+132 25
 cfl=(13)
 cfn=(46)
 calls=1 0 0
-138 575
+138 682
 
 fl=(1)
 fn=(48) php::SimpleXMLElement->xpath
-52 229
+52 206
 
 fl=(13)
 fn=(49) xml->doXpathQuery
-50 27
+50 25
 cfl=(1)
 cfn=(48)
 calls=1 0 0
-52 229
+52 206
 
 fl=(1)
 fn=(50) php::count
@@ -784,11 +784,11 @@ fn=(50) php::count
 
 fl=(13)
 fn=(51) xml->get_xml_entity
-61 72
+61 81
 cfl=(13)
 cfn=(49)
 calls=1 0 0
-64 257
+64 232
 cfl=(1)
 cfn=(50)
 calls=1 0 0
@@ -796,35 +796,35 @@ calls=1 0 0
 
 fl=(1)
 fn=(52) php::SimpleXMLElement->__toString
-83 1
+83 2
 
 fl=(13)
 fn=(53) xml->get_config
-80 56
+80 61
 cfl=(13)
 cfn=(51)
 calls=1 0 0
-83 334
+83 319
 cfl=(1)
 cfn=(52)
 calls=1 0 0
-83 1
+83 2
 
 fl=(10)
 fn=(54) read_config
-28 39
+28 46
 cfl=(13)
 cfn=(47)
 calls=1 0 0
-30 597
+30 707
 cfl=(13)
 cfn=(53)
 calls=1 0 0
-38 393
+38 383
 
 fl=(1)
 fn=(1)
-49 3
+49 2
 
 fl=(13)
 fn=(47)
@@ -832,7 +832,7 @@ fn=(47)
 
 fl=(1)
 fn=(48)
-52 58
+52 64
 
 fl=(13)
 fn=(49)
@@ -840,7 +840,7 @@ fn=(49)
 cfl=(1)
 cfn=(48)
 calls=1 0 0
-52 58
+52 64
 
 fl=(1)
 fn=(50)
@@ -848,11 +848,11 @@ fn=(50)
 
 fl=(13)
 fn=(51)
-61 23
+61 27
 cfl=(13)
 cfn=(49)
 calls=1 0 0
-64 74
+64 80
 cfl=(1)
 cfn=(50)
 calls=1 0 0
@@ -868,7 +868,7 @@ fn=(53)
 cfl=(13)
 cfn=(51)
 calls=1 0 0
-83 98
+83 108
 cfl=(1)
 cfn=(52)
 calls=1 0 0
@@ -876,7 +876,7 @@ calls=1 0 0
 
 fl=(10)
 fn=(54)
-28 24
+28 26
 cfl=(13)
 cfn=(47)
 calls=1 0 0
@@ -884,31 +884,31 @@ calls=1 0 0
 cfl=(13)
 cfn=(53)
 calls=1 0 0
-38 128
+38 137
 
 fl=(1)
 fn=(1)
-54 1
+54 0
 
 fl=(20) /var/www/html/language/french/COMMON.php
 fn=(55) include::/var/www/html/language/french/COMMON.php
-1 17
+1 12
 
 fl=(10)
 fn=(56) includeLang
-349 67
+349 61
 cfl=(20)
 cfn=(55)
 calls=1 0 0
-353 17
+353 12
 
 fl=(21) /var/www/html/includes/vars.php
 fn=(57) include::/var/www/html/includes/vars.php
-1 22
+1 30
 
 fl=(22) /var/www/html/includes/functions/CreateOneMoonRecord.php
 fn=(58) include::/var/www/html/includes/functions/CreateOneMoonRecord.php
-1 10
+1 8
 
 fl=(23) /var/www/html/includes/functions/CreateOnePlanetRecord.php
 fn=(59) include::/var/www/html/includes/functions/CreateOnePlanetRecord.php
@@ -916,7 +916,7 @@ fn=(59) include::/var/www/html/includes/functions/CreateOnePlanetRecord.php
 
 fl=(24) /var/www/html/includes/functions/CreateOneSecteurRecord.php
 fn=(60) include::/var/www/html/includes/functions/CreateOneSecteurRecord.php
-1 5
+1 6
 
 fl=(25) /var/www/html/includes/functions/SendSimpleMessage.php
 fn=(61) include::/var/www/html/includes/functions/SendSimpleMessage.php
@@ -924,7 +924,7 @@ fn=(61) include::/var/www/html/includes/functions/SendSimpleMessage.php
 
 fl=(26) /var/www/html/includes/functions/calculateAttack.php
 fn=(62) include::/var/www/html/includes/functions/calculateAttack.php
-1 10
+1 8
 
 fl=(27) /var/www/html/includes/functions/formatCR.php
 fn=(63) include::/var/www/html/includes/functions/formatCR.php
@@ -936,11 +936,11 @@ fn=(64) include::/var/www/html/includes/functions/GetBuildingTime.php
 
 fl=(29) /var/www/html/includes/functions/HandleElementBuildingQueue.php
 fn=(65) include::/var/www/html/includes/functions/HandleElementBuildingQueue.php
-1 9
+1 51
 
 fl=(30) /var/www/html/includes/functions/HandleElementCasernQueue.php
 fn=(66) include::/var/www/html/includes/functions/HandleElementCasernQueue.php
-1 9
+1 7
 
 fl=(31) /var/www/html/includes/functions/PlanetResourceUpdate.php
 fn=(67) include::/var/www/html/includes/functions/PlanetResourceUpdate.php
@@ -948,51 +948,51 @@ fn=(67) include::/var/www/html/includes/functions/PlanetResourceUpdate.php
 
 fl=(32) /var/www/html/language/french/INGAME.php
 fn=(68) include::/var/www/html/language/french/INGAME.php
-1 584
+1 718
 
 fl=(10)
 fn=(56)
-349 46
+349 59
 cfl=(32)
 cfn=(68)
 calls=1 0 0
-353 584
+353 718
 
 fl=(33) /var/www/html/global.php
 fn=(69) include::/var/www/html/global.php
-1 1429
+1 1765
 cfl=(7)
 cfn=(19)
 calls=1 0 0
-2 1249
+2 1343
 cfl=(1)
 cfn=(20)
 calls=1 0 0
-9 40
+9 20
 cfl=(1)
 cfn=(21)
 calls=1 0 0
-10 16
+10 10
 cfl=(1)
 cfn=(22)
 calls=1 0 0
-11 397
+11 634
 cfl=(8)
 cfn=(23)
 calls=1 0 0
-18 349
+18 401
 cfl=(9)
 cfn=(32)
 calls=1 0 0
-19 611
+19 305
 cfl=(10)
 cfn=(33)
 calls=1 0 0
-21 23
+21 28
 cfl=(11)
 cfn=(34)
 calls=1 0 0
-22 182
+22 178
 cfl=(12)
 cfn=(35)
 calls=1 0 0
@@ -1008,19 +1008,19 @@ calls=1 0 0
 cfl=(15)
 cfn=(38)
 calls=1 0 0
-26 0
+26 3
 cfl=(16)
 cfn=(39)
 calls=1 0 0
-27 5
+27 6
 cfl=(17)
 cfn=(40)
 calls=1 0 0
-28 9
+28 6
 cfl=(18)
 cfn=(41)
 calls=1 0 0
-29 1
+29 0
 cfl=(19)
 cfn=(42)
 calls=1 0 0
@@ -1032,39 +1032,39 @@ calls=1 0 0
 cfl=(1)
 cfn=(44)
 calls=1 0 0
-40 38
+40 35
 cfl=(1)
 cfn=(44)
 calls=1 0 0
-45 1
+45 0
 cfl=(10)
 cfn=(54)
 calls=1 0 0
-47 1030
+47 1137
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-49 3
+49 2
 cfl=(10)
 cfn=(54)
 calls=1 0 0
-53 154
+53 165
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-54 1
+54 0
 cfl=(10)
 cfn=(56)
 calls=1 0 0
-57 84
+57 73
 cfl=(21)
 cfn=(57)
 calls=1 0 0
-62 22
+62 30
 cfl=(22)
 cfn=(58)
 calls=1 0 0
-63 10
+63 8
 cfl=(23)
 cfn=(59)
 calls=1 0 0
@@ -1072,7 +1072,7 @@ calls=1 0 0
 cfl=(24)
 cfn=(60)
 calls=1 0 0
-65 5
+65 6
 cfl=(25)
 cfn=(61)
 calls=1 0 0
@@ -1080,7 +1080,7 @@ calls=1 0 0
 cfl=(26)
 cfn=(62)
 calls=1 0 0
-67 10
+67 8
 cfl=(27)
 cfn=(63)
 calls=1 0 0
@@ -1092,11 +1092,11 @@ calls=1 0 0
 cfl=(29)
 cfn=(65)
 calls=1 0 0
-70 9
+70 51
 cfl=(30)
 cfn=(66)
 calls=1 0 0
-71 9
+71 7
 cfl=(31)
 cfn=(67)
 calls=1 0 0
@@ -1104,83 +1104,23 @@ calls=1 0 0
 cfl=(10)
 cfn=(56)
 calls=1 0 0
-74 631
+74 777
 
 fl=(34) /var/www/html/language/french/PUBLIC.php
 fn=(70) include::/var/www/html/language/french/PUBLIC.php
-1 25
+1 20
 
 fl=(10)
 fn=(56)
-349 66
+349 51
 cfl=(34)
 cfn=(70)
 calls=1 0 0
-353 25
+353 20
 
 fl=(1)
 fn=(71) php::date
-109 205
-
-fl=(13)
-fn=(47)
-132 3
-
-fl=(1)
-fn=(48)
-52 65
-
-fl=(13)
-fn=(49)
-50 15
-cfl=(1)
-cfn=(48)
-calls=1 0 0
-52 65
-
-fl=(1)
-fn=(50)
-66 0
-
-fl=(13)
-fn=(51)
-61 27
-cfl=(13)
-cfn=(49)
-calls=1 0 0
-64 81
-cfl=(1)
-cfn=(50)
-calls=1 0 0
-66 0
-
-fl=(1)
-fn=(52)
-83 3
-
-fl=(13)
-fn=(53)
-80 38
-cfl=(13)
-cfn=(51)
-calls=1 0 0
-83 109
-cfl=(1)
-cfn=(52)
-calls=1 0 0
-83 3
-
-fl=(10)
-fn=(54)
-28 55
-cfl=(13)
-cfn=(47)
-calls=1 0 0
-30 3
-cfl=(13)
-cfn=(53)
-calls=1 0 0
-38 151
+109 8790
 
 fl=(13)
 fn=(47)
@@ -1188,15 +1128,75 @@ fn=(47)
 
 fl=(1)
 fn=(48)
-52 56
+52 70
 
 fl=(13)
 fn=(49)
-50 13
+50 16
 cfl=(1)
 cfn=(48)
 calls=1 0 0
-52 56
+52 70
+
+fl=(1)
+fn=(50)
+66 0
+
+fl=(13)
+fn=(51)
+61 31
+cfl=(13)
+cfn=(49)
+calls=1 0 0
+64 87
+cfl=(1)
+cfn=(50)
+calls=1 0 0
+66 0
+
+fl=(1)
+fn=(52)
+83 1
+
+fl=(13)
+fn=(53)
+80 32
+cfl=(13)
+cfn=(51)
+calls=1 0 0
+83 118
+cfl=(1)
+cfn=(52)
+calls=1 0 0
+83 1
+
+fl=(10)
+fn=(54)
+28 32
+cfl=(13)
+cfn=(47)
+calls=1 0 0
+30 2
+cfl=(13)
+cfn=(53)
+calls=1 0 0
+38 153
+
+fl=(13)
+fn=(47)
+132 0
+
+fl=(1)
+fn=(48)
+52 66
+
+fl=(13)
+fn=(49)
+50 15
+cfl=(1)
+cfn=(48)
+calls=1 0 0
+52 66
 
 fl=(1)
 fn=(50)
@@ -1208,7 +1208,7 @@ fn=(51)
 cfl=(13)
 cfn=(49)
 calls=1 0 0
-64 69
+64 82
 cfl=(1)
 cfn=(50)
 calls=1 0 0
@@ -1216,43 +1216,43 @@ calls=1 0 0
 
 fl=(1)
 fn=(52)
-83 1
+83 0
 
 fl=(13)
 fn=(53)
-80 26
+80 25
 cfl=(13)
 cfn=(51)
 calls=1 0 0
-83 95
+83 107
 cfl=(1)
 cfn=(52)
 calls=1 0 0
-83 1
+83 0
 
 fl=(10)
 fn=(54)
-28 33
+28 24
 cfl=(13)
 cfn=(47)
 calls=1 0 0
-30 2
+30 0
 cfl=(13)
 cfn=(53)
 calls=1 0 0
-38 123
+38 133
 
 fl=(1)
 fn=(72) php::file_get_contents
-346 200
+346 145
 
 fl=(10)
 fn=(73) gettemplate
-344 37
+344 34
 cfl=(1)
 cfn=(72)
 calls=1 0 0
-346 200
+346 145
 
 fl=(10)
 fn=(74) {closure:/var/www/html/includes/GeneralFunctions.php:338-340}
@@ -1284,10 +1284,6 @@ fn=(74)
 
 fl=(10)
 fn=(74)
-338 1
-
-fl=(10)
-fn=(74)
 338 0
 
 fl=(10)
@@ -1312,7 +1308,11 @@ fn=(74)
 
 fl=(10)
 fn=(74)
-338 1
+338 0
+
+fl=(10)
+fn=(74)
+338 0
 
 fl=(10)
 fn=(74)
@@ -1324,7 +1324,7 @@ fn=(74)
 
 fl=(1)
 fn=(75) php::preg_replace_callback
-340 238
+340 208
 cfl=(10)
 cfn=(74)
 calls=1 0 0
@@ -1356,10 +1356,6 @@ calls=1 0 0
 cfl=(10)
 cfn=(74)
 calls=1 0 0
-340 1
-cfl=(10)
-cfn=(74)
-calls=1 0 0
 340 0
 cfl=(10)
 cfn=(74)
@@ -1384,7 +1380,11 @@ calls=1 0 0
 cfl=(10)
 cfn=(74)
 calls=1 0 0
-340 1
+340 0
+cfl=(10)
+cfn=(74)
+calls=1 0 0
+340 0
 cfl=(10)
 cfn=(74)
 calls=1 0 0
@@ -1400,7 +1400,7 @@ fn=(76) parsetemplate
 cfl=(1)
 cfn=(75)
 calls=1 0 0
-340 267
+340 235
 
 fl=(13)
 fn=(47)
@@ -1408,7 +1408,7 @@ fn=(47)
 
 fl=(1)
 fn=(48)
-52 60
+52 62
 
 fl=(13)
 fn=(49)
@@ -1416,23 +1416,23 @@ fn=(49)
 cfl=(1)
 cfn=(48)
 calls=1 0 0
-52 60
+52 62
 
 fl=(1)
 fn=(50)
-66 0
+66 1
 
 fl=(13)
 fn=(51)
-61 23
+61 25
 cfl=(13)
 cfn=(49)
 calls=1 0 0
-64 75
+64 77
 cfl=(1)
 cfn=(50)
 calls=1 0 0
-66 0
+66 1
 
 fl=(1)
 fn=(52)
@@ -1440,11 +1440,11 @@ fn=(52)
 
 fl=(13)
 fn=(53)
-80 28
+80 26
 cfl=(13)
 cfn=(51)
 calls=1 0 0
-83 99
+83 105
 cfl=(1)
 cfn=(52)
 calls=1 0 0
@@ -1452,7 +1452,7 @@ calls=1 0 0
 
 fl=(10)
 fn=(54)
-28 26
+28 30
 cfl=(13)
 cfn=(47)
 calls=1 0 0
@@ -1460,31 +1460,23 @@ calls=1 0 0
 cfl=(13)
 cfn=(53)
 calls=1 0 0
-38 129
+38 133
 
 fl=(1)
 fn=(72)
-346 87
+346 179
 
 fl=(10)
 fn=(73)
-344 34
+344 32
 cfl=(1)
 cfn=(72)
 calls=1 0 0
-346 87
+346 179
 
 fl=(10)
 fn=(74)
-338 13
-
-fl=(10)
-fn=(74)
-338 1
-
-fl=(10)
-fn=(74)
-338 0
+338 10
 
 fl=(10)
 fn=(74)
@@ -1493,6 +1485,14 @@ fn=(74)
 fl=(10)
 fn=(74)
 338 0
+
+fl=(10)
+fn=(74)
+338 0
+
+fl=(10)
+fn=(74)
+338 1
 
 fl=(10)
 fn=(74)
@@ -1500,19 +1500,11 @@ fn=(74)
 
 fl=(1)
 fn=(75)
-340 102
+340 103
 cfl=(10)
 cfn=(74)
 calls=1 0 0
-340 13
-cfl=(10)
-cfn=(74)
-calls=1 0 0
-340 1
-cfl=(10)
-cfn=(74)
-calls=1 0 0
-340 0
+340 10
 cfl=(10)
 cfn=(74)
 calls=1 0 0
@@ -1521,6 +1513,14 @@ cfl=(10)
 cfn=(74)
 calls=1 0 0
 340 0
+cfl=(10)
+cfn=(74)
+calls=1 0 0
+340 0
+cfl=(10)
+cfn=(74)
+calls=1 0 0
+340 1
 cfl=(10)
 cfn=(74)
 calls=1 0 0
@@ -1528,50 +1528,50 @@ calls=1 0 0
 
 fl=(10)
 fn=(76)
-331 31
+331 30
 cfl=(1)
 cfn=(75)
 calls=1 0 0
-340 122
+340 119
 
 fl=(10)
 fn=(77) StdUserHeader
-245 543
+245 1107
 cfl=(10)
 cfn=(54)
 calls=1 0 0
-250 159
+250 166
 cfl=(10)
 cfn=(73)
 calls=1 0 0
-273 122
+273 211
 cfl=(10)
 cfn=(76)
 calls=1 0 0
-273 153
+273 149
 
 fl=(10)
 fn=(78) display
-87 851
+87 918
 cfl=(10)
 cfn=(77)
 calls=1 0 0
-92 977
+92 1636
 
 fl=(35) /var/www/html/index.php
 fn=(79) {main}
 
-summary: 10294
+summary: 19963
 
-1 802
+1 602
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-2 31
+2 30
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-3 14
+3 15
 cfl=(1)
 cfn=(1)
 calls=1 0 0
@@ -1579,23 +1579,23 @@ calls=1 0 0
 cfl=(1)
 cfn=(1)
 calls=1 0 0
-5 5
+5 7
 cfl=(33)
 cfn=(69)
 calls=1 0 0
-7 6381
+7 7070
 cfl=(10)
 cfn=(56)
 calls=1 0 0
-8 92
+8 72
 cfl=(1)
 cfn=(71)
 calls=1 0 0
-109 205
+109 8790
 cfl=(10)
 cfn=(54)
 calls=1 0 0
-111 210
+111 188
 cfl=(10)
 cfn=(54)
 calls=1 0 0
@@ -1603,13 +1603,13 @@ calls=1 0 0
 cfl=(10)
 cfn=(73)
 calls=1 0 0
-113 237
+113 180
 cfl=(10)
 cfn=(76)
 calls=1 0 0
-113 319
+113 287
 cfl=(10)
 cfn=(78)
 calls=1 0 0
-113 1829
+113 2554
 
