@@ -1,5 +1,4 @@
 <div id="messageview">
-	<div class="contentPageNavi"></div>
     <div class="row" id="header_message" >
         <div class="col-md-8">
             <span class="labelM">De :</span> {from}<br />
