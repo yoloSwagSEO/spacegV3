@@ -35,6 +35,9 @@ table table td
     color:#333;
 }
 
+
+
+
 body
 {
     color                : #E6EBFB;
@@ -96,6 +99,18 @@ td.c
     font-weight          : bold;
     color                : #E6EBFB;
     padding-left         : 3px;
+    background-color: #101211;
+}
+
+
+table.table-striped td a, table.table-striped th a, table.table-striped tbody tr td {
+    color: #333;
+}
+
+table.table-striped tbody tr td.c {
+    font-weight: bold;
+    color: #E6EBFB;
+    padding-left: 3px;
     background-color: #101211;
 }
 
