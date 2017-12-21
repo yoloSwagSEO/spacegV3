@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="col-md-2 bdDotted" id="colonie_lune">
-				<div id="lune_col">Lune(s)</div>
+				<div id="lune_col">Orbite(s)</div>
 				{moon_img}<br>{moon}
 			</div> 
 		</div>
