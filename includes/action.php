@@ -49,7 +49,8 @@ add_action('post-building-end','add_building_to_prompteur');
 function add_building_to_prompteur($param){
     global $lang;
     if(!$param['destruc']){
-        $_SESSION['prompteur'][] =  $lang['tech'][$param['element']].'('.$param['lvl'].')'.$lang['prompteur']['end_construct'];
+        //echo $lang['tech'][$param['element']].'('.$param['lvl'].')'.$lang['prompteur']['end_construct'];
+        $_SESSION['prompteur'][time()] =  array('type'=>'build','event'=>$lang['tech'][$param['element']].'('.$param['lvl'].')'.$lang['prompteur']['end_construct']);
     }
 }
 

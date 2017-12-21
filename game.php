@@ -203,6 +203,7 @@ switch ( ( isset ( $_GET['page'] ) ? $_GET['page'] : NULL ) )
 	break;
 // ----------------------------------------------------------------------------------------------------------------------------------------------//
 	case'logout':
+	    session_destroy();
 		setcookie(read_config ( 'cookie_name' ), "", time()-100000, "/", "", 0);
 		message($lang['see_you_soon'], XGP_ROOT, 5, FALSE, FALSE);
 	break;

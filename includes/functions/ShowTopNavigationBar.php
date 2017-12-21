@@ -110,7 +110,15 @@ if(!defined('INSIDE')){ die(header("location:../../"));}
 		if(isset($_SESSION['prompteur']) && is_array($_SESSION['prompteur'])){
 
 		   // print_r($_SESSION['prompteur']);
-            $parse['prompteur'] = implode(' - ',$_SESSION['prompteur']);
+            $tempPrompt = array();
+            foreach ($_SESSION['prompteur'] as $key =>$value){
+                if($value['type'] == 'build'){
+                    if($key >= time()-7200){
+                        $tempPrompt[] = date('G:i',$key).' '.$value['event'];
+                    }
+                }
+            }
+            $parse['prompteur'] = implode(' - ',$tempPrompt);
 
         }else{
             $parse['prompteur'] = '';
