@@ -378,14 +378,10 @@ div#lune_col, #over_message_name, #over_control_name, #over_profile_general, #pr
 }
 
 #over_message {
-    margin-top: 8px;
-    float: left;
     min-height: 300px;
 }
 
 #over_fleet {
-    margin-top: 8px;
-    float: left;
     height: 300px;
 }
 
