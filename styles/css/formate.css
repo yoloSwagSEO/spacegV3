@@ -1215,3 +1215,9 @@ div.zz {
     border-bottom: 1px solid #ddd;
 }
 
+#spacioport{
+    padding-top: 15px;
+    margin-top: 0px;
+    border: 1px solid #454545;
+    margin-bottom: 4px;
+}

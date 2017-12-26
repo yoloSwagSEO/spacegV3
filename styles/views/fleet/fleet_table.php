@@ -1,8 +1,8 @@
 <script language="JavaScript" src="js/flotten-min.js"></script>
 <script language="JavaScript" src="js/ocnt-min.js"></script>
 
-<div id="content">
-	<div id="list-bat">
+<div class="row" id="rowBuilding">
+	<div id="spacioport" class="col-md-12 bgLR">
 		<table class="table table-striped">
 			<tr>
 				<td class="c">Liste des flottes en vol</td>
