@@ -104,7 +104,7 @@ td.c
 
 
 table.table-striped td a, table.table-striped th a, table.table-striped tbody tr td {
-    color: #333;
+    color: #999;
 }
 
 table.table-striped tbody tr td.c {
@@ -1197,4 +1197,11 @@ div.zz {
     margin-right:0;
     margin-bottom: 15px;
     padding-top: 10px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #131313;
+}
+.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: #181818;
 }
