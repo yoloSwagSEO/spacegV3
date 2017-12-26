@@ -1205,3 +1205,13 @@ div.zz {
 .table-striped>tbody>tr:nth-of-type(even) {
     background-color: #181818;
 }
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border:none;
+}
+
+.table>tbody>tr>td.c, .table>tbody>tr>th.c, .table>tfoot>tr>td.c, .table>tfoot>tr>th.c, .table>thead>tr>td.c, .table>thead>tr>th.c{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+

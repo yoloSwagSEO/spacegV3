@@ -28,7 +28,7 @@
 			</tr>
 			<tr>
 				<td class="c">
-                   Liste des flottes disponible <a href="game.php?page=createFleet" class="btns btn-116-24 right">Créer une flotte</a>
+                   Liste des flottes en orbite
                 </td>
 			</tr>
 			<tr>
@@ -46,6 +46,26 @@
 					</table>
 				</td>
 			</tr>
+            <tr>
+                <td class="c">
+                    Liste des flottes disponible <a href="game.php?page=createFleet" class="btns btn-116-24 right">Créer une flotte</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Id</td>
+                            <td>Nom</td>
+                            <td>Proprietaire</td>
+                            <td>Composition</td>
+                            <td>Statut</td>
+                        </tr>
+                        {fleetOrbitpagerow}
+                        {message_nofreeslot}
+                    </table>
+                </td>
+            </tr>
 		</table>
 	{acs_members}
 <form action="game.php?page=fleet1" method="POST">
