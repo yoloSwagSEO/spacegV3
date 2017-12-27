@@ -543,7 +543,7 @@ td {
     opacity: 0.8;
 }
 
-#rowBuilding{
+#rowBuilding, #actionFleetRow{
     margin-left: -10px;
 }
 #labelshipyard p{
@@ -1215,9 +1215,12 @@ div.zz {
     border-bottom: 1px solid #ddd;
 }
 
-#spacioport{
+#spacioport, #actionFleet{
     padding-top: 15px;
     margin-top: 0px;
     border: 1px solid #454545;
     margin-bottom: 4px;
+}
+.dispoFleet{
+    width:100%;
 }

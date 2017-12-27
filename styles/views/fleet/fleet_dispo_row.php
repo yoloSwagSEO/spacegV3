@@ -4,14 +4,11 @@
         <a>{fleet_name}</a>
     </th>
     <th>
-        {fleet_proprio}
-    </th>
-    <th>
         <ul>
             {fleet_ships}
         </ul>
     </th>
     <th>
-        {fleet_statut}
+        <input type="radio" name="fleet" value="{num}" />
     </th>
 </tr>

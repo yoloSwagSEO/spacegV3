@@ -17,6 +17,7 @@ class ShowFleetPage
      */
 	function __construct ($CurrentUser , $CurrentPlanet )
 	{
+
 		global $lang, $reslist, $resource, $pricelist;
 
 		#####################################################################################################
@@ -236,15 +237,17 @@ class ShowFleetPage
                            f.fleet_statut as fleet_statut,
                            f.fleet_id as id ,
                            f.fleet_array as ship,
+                           f.fleetPosition as pos,
                            u.username as username 
                            FROM xgp_FleetsOrbit as f
                            LEFT JOIN xgp_users as u on u.id = f.fleet_owner
 
-            WHERE fleetPosition = '.$CurrentPlanet['id'],'FleetsOrbit');
+            WHERE f.fleetPosition = '.$CurrentPlanet['id'].' AND f.fleet_owner <> '.$CurrentPlanet['id_owner'],'FleetsOrbit');
 
 
 		$ii = 1;
         $parse['fleetOrbitpagerow'] = "";
+        $parseOrbit = array();
 		while($data = mysqli_fetch_array($fleetOrbit)){
 		    $parseOrbit['num'] = $ii;
 		    $parseOrbit['fleet_name'] = $data['fleetName'];
@@ -260,6 +263,38 @@ class ShowFleetPage
             }
 		    $parse['fleetOrbitpagerow'] .= parsetemplate(gettemplate('fleet/fleet_orbit_row'),$parseOrbit);
         }
+
+        $fleetDispo = doquery(
+            'SELECT f.fleetName as fleetName,
+                           f.fleet_owner as fleet_owner,
+                           f.fleet_statut as fleet_statut,
+                           f.fleet_id as id ,
+                           f.fleet_array as ship,
+                           u.username as username 
+                           FROM xgp_FleetsOrbit as f
+                           LEFT JOIN xgp_users as u on u.id = f.fleet_owner
+
+            WHERE fleetPosition = '.$CurrentPlanet['id'],'FleetsOrbit');
+
+        $parse['fleetDisponibleRow'] = '';
+        $parseDispo = array();
+        while($data = mysqli_fetch_array($fleetDispo)){
+            $parseDispo['num'] = $ii;
+            $parseDispo['fleet_name'] = $data['fleetName'];
+
+            $parseDispo['fleet_proprio'] = $data['username'];
+            $parseDispo['fleet_statut'] = $lang['fleetOrbitStatut'][$data['fleet_statut']];
+
+            $parseDispo['fleet_ships'] = '';
+            $vaisseaux = unserialize($data['ship']);
+            //___d($vaisseaux);
+            for($i=0,$j=count($vaisseaux);$i<$j;$i++){
+                $parseDispo['fleet_ships'] .= '<li>'.$lang['tech_rc'][$vaisseaux[$i]['ship']].' x '.$vaisseaux[$i]['nb'].'</li>';
+            }
+            $parse['fleetDisponibleRow'] .= parsetemplate(gettemplate('fleet/fleet_dispo_row'),$parseDispo);
+        }
+
+
 
         //___d($fleetOrbit);
         $parse['body'] 					= $ships_row;
