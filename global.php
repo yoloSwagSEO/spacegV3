@@ -36,6 +36,12 @@ function ___d($debug){
 	echo '<pre>';
 	print_r($debug);
 	echo '</pre>';
+	die();
+}
+function _d($debug){
+    echo '<pre>';
+    print_r($debug);
+    echo '</pre>';
 }
 if ( filesize ( XGP_ROOT . 'config.php' ) === 0 && ( ( !defined ( 'INSTALL' ) ) OR ( !INSTALL ) ) )
 {
