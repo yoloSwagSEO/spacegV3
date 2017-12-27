@@ -388,7 +388,7 @@ class ShowBuildingsPage
 
 	public function __construct (&$CurrentPlanet, $CurrentUser)
 	{
-		global $ProdGrid, $lang, $resource, $reslist,$batimentCategory, $_GET,$itemDb;
+		global $ProdGrid, $lang, $resource,$resBuilding, $reslist,$batimentCategory, $_GET,$itemDb;
 
 		include_once(XGP_ROOT . 'includes/functions/IsTechnologieAccessible.php');
 		include_once(XGP_ROOT . 'includes/functions/GetElementPrice.php');
@@ -398,8 +398,8 @@ class ShowBuildingsPage
 		CheckPlanetUsedFields ( $CurrentPlanet );
 
 		$parse			= $lang;
-		$Allowed['1'] 	= $reslist['build'];
-		$Allowed['3'] 	= array( 12, 14, 21, 22, 23, 24, 34, 41, 42, 43);
+		$Allowed['1'] 	= $resBuilding[1];
+		$Allowed['3'] 	= $resBuilding[3];
 
 		$TheCommand 	= isset ( $_GET['cmd'] ) ? $_GET['cmd'] : FALSE;
 		$Element 		= isset ( $_GET['building'] ) ? $_GET['building'] : NULL;
@@ -536,7 +536,7 @@ class ShowBuildingsPage
 					$parse['price'] 		= GetElementPrice ( $CurrentUser , $CurrentPlanet , $Element , TRUE , $really_lvl );
 					$parse['time'] 			= ShowBuildTime ( $ElementBuildTime );
 					// END FIX BY JSTAR
-                    $parse['classification']        = $batimentCategory[$Element];
+                                        $parse['classification']        = $batimentCategory[$Element];
 					$parse['click']        	= '';
 					$NextBuildLevel        	= $CurrentPlanet[$resource[$Element]] + 1;
 					
