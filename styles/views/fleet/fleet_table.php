@@ -1,6 +1,6 @@
 <script language="JavaScript" src="js/flotten-min.js"></script>
 <script language="JavaScript" src="js/ocnt-min.js"></script>
-
+<script src="js/pages/spacioport.js"></script>
 <div class="row" id="rowBuilding">
     <div id="spacioport" class="col-md-12 bgLR">
         <table class="table table-striped">
@@ -125,6 +125,8 @@
                         </table>
                     </div>
                     {shipdata}
+
+                    <input type="hidden" name="fleetSelected" value="" id="fleetSelected" />
                     <input type="hidden" name="thisgalaxy" value="{target_mission}"/>
                     <input type="hidden" name="thissystem" value="{target_mission}"/>
                     <input type="hidden" name="thisplanet" value="{target_mission}"/>
