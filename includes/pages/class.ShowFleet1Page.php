@@ -14,7 +14,17 @@ class ShowFleet1Page
 	{
 		global $resource, $pricelist, $reslist, $lang, $transportable,$debugbar;
 
-        ___d($_POST);
+        if($CurrentPlanet['galaxy'] == $_POST['galaxy'] && $CurrentPlanet['system'] == $_POST['system'] && $CurrentPlanet['planet'] == $_POST['planet'] ){
+            header ( 'location:game.php?page=fleet' );
+        }
+
+        $fleedId = $_POST['fleetSelected'];
+        $fleetSelectd = doquery('SELECT * FROM {{table}} WHERE fleet_id = '.$fleedId,'FleetsOrbit',true);
+
+        $shipInFleet = unserialize($fleetSelectd['fleet_array']);
+
+        //___d($shipInFleet);
+
 		#####################################################################################################
 		// SOME DEFAULT VALUES
 		#####################################################################################################
@@ -57,43 +67,77 @@ class ShowFleet1Page
 		$consomation = 0;
 		$capacite = 0;
 		$liste_fleet ='';
-		foreach ( $reslist['fleet'] as $n => $i )
-		{
-			if ( $i >= 201 && $i <= 230 && isset($_POST["ship$i"]) && $_POST["ship$i"] > "0" )
-			{
-				
-				if ( ( $_POST["ship$i"] > $CurrentPlanet[$resource[$i]]) OR (!ctype_digit( $_POST["ship$i"] )))
-				{
-					header ( 'location:game.php?page=fleet' );
-				}
-				else
-				{
-				
-					$fleet['fleetarray'][$i]   	= $_POST["ship$i"];
-					$fleet['fleetlist']        .= $i . "," . $_POST["ship$i"] . ";";
-					$fleet['amount']           += $_POST["ship$i"];
-					$fleet['i']				   	= $i;
-					$fleet['consumption']		= Fleets::ship_consumption ( $i, $CurrentUser );
-					$fleet['speed']				= Fleets::fleet_max_speed ( "", $i, $CurrentUser );
-					$fleet['capacity']			= $pricelist[$i]['capacity'];
-                    $fleet['transportVx']       = $pricelist[$i]['transportVx']*$_POST["ship$i"];
-                    $fleet['transportTr']		= $pricelist[$i]['transportTr']*$_POST["ship$i"];
-					$fleet['ship']				= $_POST["ship$i"];
-					$consomation 			   += $fleet['consumption']*$fleet['ship'];
-					$fleetSpeed[] = $fleet['speed'];
-					$capacite 				   += $fleet['capacity']*$fleet['ship'];
-					//print_r($fleet);
-					$speedalls[$i]             = Fleets::fleet_max_speed ( "", $i, $CurrentUser);
-					$FleetHiddenBlock		  .= parsetemplate ( $inputs_template , $fleet );
-					$transportVx              += $fleet['transportVx'];
-					$transportTr			  += $fleet['transportTr'];	
-					$liste_fleet 			  .= '<tr>
-														<th>'.$lang['tech'][$i].'</th><th>'.$fleet['ship'].'</th><th>'.$fleet['consumption']*$fleet['ship'].'</th><th>'.$fleet['speed']	.'</th><th>'.$fleet['capacity']*$fleet['ship'].'</th>
-												  </tr>';
-				
-				}
-			}
-		}
+        $transportVx = 0;
+        $transportTr = 0;
+
+        foreach($shipInFleet as $ship){
+
+            $fleet['fleetarray'][$ship['ship']]   	= $ship['nb'];
+            $fleet['fleetlist']        .= $ship['ship'] . "," . $ship['nb'] . ";";
+            $fleet['amount']           += $ship['nb'];
+            $fleet['i']				   	= $ship['ship'];
+            $fleet['consumption']		= Fleets::ship_consumption ( $ship['ship'], $CurrentUser );
+            $fleet['speed']				= Fleets::fleet_max_speed ( "", $ship['ship'], $CurrentUser );
+            $fleet['capacity']			= $pricelist[$ship['ship']]['capacity'];
+            $fleet['transportVx']       = $pricelist[$ship['ship']]['transportVx']*$ship['nb'];
+            $fleet['transportTr']		= $pricelist[$ship['ship']]['transportTr']*$ship['nb'];
+            $fleet['ship']				= $ship['nb'];
+            $consomation 			   += $fleet['consumption']*$fleet['ship'];
+            $fleetSpeed[] = $fleet['speed'];
+            $capacite 				   += $fleet['capacity']*$fleet['ship'];
+            //print_r($fleet);
+            $speedalls[$ship['ship']]  = Fleets::fleet_max_speed ( "", $ship['ship'], $CurrentUser);
+            $FleetHiddenBlock		  .= parsetemplate ( $inputs_template , $fleet );
+            $transportVx              += $fleet['transportVx'];
+            $transportTr			  += $fleet['transportTr'];
+            $liste_fleet 			  .= '<tr>
+										    <th>'.$lang['tech'][$ship['ship']].'</th><th>'.$fleet['ship'].'</th><th>'.$fleet['consumption']*$fleet['ship'].'</th><th>'.$fleet['speed']	.'</th><th>'.$fleet['capacity']*$fleet['ship'].'</th>
+										  </tr>';
+        }
+
+        //echo $liste_fleet;
+        //___d($fleet);
+
+
+
+		//foreach ( $reslist['fleet'] as $n => $i )
+		//{
+		//	if ( $i >= 201 && $i <= 230 && isset($_POST["ship$i"]) && $_POST["ship$i"] > "0" )
+		//	{
+//
+//
+		//		if ( ( $_POST["ship$i"] > $CurrentPlanet[$resource[$i]]) OR (!ctype_digit( $_POST["ship$i"] )))
+		//		{
+		//			header ( 'location:game.php?page=fleet' );
+		//		}
+		//		else
+		//		{
+		//
+		//			$fleet['fleetarray'][$i]   	= $_POST["ship$i"];
+		//			$fleet['fleetlist']        .= $i . "," . $_POST["ship$i"] . ";";
+		//			$fleet['amount']           += $_POST["ship$i"];
+		//			$fleet['i']				   	= $i;
+		//			$fleet['consumption']		= Fleets::ship_consumption ( $i, $CurrentUser );
+		//			$fleet['speed']				= Fleets::fleet_max_speed ( "", $i, $CurrentUser );
+		//			$fleet['capacity']			= $pricelist[$i]['capacity'];
+        //            $fleet['transportVx']       = $pricelist[$i]['transportVx']*$_POST["ship$i"];
+        //            $fleet['transportTr']		= $pricelist[$i]['transportTr']*$_POST["ship$i"];
+		//			$fleet['ship']				= $_POST["ship$i"];
+		//			$consomation 			   += $fleet['consumption']*$fleet['ship'];
+		//			$fleetSpeed[] = $fleet['speed'];
+		//			$capacite 				   += $fleet['capacity']*$fleet['ship'];
+		//			//print_r($fleet);
+		//			$speedalls[$i]             = Fleets::fleet_max_speed ( "", $i, $CurrentUser);
+		//			$FleetHiddenBlock		  .= parsetemplate ( $inputs_template , $fleet );
+		//			$transportVx              += $fleet['transportVx'];
+		//			$transportTr			  += $fleet['transportTr'];
+		//			$liste_fleet 			  .= '<tr>
+		//												<th>'.$lang['tech'][$i].'</th><th>'.$fleet['ship'].'</th><th>'.$fleet['consumption']*$fleet['ship'].'</th><th>'.$fleet['speed']	.'</th><th>'.$fleet['capacity']*$fleet['ship'].'</th>
+		//										  </tr>';
+		//
+		//		}
+		//	}
+		//}
                 //je peux transporter des vaisseaux
                
                 if($transportVx > 0){
@@ -294,7 +338,8 @@ class ShowFleet1Page
 		// LOAD COLONY SHORTCUTS
 		#####################################################################################################
 		$colonies	= SortUserPlanets ( $CurrentUser );
-
+        $colony     = array();
+        $colony['shortcut_options'] = "";
 		if ( mysqli_num_rows ( $colonies ) > 1 )
 		{
 			while ( $row = mysqli_fetch_array ( $colonies ) )

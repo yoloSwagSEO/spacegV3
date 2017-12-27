@@ -81,8 +81,8 @@
             </div>
             <div class="col-md-4">
                 <form action="game.php?page=fleet1" name="mission" method="POST">
-                    <div style="float:left;width:241px">
-                        <table width="240" border="0" cellpadding="0" cellspacing="1">
+                        <table class="table table-black">
+                            <tbody>
                             <tr height="20">
                                 <td class="c" colspan="2">Mission</td>
                             </tr>
@@ -118,12 +118,13 @@
                                 </th>
                             </tr>
                             <tr>
-                                <td>
-                                    <a href="#" onclick="mission.submit()" class="btns btn-116-24">Lancer la mission</a>
+                                <td colspan="2">
+                                    <center><a href="#" onclick="mission.submit()" class="btns btn-116-24">Lancer la mission</a></center>
                                 </td>
                             </tr>
+                            </tbody>
                         </table>
-                    </div>
+
                     {shipdata}
 
                     <input type="hidden" name="fleetSelected" value="" id="fleetSelected" />
