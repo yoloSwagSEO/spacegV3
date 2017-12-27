@@ -9,6 +9,6 @@
         </ul>
     </th>
     <th>
-        <input type="radio" name="fleet" class="fleetSelectInput" value="{num}" />
+        <input type="radio" name="fleet" class="fleetSelectInput" value="{id}" />
     </th>
 </tr>

@@ -250,6 +250,7 @@ class ShowFleetPage
         $parseOrbit = array();
 		while($data = mysqli_fetch_array($fleetOrbit)){
 		    $parseOrbit['num'] = $ii;
+
 		    $parseOrbit['fleet_name'] = $data['fleetName'];
 
 		    $parseOrbit['fleet_proprio'] = $data['username'];
@@ -261,6 +262,7 @@ class ShowFleetPage
             for($i=0,$j=count($vaisseaux);$i<$j;$i++){
                $parseOrbit['fleet_ships'] .= '<li>'.$lang['tech_rc'][$vaisseaux[$i]['ship']].' x '.$vaisseaux[$i]['nb'].'</li>';
             }
+            $ii++;
 		    $parse['fleetOrbitpagerow'] .= parsetemplate(gettemplate('fleet/fleet_orbit_row'),$parseOrbit);
         }
 
@@ -276,12 +278,13 @@ class ShowFleetPage
 
             WHERE fleetPosition = '.$CurrentPlanet['id'],'FleetsOrbit');
 
+		$ii = 0;
         $parse['fleetDisponibleRow'] = '';
         $parseDispo = array();
         while($data = mysqli_fetch_array($fleetDispo)){
             $parseDispo['num'] = $ii;
             $parseDispo['fleet_name'] = $data['fleetName'];
-
+            $parseDispo['id'] = $data['id'];
             $parseDispo['fleet_proprio'] = $data['username'];
             $parseDispo['fleet_statut'] = $lang['fleetOrbitStatut'][$data['fleet_statut']];
 
@@ -291,6 +294,7 @@ class ShowFleetPage
             for($i=0,$j=count($vaisseaux);$i<$j;$i++){
                 $parseDispo['fleet_ships'] .= '<li>'.$lang['tech_rc'][$vaisseaux[$i]['ship']].' x '.$vaisseaux[$i]['nb'].'</li>';
             }
+            $ii++;
             $parse['fleetDisponibleRow'] .= parsetemplate(gettemplate('fleet/fleet_dispo_row'),$parseDispo);
         }
 
