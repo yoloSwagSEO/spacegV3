@@ -435,6 +435,7 @@ $lang['tech'] = array(
 22 => "Hangar de m&eacute;tal",
 23 => "Hangar de cristal",
 24 => "R&eacute;servoir d&apos;uradium",
+25 => "Hangar a vaisseaux",
 30 => "Centre de commande",
 31 => "Laboratoire de recherche",
 32 => "Centre Technologique",
@@ -534,6 +535,7 @@ $lang['res']['descriptions'] = array(
 22 => "Hangar pour minerai avant le traitement.",
 23 => "Hangar pour cristal avant le traitement.",
 24 => "R&eacute;servoirs g&eacute;ants pour le stockage d&apos;uradium.",
+25 => "Hangar pour les vaisseaux avant leur utilisation dans une flotte",
 30 => "Le centre de commande de votre colonie.",
 31 => "Le laboratoire de recherche est n&eacute;cessaire pour d&eacute;velopper de nouvelles technologies.",
 32 => "N&eacute;cessaire a la conseption de technologie unique",
@@ -674,8 +676,9 @@ $lang['info'][22]['description']  			= "Hangar g&eacute;ant pour le minerai extr
 $lang['info'][23]['name']         			= $lang['tech'][23];
 $lang['info'][23]['description']  			= "Le cristal qui n&#39;est pas encore trait&eacute; est mis en stock dans ces hangars g&eacute;ants. Etant tr&egrave;s pr&eacute;cieux, ces hangars sont sous haute surveillance. Un hangar plus grand permet le stockage d&#39;une plus grande quantit&eacute; de cristaux. Lorsque le hangar est plein, l&#39;extraction de cristal est stopp&eacute;e.";
 $lang['info'][24]['name']         			= $lang['tech'][24];
-
 $lang['info'][24]['description']  			= "R&eacute;servoirs g&eacute;ants pour le stockage d&apos;uradium. Ces r&eacute;servoirs sont normalement situ&eacute;s pr&egrave;s d&#39;un port spatial. Un r&eacute;servoir plus grand permet le stockage d&#39;une plus grande quantit&eacute; d&apos;uradium. Lorsque les r&eacute;servoirs sont pleins, la production d&apos;Uradiumest stopp&eacute;e.";
+$lang['info'][25]['name']         			= $lang['tech'][25];
+$lang['info'][25]['description']  			= "Permet le stockage des vaisseaux avant leur utilisation dans une flotte, si les hangard sont plein la production de nouveau vaisseaux serons stopé, ATTENTION les vaisseaux ainsi stoker sont trés fragile et seront détruit au moindre bombardement";
 $lang['info'][30]['name']         			= $lang['tech'][30];
 $lang['info'][30]['description']  			= "Le centre de commande est le point névralgique de la gestion de votre colonie.";
 

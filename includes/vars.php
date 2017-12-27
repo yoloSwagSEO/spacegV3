@@ -22,7 +22,7 @@ if ( defined('INSIDE'))
 	 22 => "metal_store",
 	 23 => "crystal_store",
 	 24 => "deuterium_store",
-	 
+     25 => "vxHangard",
 	 30 => "commande_center",
 	 31 => "laboratory",
      32 => "techcenter",
@@ -31,8 +31,9 @@ if ( defined('INSIDE'))
          36 => "university",
 	 37 => "caserne",
 	 38 => "diffcul",
-         39 => "banque",
-        
+        39 => "banque",
+
+
 	 41 => "mondbasis",
 	 42 => "phalanx",
 	 43 => "sprungtor",
@@ -164,7 +165,9 @@ if ( defined('INSIDE'))
 	 22 => "ressource",
 	 23 => "ressource",
 	 24 => "ressource",
-	 30 => "civil",
+     25 => "civil",
+     30 => "civil",
+
 	 31 => "scientifique",
          32 => "scientifique",
 	 33 => "ressource",
@@ -173,7 +176,7 @@ if ( defined('INSIDE'))
 	 37 => "militaire",
 	 38 => "civil",
          39 => "civil",
-        
+
 	 41 => "mondbasis",
 	 42 => "phalanx",
 	 43 => "sprungtor",
@@ -285,6 +288,7 @@ if ( defined('INSIDE'))
 		 22 => array ( 'metal' =>    2000, 'crystal' =>       0, 'credit'=>     0, 'deuterium' =>       0, 'energy' =>    0, 'factor' =>   2, 'factor_cred' => -1),
 		 23 => array ( 'metal' =>    2000, 'crystal' =>    1000, 'credit'=>     0, 'deuterium' =>       0, 'energy' =>    0, 'factor' =>   2, 'factor_cred' => -1),
 		 24 => array ( 'metal' =>    2000, 'crystal' =>    2000, 'credit'=>     0, 'deuterium' =>       0, 'energy' =>    0, 'factor' =>   2, 'factor_cred' => -1),
+         25 => array ( 'metal' =>    1500, 'crystal' =>       0, 'credit'=>     0, 'deuterium' =>       0, 'energy' =>    0, 'factor' =>   1.5, 'factor_cred' => -1),
 		 30 => array ( 'metal' =>    6000, 'crystal' =>    6000, 'credit'=>  2000, 'deuterium' =>    2000, 'energy' =>  100, 'factor' =>   2, 'factor_cred' => 160),
 		 31 => array ( 'metal' =>     200, 'crystal' =>     400, 'credit'=>     0, 'deuterium' =>     200, 'energy' =>    0, 'factor' =>   2, 'factor_cred' => 1),
 		 32 => array ( 'metal' =>     600, 'crystal' =>    1200, 'credit'=>     0, 'deuterium' =>     800, 'energy' =>    0, 'factor' =>   2, 'factor_cred' => 1),
@@ -293,7 +297,8 @@ if ( defined('INSIDE'))
 		 36 => array ( 'metal' =>     400, 'crystal' =>     300, 'credit'=>     0, 'deuterium' =>      50, 'energy' =>   0, 'factor' => 2.1, 'factor_cred' => 1), 
                  37 => array ( 'metal' =>     460, 'crystal' =>     390, 'credit'=>     0, 'deuterium' =>     150, 'energy' =>   0, 'factor' => 3.1, 'factor_cred' => 1), 
                  38 => array ( 'metal' =>     320, 'crystal' =>     210, 'credit'=>     0, 'deuterium' =>     150, 'energy' =>   0, 'factor' => 2.2, 'factor_cred' => 1), 
-                 39 => array ( 'metal' =>    5000, 'crystal' =>     210, 'credit'=>     0, 'deuterium' =>     150, 'energy' =>   0, 'factor' => 2.2, 'factor_cred' => 25), 
+                 39 => array ( 'metal' =>    5000, 'crystal' =>     210, 'credit'=>     0, 'deuterium' =>     150, 'energy' =>   0, 'factor' => 2.2, 'factor_cred' => 25),
+
                  41 => array ( 'metal' =>   20000, 'crystal' =>   40000, 'credit'=>     0, 'deuterium' =>   20000, 'energy' =>    0, 'factor' =>   2,'factor_cred' => 0),
 		 42 => array ( 'metal' =>   20000, 'crystal' =>   40000, 'credit'=>     0, 'deuterium' =>   20000, 'energy' =>    0, 'factor' =>   2,'factor_cred' => 0),
 		 43 => array ( 'metal' => 2000000, 'crystal' => 4000000, 'credit'=>     0, 'deuterium' => 2000000, 'energy' =>    0, 'factor' =>   2,'factor_cred' => 0),
@@ -506,7 +511,7 @@ if ( defined('INSIDE'))
 	);
 	
 	$messageColor		 =array(0=>'#F93',1=>'none',2=>'none',3=>'#F30',4=>'#5F9EA0',5=>'green',99=>'#033');
-	$reslist['build']    = array (   1,   2,   3,   4, 12,  14,  15,  21,  22,  23,  24,  30,  31, 32,  33,  34,  36,  37,  39,  10, 41,  42,  43, 44,51);
+	$reslist['build']    = array (   1,   2,   3,   4, 12,  14,  15,  21,  22,  23,  24,  25,  30,  31, 32,  33,  34,  36,  37,  39,  10, 41,  42,  43, 44,51);
 	$reslist['tech']     = array ( 106, 108, 109, 110, 111,112, 113, 114, 115, 117, 118, 120, 121, 122, 123, 124, 125, 199);
 	$reslist['casern']   = array ( 801, 802, 803);
 	$reslist['fleet']    = array ( 202, 203,204, 208, 209, 210, 211, 212, 213, 214, 215,216,217,218,219,220,221,222,223,224,225,226 );
