@@ -398,7 +398,7 @@ class ShowBuildingsPage
 		CheckPlanetUsedFields ( $CurrentPlanet );
 
 		$parse			= $lang;
-		$Allowed['1'] 	= array(  1,  2,  3,  4, 12, 14, 15, 21, 22, 23, 24, 30, 31, 32, 33, 34,36,37,38,39,10, 44,51);
+		$Allowed['1'] 	= $reslist['build'];
 		$Allowed['3'] 	= array( 12, 14, 21, 22, 23, 24, 34, 41, 42, 43);
 
 		$TheCommand 	= isset ( $_GET['cmd'] ) ? $_GET['cmd'] : FALSE;
@@ -536,7 +536,7 @@ class ShowBuildingsPage
 					$parse['price'] 		= GetElementPrice ( $CurrentUser , $CurrentPlanet , $Element , TRUE , $really_lvl );
 					$parse['time'] 			= ShowBuildTime ( $ElementBuildTime );
 					// END FIX BY JSTAR
-                                        $parse['classification']        = $batimentCategory[$Element];
+                    $parse['classification']        = $batimentCategory[$Element];
 					$parse['click']        	= '';
 					$NextBuildLevel        	= $CurrentPlanet[$resource[$Element]] + 1;
 					
