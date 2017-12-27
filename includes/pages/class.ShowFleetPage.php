@@ -278,7 +278,7 @@ class ShowFleetPage
 
             WHERE fleetPosition = '.$CurrentPlanet['id'].' AND f.fleet_owner = '.$CurrentPlanet['id_owner'],'FleetsOrbit');
 
-		$ii = 0;
+		$ii = 1;
         $parse['fleetDisponibleRow'] = '';
         $parseDispo = array();
         while($data = mysqli_fetch_array($fleetDispo)){
