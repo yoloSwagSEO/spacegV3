@@ -276,7 +276,7 @@ class ShowFleetPage
                            FROM xgp_FleetsOrbit as f
                            LEFT JOIN xgp_users as u on u.id = f.fleet_owner
 
-            WHERE fleetPosition = '.$CurrentPlanet['id'],'FleetsOrbit');
+            WHERE fleetPosition = '.$CurrentPlanet['id'].' AND f.fleet_owner = '.$CurrentPlanet['id_owner'],'FleetsOrbit');
 
 		$ii = 0;
         $parse['fleetDisponibleRow'] = '';
