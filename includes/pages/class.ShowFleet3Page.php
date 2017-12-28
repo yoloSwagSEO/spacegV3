@@ -10,7 +10,7 @@ if(!defined('INSIDE')){ die(header("location:../../"));}
 
 class ShowFleet3Page
 {
-	function ShowFleet3Page($CurrentUser, $CurrentPlanet)
+	function __construct($CurrentUser, $CurrentPlanet)
 	{
 		global $resource, $pricelist, $reslist, $lang, $transportable,$debugbar;
 
@@ -62,7 +62,32 @@ class ShowFleet3Page
 				message ("<font color=\"red\"><b>".$lang['fl_attk_no_colo']."</b></font>", "game.php?page=fleet", 2);
 				exit();
 		}
-		$fleetarray  = unserialize ( base64_decode ( str_rot13 ( $_POST["usedfleet"] ) ) );
+
+		//----------------------------------------------
+        // Nouveau système de flotes
+        //----------------------------------------------
+
+
+        $selectedFleet = doquery('SELECT * FROM {{table}} WHERE fleet_id = '.$_POST['fleetSelectedId'],'FleetsOrbit',true);
+
+        //on vérifie que la flotte apartien bien au joueur
+		if($selectedFleet['fleet_owner'] != $CurrentUser['id']){
+            message ("<font color=\"red\"><b>Cette flote de nous apartien pas</b></font>", "game.php?page=fleet", 2);
+            exit();
+        }
+
+        //----------------------------------------------
+        // Nouveau système de flotes
+        //----------------------------------------------
+
+        $tempFleet = unserialize($selectedFleet['fleet_array']);
+
+
+		$fleetarray  = array();
+
+		foreach($tempFleet as $ship){
+            $fleetarray[$ship['ship']] = $ship['nb'];
+        }
 
 		
 				//-------------------------------------------------
@@ -73,9 +98,13 @@ class ShowFleet3Page
                 $fighter = array();
                 $totalFight = 0;
                 $FleetSubQRY2="";
+
+
                 foreach($fleetFighter AS $key => $value){
+
+
                     if(in_array($key, $transportable['chasseur'])){
-                        if($value > ($CurrentPlanet[$resource[$key]]-$fleetarray[$key])){
+                        if($value > ($CurrentPlanet[$resource[$key]]-$fleetarray[$key]) && $value > 0){
                             exit ( header ( "Location: game.php?page=fleet" ) );
                         }else{
                         	$totalFight += $value;
@@ -85,6 +114,7 @@ class ShowFleet3Page
                     }
                 }
                 if($_POST['totalTransportable'] < $totalFight){
+                    echo 'la?'; die();
                     exit ( header ( "Location: game.php?page=fleet" ) );
                 }
                 $fighterSerialize = serialize($fighter);
@@ -118,16 +148,16 @@ class ShowFleet3Page
 			exit ( header ( "Location: game.php?page=fleet" ) );
 		}
 
-
-		foreach ( $fleetarray as $Ship => $Count )
-		{
-			$Count = intval ( $Count );
-			//hum hum on a plus de vx que de Vx présent sur la planette?
-			if ($Count > $CurrentPlanet[$resource[$Ship]])
-			{
-				exit ( header ( "Location: game.php?page=fleet" ) );
-			}
-		}
+        //TODO a fixé un jour
+		//foreach ( $fleetarray as $Ship => $Count )
+		//{
+		//	$Count = intval ( $Count );
+		//	//hum hum on a plus de vx que de Vx présent sur la planette?
+		//	if ($Count > $CurrentPlanet[$resource[$Ship]])
+		//	{
+		//		exit ( header ( "Location: game.php?page=fleet" ) );
+		//	}
+		//}
 
 		$error              = 0;
 		$galaxy             = intval($_POST['galaxy']);
@@ -189,8 +219,7 @@ class ShowFleet3Page
 			message ("<font color=\"red\"><b>Vous ne pouvez pas envoyer une flote sur la meme planète.</b></font>", "game.php?page=fleet", 2);
 			exit();
 		}
-		___d($_POST);
-		die();
+
 		if ($_POST['mission'] != 15)//Es que c'est une expedition?
 		{
 			if (count($select) < 1 && $fleetmission != 7)
@@ -670,19 +699,27 @@ class ShowFleet3Page
 		$QryInsertFleet .= "`fleet_target_owner` = '". intval($TargetPlanet['id_owner']) ."', ";
 		$QryInsertFleet .= "`fleet_group` = '".intval($fleet_group_mr)."',  ";
 		$QryInsertFleet .= "`no_debarq` = '".intval((isset($_POST['debarq']))?1:0)."',  ";
+		$QryInsertFleet .= "`fleet_name` = '". $selectedFleet['fleetName'] ."', ";
+
 		$QryInsertFleet .= "`start_time` = '". time() ."';";
 		doquery( $QryInsertFleet, 'fleets');
 
 		$QryUpdatePlanet  = "UPDATE `{{table}}` SET ";
-		$QryUpdatePlanet .= $FleetSubQRY;
                 $QryUpdatePlanet .= $FleetSubQRY2;
                 $QryUpdatePlanet .= $FleetSubQRY3;
 		$QryUpdatePlanet .= "`metal` = `metal` - ". $TransMetal .", ";
 		$QryUpdatePlanet .= "`crystal` = `crystal` - ". $TransCrystal .", ";
 		$QryUpdatePlanet .= "`deuterium` = `deuterium` - ". ($TransDeuterium + $consumption) ." ";
+
+
+
+
 		$QryUpdatePlanet .= "WHERE ";
 		$QryUpdatePlanet .= "`id` = ". intval($CurrentPlanet['id']) ." LIMIT 1;";
+
 		doquery ($QryUpdatePlanet, "planets");
+
+		 doquery('DELETE FROM {{table}} WHERE fleet_id = '.$_POST['fleetSelectedId'],'FleetsOrbit',true);
 
 		$parse['mission'] 		= $missiontype[$_POST['mission']];
 		$parse['distance'] 		= Format::pretty_number($distance);

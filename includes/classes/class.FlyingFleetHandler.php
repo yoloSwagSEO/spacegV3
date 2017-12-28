@@ -427,6 +427,10 @@ class FlyingFleetHandler {
         $zlom["wrog"] = (($wrog_zlom_poczatek['metal'] - $wrog_zlom_koniec['metal']) + ($wrog_zlom_poczatek['crystal'] - $wrog_zlom_koniec['crystal']) + $straty_obrona_wrog);
         return array("atakujacy" => $CurrentSet, "wrog" => $TargetSet, "wygrana" => $wygrana, "dane_do_rw" => $runda, "zlom" => $zlom);
     }
+
+
+
+
     private function RestoreFleetToPlanet($FleetRow, $Start = TRUE, $isFight = TRUE) {
         global $resource;
         //print_r($FleetRow);
@@ -445,6 +449,17 @@ class FlyingFleetHandler {
                 $QryUpdFleet .= "`" . $resource[$Class[0]] . "` = `" . $resource[$Class[0]] . "` + '" . $Class[1] . "', \n";
             }
         }
+
+        $fleetArray = array();
+        $fleetAmount = 0;
+        foreach($FleetRecord as $element){
+            if(strlen($element) > 0){
+                $tempShip = explode(',',$element);
+                $fleetArray[] = array('ship'=>$tempShip[0],'nb'=>$tempShip[1]);
+                $fleetAmount = $fleetAmount+$tempShip[1];
+            }
+        }
+
         if (!$isFight) {
             foreach ($FleetFighter as $key => $value) {
                 $QryUpdFleet .= "`" . $resource[$key] . "` = `" . $resource[$key] . "` + '" . $value . "', \n";
@@ -456,8 +471,6 @@ class FlyingFleetHandler {
         	}
         }
         $QryUpdatePlanet = "UPDATE {{table}} SET ";
-        if ($QryUpdFleet != "")
-            $QryUpdatePlanet .= $QryUpdFleet;
         $QryUpdatePlanet .= "`metal` = `metal` + '" . $FleetRow['fleet_resource_metal'] . "', ";
         $QryUpdatePlanet .= "`crystal` = `crystal` + '" . $FleetRow['fleet_resource_crystal'] . "', ";
         $QryUpdatePlanet .= "`deuterium` = `deuterium` + '" . $FleetRow['fleet_resource_deuterium'] . "' ";
@@ -474,14 +487,26 @@ class FlyingFleetHandler {
         }
         $QryUpdatePlanet .= "LIMIT 1;";
         doquery($QryUpdatePlanet, 'planets');
+
+        $QryUpdateOrbit = 'INSERT INTO {{table}} 
+              (`fleetName`,`fleetPosition`,`fleet_owner`,`fleet_statut`,`fleet_amount`,`fleet_array`) 
+        VALUES 
+              ("'.$FleetRow['fleet_name'].'","'.$targetPlanet['id'].'", "'.$FleetRow['fleet_target_owner'].'","0","'.$fleetAmount.'",\''.serialize($fleetArray).'\')';
+
+        doquery($QryUpdateOrbit,'FleetsOrbit');
     }
+
+
+
+
+
     private function StoreGoodsToPlanet($FleetRow, $Start = FALSE) {
 		global $resource;
         //fix resource by jstar
         $targetPlanet = doquery("SELECT * FROM {{table}} WHERE `galaxy` = " . intval($FleetRow['fleet_start_galaxy']) . " AND `system` = " . intval($FleetRow['fleet_start_system']) . " AND `planet` = " . intval($FleetRow['fleet_start_planet']) . ";", 'planets', TRUE);
         $targetUser = doquery('SELECT * FROM {{table}} WHERE id=' . intval($targetPlanet['id_owner']), 'users', TRUE);
         PlanetResourceUpdate($targetUser, $targetPlanet, time());
-        
+        $QryUpdatePlanetTroupes = "";
         //On as pas empecher le débarquement donc on stocke les troupes sur la planete d'arriver
 		if($FleetRow['no_debarq']== 0){
 			$FleetTroupes = unserialize($FleetRow['fleet_troupes']);
@@ -551,14 +576,21 @@ class FlyingFleetHandler {
         $TargetOwner = $TargetPlanet['id_owner'];
         if ($FleetRow['fleet_mess'] == 0) {
             if ($FleetRow['fleet_start_time'] < time()) {
+
                 $this->StoreGoodsToPlanet($FleetRow, FALSE);
+
                 $Message = sprintf($lang['sys_tran_mess_owner'], $TargetName, GetTargetAdressLink($FleetRow, ''), $FleetRow['fleet_resource_metal'], $lang['Metal'], $FleetRow['fleet_resource_crystal'], $lang['Crystal'], $FleetRow['fleet_resource_deuterium'], $lang['Deuterium']);
+
+
                 //echo $StartOwner.'_'.$TargetOwner;
 				SendSimpleMessage($StartOwner, '0', $FleetRow['fleet_start_time'], 5, $lang['sys_mess_tower'], $lang['sys_mess_transport'], $Message);
-                if ($TargetOwner <> $StartOwner) {
+
+				if ($TargetOwner <> $StartOwner) {
                     $Message = sprintf($lang['sys_tran_mess_user'], $StartName, GetStartAdressLink($FleetRow, ''), $TargetName, GetTargetAdressLink($FleetRow, ''), $FleetRow['fleet_resource_metal'], $lang['Metal'], $FleetRow['fleet_resource_crystal'], $lang['Crystal'], $FleetRow['fleet_resource_deuterium'], $lang['Deuterium']);
                     SendSimpleMessage($TargetOwner, '0', $FleetRow['fleet_start_time'], 5, $lang['sys_mess_tower'], $lang['sys_mess_transport'], $Message);
                 }
+
+
                 $QryUpdateFleet = "UPDATE {{table}} SET ";
                 
                 if($FleetRow['no_debarq']== 0){
@@ -572,7 +604,12 @@ class FlyingFleetHandler {
                 $QryUpdateFleet .= "LIMIT 1 ;";
                 doquery($QryUpdateFleet, 'fleets');
             }
+
+
+
         } else {
+
+
             if ($FleetRow['fleet_end_time'] < time()) {
                 $Message = sprintf($lang['sys_tran_mess_back'], $StartName, GetStartAdressLink($FleetRow, ''));
                 SendSimpleMessage($StartOwner, '0', $FleetRow['fleet_end_time'], 5, $lang['sys_mess_tower'], $lang['sys_mess_fleetback'], $Message);
@@ -584,6 +621,7 @@ class FlyingFleetHandler {
     private function MissionCaseStay($FleetRow) {
         global $lang, $resource,$debugbar;
         if ($FleetRow['fleet_mess'] == 0) {
+
             if ($FleetRow['fleet_start_time'] <= time()) {
             	
                 $QryGetTargetPlanet = "SELECT * FROM {{table}} ";
@@ -599,6 +637,7 @@ class FlyingFleetHandler {
                 $TargetAddedGoods = sprintf($lang['sys_stay_mess_goods'], $lang['Metal'], Format::pretty_number($FleetRow['fleet_resource_metal']), $lang['Crystal'], Format::pretty_number($FleetRow['fleet_resource_crystal']), $lang['Deuterium'], Format::pretty_number($FleetRow['fleet_resource_deuterium']));
                 $TargetMessage = $lang['sys_stay_mess_start'] . "<a href=\"game.php?page=galaxy&mode=3&galaxy=" . $FleetRow['fleet_end_galaxy'] . "&system=" . $FleetRow['fleet_end_system'] . "\">";
                 $TargetMessage .= $TargetAdress . "</a>" . $lang['sys_stay_mess_end'] . "<br />" . $TargetAddedGoods;
+
                 if($TargetUserID == $FleetRow['fleet_owner']){
                 	SendSimpleMessage($TargetUserID, 0, $FleetRow['fleet_start_time'], 5, $lang['sys_mess_qg'], $lang['sys_stay_mess_stay'], $TargetMessage);
                 }else{
