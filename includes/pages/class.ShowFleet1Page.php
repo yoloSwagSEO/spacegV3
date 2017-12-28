@@ -261,6 +261,9 @@ class ShowFleet1Page
 		$parse['galaxy_post'] 			= intval($_POST['galaxy']);
 		$parse['system_post'] 			= intval($_POST['system']);
 		$parse['planet_post'] 			= intval($_POST['planet']);
+
+		$parse['fleetSelectedId']       = intval($fleedId);
+
 		$parse['speedfactor'] 			= GetGameSpeedFactor();
 		$parse['consobase']				= $consomation;
 		$parse['distance']				= Fleets::target_distance($CurrentPlanet['galaxy'], $_POST['galaxy'], $CurrentPlanet['system'], $_POST['system'], $CurrentPlanet['planet'], $_POST['planet']);

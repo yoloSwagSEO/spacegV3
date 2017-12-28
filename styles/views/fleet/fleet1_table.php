@@ -177,6 +177,7 @@ $(document).ready(function($){
 
 
     {fleetblock}
+    <input type="hidden" name="fleetSelectedId" value="{fleetSelectedId}" />
     <input type="hidden" name="speedallsmin"   value="{speedallsmin}" />
     <input type="hidden" name="usedfleet"      value="{fleetarray}" />
     <input type="hidden" name="thisgalaxy"     value="{galaxy}" />
@@ -199,15 +200,7 @@ $(document).ready(function($){
 	<input type="hidden" name="mission" value="{mission}" />
     <input name="fleet_group" type="hidden" onChange="shortInfo()" onKeyUp="shortInfo()" value="0" />
     <input name="acs_target_mr" type="hidden" onChange="shortInfo()" onKeyUp="shortInfo()" value="0:0:0" />
-    <br />
-    <div id="content">
-		<div style="float:left;width:230px">
 
-		</div>
-		<div style="float:left;width:515px">
-
-		</div>
-    </div>
 	<input name="fleet_group" type="hidden" onChange="shortInfo()" onKeyUp="shortInfo()" value="0" />
     <input name="acs_target_mr" type="hidden" onChange="shortInfo()" onKeyUp="shortInfo()" value="0:0:0" />
     <input type="hidden" name="maxepedition" value="{maxepedition}" />
