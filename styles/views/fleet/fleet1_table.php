@@ -37,7 +37,145 @@ $(document).ready(function($){
     });
 });
 </script>
-<form action="game.php?page=fleet3" method="post" onsubmit='this.submit.disabled = true;'>
+<form action="game.php?page=fleet3" method="post" name="gofleet" onsubmit='this.submit.disabled = true;'>
+
+
+    <div class="row" id="rowBuilding">
+        <div id="spacioport" class="col-md-12 bgLR">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row" style="margin-bottom: 8px">
+                        <div class="col-md-6">
+                            <a href="game.php?page=fleet" class="btns btn-116-24">Annuler</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#" onclick="gofleet.submit()" class="btns btn-116-24">Continuer</a>
+                        </div>
+                    </div>
+                    <table class="table table-striped">
+                        <tr>
+                            <td colspan="2" class="c">Recapitulatif</td>
+                        </tr>
+                        <tr>
+                            <th>Destination</th>
+                            <th>
+                                {g} : {s} : {p}
+                                <select name="planettype" onChange="shortInfo()" onKeyUp="shortInfo()">
+                                    {options_planettype}
+                                </select>
+
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Distance</th>
+                            <th>
+                                <div id="distance">{distance}</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Vitesse Max</th>
+                            <th>
+                                <div id="vitessemax">{maxspeed}</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Dur&eacute;e</th>
+                            <th>
+                                <div id="duree">{duration}</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Consomation</th>
+                            <th>
+                                <div id="consomation">{consomation}</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Capacit&eacute;</th>
+                            <th>
+                                <div id="capacite">{capacity}</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Capacit&eacute; Chasseur</th>
+                            <th>
+                                <div id="capaciteV">{transportFighter}</div>
+                            </th>
+                        </tr>
+                    </table>
+                    <table class="table table-striped">
+                        <tr height="20">
+                            <td colspan="2" class="c">Option</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">
+                                Ne pas débarqu&eacute; les troupes au sol <input type="checkbox" name="debarq" value="0" />
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Facteur de vitesse :
+                                <select name="speed" id="speed_factor">
+                                    <option value="10">100%</option>
+                                    <option value="9">90%</option>
+                                    <option value="8">80%</option>
+                                    <option value="7">70%</option>
+                                    <option value="6">60%</option>
+                                    <option value="5">50%</option>
+                                    <option value="4">40%</option>
+                                    <option value="3">30%</option>
+                                    <option value="2">20%</option>
+                                    <option value="1">10%</option>
+                                </select>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-8">
+                    <table class="table table-striped">
+                        <tr height="20">
+                            <td colspan="3" class="c">Emporter</td>
+                        </tr>
+                        <tr>
+                            <th>Metal : <input type="text" name="metal_e" id="metal_e" value="0" style="width: 80px;"/></th>
+                            <th>Cristal : <input type="text" name="cristal_e" id="crital_e" value="0" style="width: 80px;" /></th>
+                            <th>Uradium : <input type="text" name="uradium_e" id="uradium_e" value="0"  style="width: 80px;"/></th>
+                        </tr>
+                    </table>
+                    <table class="table table-striped">
+                        <tr height="20">
+                            <td colspan="4" class="c">Emport de chasseur</td>
+                        </tr>
+                        {transportable}
+                    </table>
+                    <table class="table table-striped">
+                        <tr height="20">
+                            <td colspan="4" class="c">Emport de troupes</td>
+                        </tr>
+                        {transportables_units}
+                    </table>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td colspan="5" class="c">Liste</td>
+                            </tr>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Nb</th>
+                                <th>Conso</th>
+                                <th>Vitesse</th>
+                                <th>Capacite</th>
+                            </tr>
+                            {list_fleet}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     {fleetblock}
     <input type="hidden" name="speedallsmin"   value="{speedallsmin}" />
     <input type="hidden" name="usedfleet"      value="{fleetarray}" />
@@ -64,125 +202,10 @@ $(document).ready(function($){
     <br />
     <div id="content">
 		<div style="float:left;width:230px">
-			<table width="230" border="0" cellpadding="0" cellspacing="0">
-				<tr height="20">
-					<td colspan="2" class="c">Recapitulatif</td>
-				</tr>
-				<tr height="20">
-					<th width="30">Destination</th> 
-					<th>
-						{g} : {s} : {p}
-						<select name="planettype" onChange="shortInfo()" onKeyUp="shortInfo()">
-							{options_planettype}
-						</select>
 
-					</th>
-				</tr>
-				<tr height="20">
-					<th width="30">Distance</th> 
-					<th>
-						<div id="distance">{distance}</div>
-					</th>
-				</tr>
-				<tr height="20">
-					<th width="30">Vitesse Max</th> 
-					<th>
-						<div id="vitessemax">{maxspeed}</div>
-					</th>
-				</tr>
-				<tr height="20">
-					<th width="30">Dur&eacute;e</th> 
-					<th>
-						<div id="duree">{duration}</div>
-					</th>
-				</tr>
-				<tr height="20">
-					<th width="30">Consomation</th> 
-					<th>
-						<div id="consomation">{consomation}</div>
-					</th>
-				</tr>
-				<tr height="20">
-					<th width="30">Capacit&eacute;</th> 
-					<th>
-						<div id="capacite">{capacity}</div>
-					</th>
-				</tr>
-                <tr height="20">
-					<th width="30">Capacit&eacute; Chasseur</th> 
-					<th>
-						<div id="capaciteV">{transportFighter}</div>
-					</th>
-				</tr>
-                                
-			</table>
 		</div>
 		<div style="float:left;width:515px">
-		<table width="515" border="0" cellpadding="0" cellspacing="1">
-        	<tr height="20">
-        		<td colspan="3" class="c">Emporter</td>
-        	</tr>
-			<tr>	
-				<th>Metal : <input type="text" name="metal_e" id="metal_e" value="0" style="width: 80px;"/></th>
-				<th>Cristal : <input type="text" name="cristal_e" id="crital_e" value="0" style="width: 80px;" /></th>
-				<th>Uradium : <input type="text" name="uradium_e" id="uradium_e" value="0"  style="width: 80px;"/></th>
-			</tr>
-		</table>
-                <table width="515" border="0" cellpadding="0" cellspacing="1">
-                    <tr height="20">
-                        <td colspan="4" class="c">Emport de chasseur</td>
-                    </tr>
-                    {transportable}
-                </table>
-                        <table width="515" border="0" cellpadding="0" cellspacing="1">
-                    <tr height="20">
-                        <td colspan="4" class="c">Emport de troupes</td>
-                    </tr>
-                    {transportables_units}
-                </table>
-		<table width="515" border="0" cellpadding="0" cellspacing="1">
-        	<tr height="20">
-        		<td colspan="2" class="c">Option</td>
-        	</tr>
-        	                    <tr>
-                    	<th colspan="2">
-                    		Ne pas débarqu&eacute; les troupes au sol <input type="checkbox" name="debarq" value="0" />
-                    	</th>
-                    </tr>
-			<tr>	
-				<th>Facteur de vitesse : 
-					<select name="speed" id="speed_factor">
-						<option value="10">100%</option>
-						<option value="9">90%</option>
-						<option value="8">80%</option>
-						<option value="7">70%</option>
-						<option value="6">60%</option>
-						<option value="5">50%</option>
-						<option value="4">40%</option>
-						<option value="3">30%</option>
-						<option value="2">20%</option> 
-						<option value="1">10%</option>
-					</select>
-				</th>
-				<th></th>
-			</tr>
-		</table>
-    	<table width="515" border="0" cellpadding="0" cellspacing="1">
-        	<tr height="20">
-        		<td colspan="5" class="c">Liste</td>
-        	</tr>
-			<tr>
-				<th>Nom</th>
-				<th>Nb</th>
-				<th>Conso</th>
-				<th>Vitesse</th>
-				<th>Capacite</th>
-			</tr>
-            {list_fleet}
-            <tr height="20">
-            	<th colspan="5"><input type="submit" name="submit" value="{fl_continue}" /></th>
-            </tr>
-        </table>
+
 		</div>
     </div>
 	<input name="fleet_group" type="hidden" onChange="shortInfo()" onKeyUp="shortInfo()" value="0" />
