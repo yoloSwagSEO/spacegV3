@@ -14,7 +14,7 @@ function changeGouvernementText(val){
 	}
 	$('.GouvName').html(gouvernementString); 
 }
-$(document).ready(function(){ 
+$(document).ready(function($){
 	$( "#sliderGouv1" ).slider({
 		value:2,
 		min: 0,
@@ -49,4 +49,13 @@ $(document).ready(function(){
 		}
 	});
 	changeGouvernementText();
+
+	$('.Btabs').on('click',function(){
+		var id = $(this).attr('data-tabs');
+
+		$('.sTabs').each(function(){
+			$(this).hide();
+		});
+		$('#tabs-'+id).show();
+	});
 });
