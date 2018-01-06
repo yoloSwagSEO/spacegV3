@@ -1,19 +1,19 @@
-<br />
-<div id="content">
-<div id="trie-button">
-<button onclick="window.location.href='game.php?page=buildings&mode=fleet'" class="active">Vaisseaux</button> - <button onclick="window.location.href='game.php?page=buildings&mode=defense'">Defense</button>
-</div>
-
-	<div id="shipyardImg">
-		<div id="labelshipyard"><p>Chantier spacial</p></div>
-		<div id="buildlisting">{buildinglist}</div>
-	</div>
-    {message}
+<div class="row" id="rowBuilding">
+    <div class="col-md-12 bgLR" id="labelshipyard">
+        <p>Chantier spacial</p>
+        <div id="trie-button">
+            <button onclick="window.location.href='game.php?page=buildings&mode=fleet'" class="active">Vaisseaux</button>
+            <button onclick="window.location.href='game.php?page=buildings&mode=defense'">Defense</button>
+        </div>
+    </div>
+    <div class="col-md-12 bgLR" id="list-bat">
+        {buildinglist}
+    </div>
+    <div class="col-md-12 bgLR" id="buildlistingBatNew">
+        {message}
         <form action="" method="post">
-            <div id="container_fleet_build">
-                {buildlist}
-                {build_fleet}
-            </div>
+            {buildlist}
+            {build_fleet}
         </form>
-    
+    </div>
 </div>
