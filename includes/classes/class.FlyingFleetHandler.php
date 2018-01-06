@@ -435,9 +435,12 @@ class FlyingFleetHandler {
         global $resource;
         //print_r($FleetRow);
         //fix resource by jstar
-        $targetPlanet = doquery("SELECT * FROM {{table}} WHERE `galaxy` = " . intval($FleetRow['fleet_start_galaxy']) . " AND `system` = " . intval($FleetRow['fleet_start_system']) . " AND `planet_type` = " . intval($FleetRow['fleet_start_type']) . " AND `planet` = " . intval($FleetRow['fleet_start_planet']) . ";", 'planets', TRUE);
-        $targetUser = doquery('SELECT * FROM {{table}} WHERE id=' . intval($targetPlanet['id_owner']), 'users', TRUE);
-        PlanetResourceUpdate($targetUser, $targetPlanet, time());
+
+
+        $startPlanet = doquery("SELECT * FROM {{table}} WHERE `galaxy` = " . intval($FleetRow['fleet_start_galaxy']) . " AND `system` = " . intval($FleetRow['fleet_start_system']) . " AND `planet` = " . intval($FleetRow['fleet_start_planet']) . ";", 'planets', TRUE);
+        $targetPlanet = doquery("SELECT * FROM {{table}} WHERE `galaxy` = " . intval($FleetRow['fleet_end_galaxy']) . " AND `system` = " . intval($FleetRow['fleet_end_system'])  . " AND `planet` = " . intval($FleetRow['fleet_end_planet']) . ";", 'planets', TRUE);
+        $targetUser = doquery('SELECT * FROM {{table}} WHERE id=' . intval($startPlanet['id_owner']), 'users', TRUE);
+        PlanetResourceUpdate($targetUser, $startPlanet, time());
         //
         $FleetRecord = explode(";", $FleetRow['fleet_array']);
         $FleetFighter = unserialize($FleetRow['fleet_fighter']);
@@ -480,26 +483,29 @@ class FlyingFleetHandler {
             $QryUpdatePlanet .= "`system` = '" . $FleetRow['fleet_start_system'] . "' AND ";
             $QryUpdatePlanet .= "`planet` = '" . $FleetRow['fleet_start_planet'] . "' AND ";
             $QryUpdatePlanet .= "`planet_type` = '" . $FleetRow['fleet_start_type'] . "' ";
+
+
+            $QryUpdateOrbit = 'INSERT INTO {{table}} 
+              (`fleetName`,`fleetPosition`,`fleet_owner`,`fleet_statut`,`fleet_amount`,`fleet_array`) 
+        VALUES 
+              ("'.$FleetRow['fleet_name'].'","'.$startPlanet['id'].'", "'.$FleetRow['fleet_target_owner'].'","0","'.$fleetAmount.'",\''.serialize($fleetArray).'\')';
+
         } else {
             $QryUpdatePlanet .= "`galaxy` = '" . $FleetRow['fleet_end_galaxy'] . "' AND ";
             $QryUpdatePlanet .= "`system` = '" . $FleetRow['fleet_end_system'] . "' AND ";
             $QryUpdatePlanet .= "`planet` = '" . $FleetRow['fleet_end_planet'] . "'";
-        }
-        $QryUpdatePlanet .= "LIMIT 1;";
-        doquery($QryUpdatePlanet, 'planets');
 
-        $QryUpdateOrbit = 'INSERT INTO {{table}} 
+            $QryUpdateOrbit = 'INSERT INTO {{table}} 
               (`fleetName`,`fleetPosition`,`fleet_owner`,`fleet_statut`,`fleet_amount`,`fleet_array`) 
         VALUES 
               ("'.$FleetRow['fleet_name'].'","'.$targetPlanet['id'].'", "'.$FleetRow['fleet_target_owner'].'","0","'.$fleetAmount.'",\''.serialize($fleetArray).'\')';
 
+        }
+        $QryUpdatePlanet .= "LIMIT 1;";
+        doquery($QryUpdatePlanet, 'planets');
+
         doquery($QryUpdateOrbit,'FleetsOrbit');
     }
-
-
-
-
-
     private function StoreGoodsToPlanet($FleetRow, $Start = FALSE) {
 		global $resource;
         //fix resource by jstar
@@ -645,8 +651,8 @@ class FlyingFleetHandler {
                 	SendSimpleMessage($FleetRow['fleet_owner'], 0, $FleetRow['fleet_start_time'], 5, $lang['sys_mess_qg'], $lang['sys_stay_mess_stay'], $TargetMessage);
                 }
                 
-                SendSimpleMessage($TargetUserID, 0, $FleetRow['fleet_start_time'], 5, $lang['sys_mess_qg'], $lang['sys_stay_mess_stay'], $TargetMessage);
-                SendSimpleMessage($FleetRow['fleet_owner'], 0, $FleetRow['fleet_start_time'], 5, $lang['sys_mess_qg'], $lang['sys_stay_mess_stay'], $TargetMessage);
+                //SendSimpleMessage($TargetUserID, 0, $FleetRow['fleet_start_time'], 5, $lang['sys_mess_qg'], $lang['sys_stay_mess_stay'], $TargetMessage);
+                //SendSimpleMessage($FleetRow['fleet_owner'], 0, $FleetRow['fleet_start_time'], 5, $lang['sys_mess_qg'], $lang['sys_stay_mess_stay'], $TargetMessage);
                 
                 $this->RestoreFleetToPlanet($FleetRow, FALSE);
                 doquery("DELETE FROM {{table}} WHERE `fleet_id` = '" . $FleetRow["fleet_id"] . "';", 'fleets');
@@ -1664,7 +1670,7 @@ class FlyingFleetHandler {
     	//Sinon on la crée
     	
     }
-    
+
     public function __construct(&$planet) {
         global $resource;
         doquery("LOCK TABLE {{table}}aks WRITE, {{table}}rw WRITE, {{table}}errors WRITE, {{table}}messages WRITE, {{table}}fleets WRITE,  {{table}}planets WRITE, {{table}}galaxy WRITE ,{{table}}users WRITE", "");
