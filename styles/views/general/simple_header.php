@@ -34,7 +34,7 @@
 				
 				return returnString;
 			}
-			$(document).ready(function(){
+			$(document).ready(function($){
 
                 $.notify("yoloooooo",{autoHide: false,className: 'success'});
 
@@ -51,13 +51,22 @@
 				setInterval(function(){
 
 					$('#total_metal').val(parseFloat($('#total_metal').val())+parseFloat(metalS));
+                    if($('#total_metal').val() < parseFloat($('#max_metal').val())){
+                        $('#metal_val').text(Math.round($('#total_metal').val()).toLocaleString());
+                    }
+
 					$('#total_crystal').val(parseFloat($('#total_crystal').val())+parseFloat(cristalS));
+                    if($('#total_crystal').val() < parseFloat($('#max_crystal').val())){
+                        $('#crystal_val').text(Math.round($('#total_crystal').val()).toLocaleString());
+                    }
+
 					$('#total_deut').val(parseFloat($('#total_deut').val())+parseFloat(deutS));
-                                        $('#total_credit').val(parseFloat($('#total_credit').val())+parseFloat(credS));
-					$('#metal_val').text(Math.round($('#total_metal').val()).toLocaleString());
-					$('#crystal_val').text(Math.round($('#total_crystal').val()).toLocaleString());
-					$('#deut_val').text(Math.round($('#total_deut').val()).toLocaleString());
-                                        $('#cred_val').text(Math.round($('#total_credit').val()).toLocaleString());
+                    if($('#total_deut').val() < parseFloat($('#max_deut').val())){
+                        $('#deut_val').text(Math.round($('#total_deut').val()).toLocaleString());
+                    }
+
+                    $('#total_credit').val(parseFloat($('#total_credit').val())+parseFloat(credS));
+					$('#cred_val').text(Math.round($('#total_credit').val()).toLocaleString());
 				},1000);
 				
 				$('.tooltipbat').tooltip({

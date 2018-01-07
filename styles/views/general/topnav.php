@@ -89,7 +89,14 @@
 <input type="hidden" id="total_crystal" name="total_crystal" value="{total_crystal}"/> 
 <input type="hidden" id="total_deut" name="total_deut" value="{total_deut}"/>
 <input type="hidden" id="total_credit" name="total_credit" value="{total_credit}"/>
-{show_umod_notice}
+
+
+<input type="hidden" id="max_metal" name="max_metal" value="{maxMetal}"/>
+<input type="hidden" id="max_crystal" name="max_crystal" value="{maxCrystal}"/>
+<input type="hidden" id="max_deut" name="max_deut" value="{maxDeuterium}"/>
+
+
+    {show_umod_notice}
 </div>
 	<div id="game">
 	<div class="row">

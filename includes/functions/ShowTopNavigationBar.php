@@ -75,6 +75,7 @@ if(!defined('INSIDE')){ die(header("location:../../"));}
 		}
 		// Metal
 		$metal = Format::pretty_number($CurrentPlanet["metal"]);
+        $parse['maxMetal'] = $CurrentPlanet["metal_max"];
 		if (($CurrentPlanet["metal"] >= $CurrentPlanet["metal_max"])) {
 			$parse['metal'] = Format::color_red($metal);
 		} else {
@@ -82,6 +83,7 @@ if(!defined('INSIDE')){ die(header("location:../../"));}
 		}
 		// Cristal
 		$crystal = Format::pretty_number($CurrentPlanet["crystal"]);
+        $parse['maxCrystal'] = $CurrentPlanet["crystal_max"];
 		if (($CurrentPlanet["crystal"] >= $CurrentPlanet["crystal_max"])) {
 			$parse['crystal'] = Format::color_red($crystal);
 		} else {
@@ -89,6 +91,7 @@ if(!defined('INSIDE')){ die(header("location:../../"));}
 		}
 		// Deuterium
 		$deuterium = Format::pretty_number($CurrentPlanet["deuterium"]);
+        $parse['maxDeuterium'] = $CurrentPlanet["deuterium_max"];
 		if (($CurrentPlanet["deuterium"] >= $CurrentPlanet["deuterium_max"])) {
 			$parse['deuterium'] = Format::color_red($deuterium);
 		} else {
