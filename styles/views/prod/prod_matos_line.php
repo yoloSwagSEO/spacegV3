@@ -1,4 +1,4 @@
-<tr>
+<tr class="sTabs sTabs-3">
     <td>{name}</td>
     <td>x {level}</td>
     <td></td>   

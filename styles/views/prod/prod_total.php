@@ -1,4 +1,4 @@
-<tr>
+<tr  class="sTabs sTabs-4">
     <td colspan="3">{name}</td>
     <td>{metal}</td>
     <td>{cristal}</td>
