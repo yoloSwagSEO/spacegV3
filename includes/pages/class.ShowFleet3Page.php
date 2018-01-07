@@ -93,16 +93,18 @@ class ShowFleet3Page
 				//-------------------------------------------------
 				//Gestion chasseur
 				//-------------------------------------------------
-                $fleetFighter = $_POST['fleetFighter'];
+
                 //print_r($fleetFighter);
                 $fighter = array();
                 $totalFight = 0;
                 $FleetSubQRY2="";
+                $fighterSerialize = "";
+        if(array_key_exists('fleetFighter',$_POST)){
+            $fleetFighter = $_POST['fleetFighter'];
 
 
-                foreach($fleetFighter AS $key => $value){
 
-
+            foreach($fleetFighter AS $key => $value){
                     if(in_array($key, $transportable['chasseur'])){
                         if($value > ($CurrentPlanet[$resource[$key]]-$fleetarray[$key]) && $value > 0){
                             exit ( header ( "Location: game.php?page=fleet" ) );
@@ -113,28 +115,36 @@ class ShowFleet3Page
                         }
                     }
                 }
+
+
                 if($_POST['totalTransportable'] < $totalFight){
                     echo 'la?'; die();
                     exit ( header ( "Location: game.php?page=fleet" ) );
                 }
                 $fighterSerialize = serialize($fighter);
-               
-                $fleetTroupes = $_POST['unitTroupes'];
+            }
+
+
+
                 $troupes = array();
                 $totalTroupes = 0;
                 $FleetSubQRY3 = "";
-                foreach($fleetTroupes AS $key => $value){
-                	if(in_array($key,$reslist['casern'])){
-                		if($value > $CurrentPlanet[$resource[$key]]){
-                			exit (header("Location: game.php?page=fleet"));
-                		}else{
-                			$totalTroupes += $value;
-                			$troupes[$key] = $value;
-                			$FleetSubQRY3 .= "`".$resource[$key]."`=`".$resource[$key]."` - ".$value.", ";
-                		}
-                	}
+                $troupesSerialize = "";
+        if(array_key_exists('unitTroupes',$_POST)) {
+            $fleetTroupes = $_POST['unitTroupes'];
+            foreach ($fleetTroupes AS $key => $value) {
+                if (in_array($key, $reslist['casern'])) {
+                    if ($value > $CurrentPlanet[$resource[$key]]) {
+                        exit (header("Location: game.php?page=fleet"));
+                    } else {
+                        $totalTroupes += $value;
+                        $troupes[$key] = $value;
+                        $FleetSubQRY3 .= "`" . $resource[$key] . "`=`" . $resource[$key] . "` - " . $value . ", ";
+                    }
                 }
-                $troupesSerialize = serialize($troupes);
+            }
+            $troupesSerialize = serialize($troupes);
+        }
 		//if ( $TargetPlanet["destruyed"] != 0 )
 		//{
 		//	echo 'ereur 1';
@@ -204,15 +214,11 @@ class ShowFleet3Page
 		{
 			$YourPlanet = FALSE;
 			$UsedPlanet = FALSE;
-			if($planettype == 3){
-				$planettypeSql =  "AND planet_type = '". $planettype ."'";
-			}else{
-				$planettypeSql =  "";
-			}
-			$select = (array) doquery("SELECT * FROM {{table}} WHERE galaxy = '". $galaxy ."' AND system = '". $system ."' AND planet = '". $planet ."' ".$planettypeSql."", "planets");
+
+			$select = (array) doquery("SELECT * FROM {{table}} WHERE galaxy = '". $galaxy ."' AND system = '". $system ."' AND planet = '". $planet ."' ", "planets");
 		}
 
-		//Et non on ne peux pas envoyer de la flotte sur ca meme planete :p by by les ghost a la ng
+		//Et non on ne peux pas envoyer de la flotte sur ca meme planete :p by by les ghost a la gh
 		if ($CurrentPlanet['galaxy'] == $galaxy AND $CurrentPlanet['system'] == $system AND $CurrentPlanet['planet'] == $planet )
 		{
 			
@@ -264,12 +270,12 @@ class ShowFleet3Page
 		}	
 		//$select = mysql_fetch_array($select);
 
-		if ($select['id_owner'] == $CurrentUser['id'])
+		if ($TargetPlanet['id_owner'] == $CurrentUser['id'])
 		{
 			$YourPlanet = TRUE;
 			$UsedPlanet = TRUE;
 		}
-		elseif (!empty($select['id_owner']))
+		elseif (!empty($TargetPlanet['id_owner']))
 		{
 			$YourPlanet = FALSE;
 			$UsedPlanet = TRUE;
@@ -743,7 +749,7 @@ class ShowFleet3Page
 
 		$parse['fleet_list'] 	= $ships_list;
 
-		display ( parsetemplate ( gettemplate ( 'fleet/fleet3_table' ) , $parse ) , FALSE );
+		display ( parsetemplate ( gettemplate ( 'fleet/fleet3_table' ) , $parse ) );
 	}
 }
 ?>

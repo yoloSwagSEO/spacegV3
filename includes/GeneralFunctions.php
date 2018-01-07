@@ -399,7 +399,7 @@ function doquery ( $query , $table , $fetch = FALSE )
 	}else{
 		if ( $fetch )
 		{
-			return mysqli_fetch_array($retour);
+			return @mysqli_fetch_array($retour);
 		}else{
 			return $retour;
 		}
