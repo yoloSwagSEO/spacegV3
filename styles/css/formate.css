@@ -1230,3 +1230,8 @@ div.zz {
 .table-black{
     background-color: #181818;
 }
+
+.pd-10{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
