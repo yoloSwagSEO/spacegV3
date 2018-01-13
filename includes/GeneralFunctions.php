@@ -250,7 +250,7 @@ function StdUserHeader ($metatags = '',$bgStyle="")
 	$parse['-title-']	= read_config ( 'game_name' );
 	$parse['-favi-']	= "<link rel=\"shortcut icon\" href=\"./favicon.ico\">\n";
 	$parse['-meta-']	= "<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">\n";
-	$parse['class'] 	= $_GET['page'];
+	$parse['class'] 	= $_GET['page']??'login';
 	if(isset($_GET['mode'])){
 		$parse['class'] = $_GET['page']." ".$_GET['page']."_".$_GET['mode'];
 	}
