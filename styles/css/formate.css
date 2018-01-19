@@ -1235,3 +1235,8 @@ div.zz {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.table-spacioport .imgPlanet img{
+    border-radius: 40px;
+    width: 51px;
+}
