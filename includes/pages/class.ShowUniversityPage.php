@@ -11,14 +11,14 @@ class ShowUniversityPage
 		global $lang, $resource, $reslist, $_GET;
 		
 		$parse= "";
-		if($this->hasTirage($CurrentPlanet)){
+		//if($this->hasTirage($CurrentPlanet)){
+//
+		//	$this->showExistingRecrut($this->tirage);
+		//}else{
+		//	$this->showChoiseRecrut($CurrentPlanet, $CurrentUser);
+		//}
 
-			$this->showExistingRecrut($this->tirage);
-		}else{
-			$this->showChoiseRecrut($CurrentPlanet, $CurrentUser);
-		}
-
-		//display(parsetemplate(gettemplate('university/university_body'), $parse));
+		display(parsetemplate(gettemplate('university/university_body'), $parse));
 	}
 	public function showChoiseRecrut(&$CurrentPlanet, $CurrentUser){
 		//Le nombre de compétence pas dépendre du level
