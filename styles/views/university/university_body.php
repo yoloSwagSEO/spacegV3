@@ -3,8 +3,8 @@
     <div class="col-md-12 bgLR" id="labelshipyard">
         <p>Université</p>
         <div id="trie-button">
-            <button onclick="window.location.href='game.php?page=buildings&mode=fleet'" class="active">Spécialiste</button>
-            <button onclick="window.location.href='game.php?page=buildings&mode=defense'">Recrutement</button>
+            <button onclick="window.location.href='game.php?page=university'" class="active">Spécialiste</button>
+            <button onclick="window.location.href='game.php?page=university&mode=recrut'">Recrutement</button>
         </div>
     </div>
     <div class="col-md-12 bgLR" id="list-bat">
