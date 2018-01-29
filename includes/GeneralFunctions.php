@@ -250,7 +250,7 @@ function StdUserHeader ($metatags = '',$bgStyle="")
 	$parse['-title-']	= read_config ( 'game_name' );
 	$parse['-favi-']	= "<link rel=\"shortcut icon\" href=\"./favicon.ico\">\n";
 	$parse['-meta-']	= "<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">\n";
-	$parse['class'] 	= $_GET['page'];
+	$parse['class'] 	= $_GET['page']??'login';
 	if(isset($_GET['mode'])){
 		$parse['class'] = $_GET['page']." ".$_GET['page']."_".$_GET['mode'];
 	}
@@ -374,7 +374,7 @@ function BuildPlanetAdressLink ( $CurrentPlanet )
 	return $Link;
 }
 
-function doquery ( $query , $table , $fetch = FALSE )
+function doquery ( $query , $table , $fetch = FALSE, $lastId = FALSE )
 {
 	global $link, $debug,$numqueries,$debug,$debugbar;
 
@@ -400,7 +400,9 @@ function doquery ( $query , $table , $fetch = FALSE )
 		if ( $fetch )
 		{
 			return @mysqli_fetch_array($retour);
-		}else{
+		}elseif($lastId){
+		    return mysqli_insert_id($link);
+        }else{
 			return $retour;
 		}
 	}
