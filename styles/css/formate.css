@@ -1240,3 +1240,49 @@ div.zz {
     border-radius: 40px;
     width: 51px;
 }
+
+.innerHeader{
+    font-weight: bold;
+    color: #E6EBFB;
+    padding-left: 3px;
+    background-color: #101211;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 13px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
+.innerHeader .title{
+    margin-top: 8px;
+}
+.innerContent{
+    background-color: #181818;
+    margin-left: 0;
+    margin-right: 0;
+}
+.itemRecrut{
+    border: 1px solid white;
+}
+.itemRecrut{
+    padding:0;
+}
+.imgRecrut{
+    padding:0;
+}
+.imgRecrut img{
+    height: 117px;
+}
+.star-gold{
+    color:gold;
+}
+
+.detailRecrut .function{
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+
+.detailRecrut .name{
+    margin-bottom: 3px;
+}

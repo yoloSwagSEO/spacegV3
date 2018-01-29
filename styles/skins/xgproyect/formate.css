@@ -550,6 +550,9 @@ h1
 .right{
   float: right;
 }
+.left{
+  float: left;
+}
 .trans-02s {
   -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
