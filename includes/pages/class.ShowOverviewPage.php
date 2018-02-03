@@ -485,6 +485,49 @@ class ShowOverviewPage
                    		</div>
                     </div>';
 				}
+
+
+
+				//conseiller
+				$gouverneur = '
+					SELECT * FROM xgp_gouverneur as gouv
+					LEFT JOIN xgp_perso as perso
+					ON gouv.idPerso = perso.id
+					WHERE gouv.idPlanet = '.$CurrentPlanet['id'];
+				$gouverneur = doquery($gouverneur,'');
+				if($gouverneur->num_rows > 0){
+					$gouv = array();
+					while($data=mysqli_fetch_array($gouverneur)){
+
+						$gouv['name'] = $data['name'];
+						$gouv['age'] = $data['age'];
+
+						$gouv['lvl'] = '';
+                        for($ii=0;$ii<=$data['lvl'];$ii++){
+                            $gouv['lvl'] .= '<i class="fa fa-star star-gold" aria-hidden="true"></i>';
+                            $ii++;
+                        }
+
+                        $bonusArr = unserialize($data['serialized']);
+						$gouv['competense'] = '';
+                        foreach ($bonusArr as $bonus){
+                            $gouv['competense'] .= '<img src="styles/skins/xgproyect/img/bonus/'.$bonus.'.png" />';
+                        }
+
+					}
+
+                    $parse['colony_gouv'] = parsetemplate(gettemplate('overview/overview_gouverneur'),$gouv);
+
+					//_d($parse);
+				}else{
+					$parse['colony_gouv'] = parsetemplate(gettemplate('overview/overview_gouverneur_no'),array());
+				}
+								
+
+
+
+
+
 				return display(parsetemplate(gettemplate('overview/overview_body'),$parse));
 				break;
 		}

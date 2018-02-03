@@ -9,12 +9,7 @@
 					</div>
 				</div>
 				<div class="row" style="    margin-top: 70px;">
-					<div id="colonie_gouv" class="col-md-3">
-            			<center>Gouverneur</center>
-						<div class="gouverneur_content">
-			                <img src="styles/images/addPerso.png" />
-						</div>
-					</div>
+					{colony_gouv}
 					<div id="colonie_info" class="col-md-6 col-md-offset-3">
 						<u>Position :</u> [{galaxy_galaxy}:{galaxy_system}:{galaxy_planet}]<br />
 						<u>Type :</u> Tellurique<br />

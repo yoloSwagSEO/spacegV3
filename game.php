@@ -97,11 +97,14 @@ switch ( ( isset ( $_GET['page'] ) ? $_GET['page'] : NULL ) )
 		include_once(XGP_ROOT . 'includes/pages/class.ShowMessageView.php');
 		new ShowMessageView ( $user );
 	break;
-    	case'profil':
+    case'profil':
 		include_once(XGP_ROOT . 'includes/pages/class.ShowProfilePage.php');
 		new ShowProfilePage ( $user );
 	break;
-    
+    case'assignGouv':
+        include_once(XGP_ROOT . 'includes/pages/class.ShowUniversityPage.php');
+        new ShowUniversityPage ( $user, $planetrow );
+    break;
 // ----------------------------------------------------------------------------------------------------------------------------------------------//
 	case'buildings':
 		UpdatePlanetBatimentQueueList ($planetrow, $user);

@@ -1083,9 +1083,27 @@ div.zz {
     margin-left: 0px;
     margin-right: 0px;
     height: 160px;
+    position: relative;
 }
 
-#colonie_gouv .gouverneur_content img{
+#colonie_gouv .gouverneur_content .gouv_name{
+    position: absolute;
+    top: 5px;
+    left: 7px;
+}
+#colonie_gouv .gouverneur_content .gouv_competence{
+    position: absolute;
+    bottom: -9px;
+    left: 8px;
+}
+
+#colonie_gouv .gouverneur_content .gouv_lvl{
+    position: absolute;
+    bottom: 26px;
+    left: 8px;
+}
+
+#colonie_gouv .gouverneur_content img.nogouv{
     margin: auto;
     width: 58px;
     display: block;
@@ -1297,4 +1315,20 @@ div.zz {
 
 .detailRecrut .name{
     margin-bottom: 3px;
+}
+
+#cboxTopLeft,
+#cboxTopRight,
+#cboxTopCenter,
+#cboxMiddleLeft,
+#cboxContent,
+#cboxMiddleRight,
+#cboxBottomLeft,
+#cboxBottomCenter,
+#cboxBottomRight{
+    background:none;
+}
+
+.container835{
+    width:835px !important;
 }

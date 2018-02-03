@@ -12,6 +12,9 @@ class ShowUniversityPage
 		
 		$parse= "";
 
+        if($CurrentUser['university'] == 0){
+            exit ( message ( 'Vous n\'avez pas d\'université sur cette colonie' , "game.php?page=overview" , 2 ) );
+        }
         if(!isset($_GET['mode']) || empty($_GET['mode'])){
             $this->dispoInColo($CurrentUser,$CurrentPlanet);
         }elseif($_GET['mode'] == 'recrut'){
@@ -23,12 +26,101 @@ class ShowUniversityPage
             }
         }elseif($_GET['mode'] == 'embauche'){
             $this->embaucheRecrut($CurrentPlanet, $CurrentUser, $_GET['id']);
+        }elseif($_GET['mode'] == 'assign'){
+            $this->assignationConseiller($CurrentUser,$CurrentPlanet);
+        }elseif($_GET['mode'] == 'assignInColo'){
+            $this->assignInColo($CurrentUser,$CurrentPlanet);
         }
 	}
 
+    public function	assignInColo($CurrentPlanet,$CurrentUser){
+        $conseiller = $_GET['id'];
+        $gouv = 'SELECT * FROM {{table}} WHERE idPlanet = '.$CurrentPlanet['id'];
+        $gouv = doquery($gouv,'gouverneur');
+        $sql = 'SELECT * FROM {{table}} WHERE id = '.$conseiller;
+        $conseiller = doquery($sql,'perso');
+        if($conseiller->num_rows > 0){
+            if($gouv->num_rows > 0){
+                while($data = mysqli_fetch_array($gouv)){
+                    //On désasigne le conseiller en cour
+                    //doquery('UPDATE {{table}} SEI assigned = 0 WHERE id='.$data['idPerso'],'perso');
+                    doquery("UPDATE {{table}} SET `assigned` = '0' WHERE `id` = ".$data['idPerso'],'perso');
+
+
+                    doquery("DELETE FROM {{table}} WHERE 	idPlanet = ".$CurrentPlanet['id'],'gouverneur');
+                }
+            }
+            while($data = mysqli_fetch_array($conseiller)){
+                _d($data);
+                $bonusArr = unserialize($data['serialized']);
+                $champ = array();
+                $valeur = array();
+                foreach($bonusArr as $bonus){
+                    $exp = explode('-',$bonus);
+                    $champ[] = $exp[0];
+                    $valeur[] = $exp[1];
+                }
+                $req = 'INSERT INTO {{table}} (idPlanet, idPerso,'.implode(',',$champ).') VALUE ('.$CurrentPlanet['id'].','.$data['id'].', '.implode(',',$valeur).')';
+                doquery($req,'gouverneur');
+
+                doquery("UPDATE {{table}} SET `assigned` = '1' WHERE `id` = ".$data['id'],'perso');
+
+
+
+                //echo "UPDATE {{table}} SET `assigned` = '1' WHERE `id` = ".$data['id'];
+
+                header('location:game.php?page=overview');
+            }
+
+        }else{
+            message('Erreur Conseiller');
+        }
+
+
+
+    }
+    public function assignationConseiller($CurrentPlanet,$CurrentUser){
+
+        $sql = 'SELECT * FROM {{table}} WHERE idPlanet = '.$CurrentPlanet['id'].' AND assigned = 0';
+
+        $recrut = doquery($sql,'perso');
+
+
+        $parse = array();
+        $parse['choiseList'] = "";
+        if($recrut->num_rows > 0){
+            $row = array();
+            while ($data = mysqli_fetch_array($recrut)){
+
+                $row['id'] = $data['id'];
+                $row['role'] = $data['type'];
+                $row['name'] = $data['name'];
+                $row['age'] = $data['age'];
+
+                $row['lvl'] = "";
+                for($ii=0;$ii<=$data['lvl'];$ii++){
+                    $row['lvl'] .= '<i class="fa fa-star star-gold" aria-hidden="true"></i>';
+                    $ii++;
+                }
+                $tempBonus = unserialize($data['serialized']);
+
+                $row['bonus'] = '';
+                foreach ($tempBonus as $bonus){
+
+                    $row['bonus'] .= '<img src="styles/skins/xgproyect/img/bonus/'.$bonus.'.png" />';
+                }
+
+                $parse['choiseList'] .= parsetemplate(gettemplate('university/assignationList'), $row) ;
+
+            }
+        }
+
+        display2(parsetemplate(gettemplate('university/assignation'), $parse));
+
+    }
 
 	public function dispoInColo($CurrentPlanet,$CurrentUser){
-        $sql = 'SELECT * FROM {{table}} WHERE idPlanet = '.$CurrentPlanet['id'];
+        $sql = 'SELECT * FROM {{table}} WHERE idPlanet = '.$CurrentPlanet['id'].' AND assigned = 0';
 
         $recrut = doquery($sql,'perso');
         $parse = array();

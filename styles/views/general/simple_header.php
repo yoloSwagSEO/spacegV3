@@ -41,7 +41,7 @@
 				$("#tabs_banque").tabs();
                                 
 				$(".infoshow").click(function(){
-					$(this).colorbox();
+					$(this).colorbox({maxWidth:'75%'});
 				});
 				
 				metalS = $('#top_metal_rate').val()/3600;
