@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="col-md-12 bgLR" id="list-bat">
-        <center>L'université vous permet de formét l'élite de votre empire, c'est ici que vous pourez choisir de formé vos gouverneur, amiraux, scientifique, ministre... <br />Plus votre université sera évoluer et plus vous aurez de choix pour formé une nouvelle recrut</center>
+        <center>Le doyen a selectionée pour nous une liste de talent prométeur qui pourrais rejoindre notre gouvernement.</center>
 
 
         <div class="row">

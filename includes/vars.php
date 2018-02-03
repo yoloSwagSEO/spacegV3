@@ -185,7 +185,8 @@ if ( defined('INSIDE'))
      51 => "exo"
         );
     $limit = array(
-		1 => 40
+		 1 => 40,
+        36 => 10
 	);  
 	$requeriments = array(
 		 12 => array(   3 =>   5, 113 =>   3),
@@ -528,6 +529,60 @@ if ( defined('INSIDE'))
 	$nameList['first']['f']['human'] = "Olivia Emily Sophie Jessica Alice Scarlett Emma Daisy Eve Phoebe Sienna Anna Mary Megan Elizabeth Amy Darcy Matilda Erin Lucy Grace Evelyn Amber Harriet Caitlyn Jasmine Madison Kate Eleanor Alexandra Sarah Martha Bethany Rebecca Victoria Gabriella Naomi Lauren Clara Laura Kayla Nicole Skye Eliza Patricia Linda Barbara Jennifer Maria Susan Margaret Dorothy Lisa Nancy Helen Sandra Donna Carol Ruth Sharon Michelle Kimberly Deborah Amelia Charlotte Isabella Ruby Addison Alyssa Abigail Julia Samantha Brooklyn Ashley Natalie Brianna Chloe Hailey Lillian Judith Alison Amanda Angela Audrey Beatrice Brenda Bridget Caroline Cassandra Charity Cecilia Anne Clarissa Christabel Cheryl Cynthia Cadence Cordelia Daphne Deanna Denise Dolores Doreen Drusilia Edith Edna Eleonor Eileen Edwina Ellen Estelle Ethel Felicity Fiona Genevieve Gertie Gwen Gwendolyn Henrietta Imogen Iris Imelda Jacqueline Jane Jenna Joanna Josephine Julianne Kathleen Kierra Kaylee Leah Lois Loretta Lorna Louisa Lynnette Lucinda Mabel Marcia Marilyn Marissa Marjorie Maud Melanie Myrna Mavis Nadine Paula Penelope Philippa Priscilla Rhonda Rita Roberta Rosamund Rosemary Roxanne Sabrina Selma Selina Sibyl Suzanne Tara Tabitha Thelma Teresa Tiffany Vanessa Vivian Melissa Wanda Wendy Winifred Victoria Yvette Vera Zelda Joan Pamela Sherry Adrienne Monica Irene Heather Lindsay Gillian Kristen Odette Felicia Christina Candace Arlene Tisha Majel Fran Doris Julie Courtney Shelly Frances Mandy Mindy Rachel Miranda Virginia Gina Karla Tricia Diane Phyllis Sally Elaine Kara Shannon Susie Elle Gail Ann Kathryn Tina Carrie Miriam Vivica Tamara Judy Willow Hilary Claire Danielle Teri Jackie Kelly Bonnie Holly Janice Brittney Bianca Stephanie Natasha Lydia Mona Meredith Lynda Erica Heidi Paige Carmen Hayden Mallory Mercedes Marion Winona Jill Molly Constance Jenny Penny Meryl Jodie Veronica April Sigourney Jillian Honor Theodora Fatima Miranda Cordelia Svetlana Anastasia Valentina Henrietta Anna Yelena Olga Oksana Tatyana Svetlana Nadya Yekaterina Irina Galina Miroslava Anastasia Vera Polina Lyudmila Elena Marina Darya Irma Ksenia Alexandra Nadesja Valentina Arina Alya Galenka Katya Ljuba Radmila Natacha Vlada Nadezhda Tatiana Sonia Mira Ai Bi Cui Chan Dai Dan Fang Hong Hua Huan Jiao Ju Juan Lan Lian Lin Mei Na Ni Qian Qiao Qing Shan Shu Ting Wen Xia Xian Xiang Xiu Xue Yan Ying Yu Yuan Yun Zhen Zhi Zhu Zi Anna Elsa Emma Helga Ursula Gisela Ingrid Ilse Jessika Sandra Stefanie Andrea Anja Katrin Birgit Martina Heike Sabine Erika Edith Lena Lisa Katharina Claudia Silvia Tina Annike Renate Bettina Wibke Sara Lina Julia Marith Heidi Angelika Christel Gretchen Hilde Hildegard Gertrude Wilhelmina Lisbeth Kerstin Johanna Anita Chloe Inés Manon Camille Clara Juliette Clémence Jeanne Charlotte Marie Nina Julia Elise Justine Yasmine Elina Andrea Eleonore Clarisse Fanny Selma Leila Veronique Sophie Helena Daphne Suzanne Melanie Bernadette Maud Angeline Celine Jessica Pauline Viviane Jeanette Haruna Sakura Misaki Aoi Mihane Miyu Rin Nanami Yui Hina Honoka Riko Yuna Koharu Hinata Mei Saki Ichika Hiyori Yusuki Shiori Natsuki Ayane Kaho Hana Momoka Himari Yume Aomame Noriko Kazumi Kimiko Saanvi Aanya Aadhya Aaradhya Ananya Pari Anika Navya Diya Avani Myra Ira Aahana Anvi Prisha Riya Aarohi Anaya Akshara Shanaya Kyra Siya Priyanka Divya Mahima Shivangi Juvina Anoushka Anushri Apoorva Sanjana Hortensia Isabel Valentina Alejandra Alicia Antonia Carla Carmen Catalina Dolores Estefania Eva Fernanda Florencia  Gabriela Grizelda Maria Lorena Magdalena Mercedes Miriam Paulina Sofia Yolanda Camila Luciana Valeria Mariana Daniela Martina Julieta Antonella Renata Agustina Constanza Fabiana Alma Amani Amira Aisha Fatima Hala Hana Hasti Imani Jana Jaliyah Jazmin Jenna Kaliyah Layan Leen Leila Lydia Malak Maryam  Maritza Mina Naima Noor Salma Samira Sanaa Yesenia Zahra Satayesh Zeinab Reihaneh Mobina Narges Ma'soumeh Sakineh Aya Asha Abla Adhra Adila Aeeshah Afiya Chausiku Eshe Furaha Imani Kamaria Marjani Mchumba Mwanajuma Nia Nuru Sanaa Sauda Subira  Zuri Aizivaishe Anatswanashe Anodiwa Anokosha Awande Bokang Bongani Dikeledi Edzai Fikile Gugu Kagiso Keneuwe Koketso Langalibalele Lerato Lindidwe Litsoanelo Lulama Majobo Maletsatsi Matshediso Mbali Mmaabo Mncedisi Mohau Moratuoa Muambiwa Nnyadzeni Nofoto Nthati Ntsebo Ntswaki Phathu Reneilwe Rudzani Shandu Sinethemba Sizani Thanduxolo Tshanduko Tungu Zinhle Maria Anna Guiseppina Rosa Angela Giovanna Teresa Lucia Carmela Caterina Francesca Antonietta Carla Elena Concetta Rita Margherita Franca Paola Vittoria Arianna Orietta Nicoletta Clara Stefania Gisella Claudia Lorenza Gabriella Isabella Valeria Lucrezia Dina Benedetta Pietra";
 	$nameList['last']['human'] = "Smith Jones Williams Taylor Brown Davies Evans Wilson Johnson Robinson Wright Thompson Evans Walker White Roberts Green Hall Wood Jackson Clark Lewis Mason Mitchell Cox Campbell Stewart Quinn Murphy Hamilton Moore Murray McLaughlin Martin O'Neill Anderson Scott MacDonald Reid Ross Watson Patterson Morrison Sanders Harris Hughes Driscoll Price Jenkins Morgan Moss Sinclair Simpson Zimmerman Young York Youngfellow Winters Worley Woodard Whitley Wheeler Wentworth West Weaver Webb Welsh Sparks Spencer Stafford Stanley Steel Sterling Stevens Stone Stewart Sullivan Swanson Sweeney Swift Sykes Terrell Thornton Tipton Turner Tyler Underwood Vincent Voight Wade Washington Watts O'Connor O'Donnell O'Hara Owens Page Palmer Parker Perry Parson Paxton Payne Perkins Peters Pershing Phillips Pitt Potter Reynolds Reaves Reese Richardson Rivers Robbins Robertson Roswell Ryan Salinger Samuels Sandler Savage Saxton Schneider Scowley Sedgwick Shannon Flint Sibbett Silverman Silverstone Smart Snow Kruger Landau Lawrence Lawson Lee Leonard Little Lowell Michaels McGillis McKinnon McSwain McCoy McCarthy McCormick McCreary Marshall Lynch Miller Montgomery Morris Nash Newman Nichols North Masterson Mayfield McCall Hansen Harrington Hart Hendricks Holmes Higgins Hoffman Hood Hutchinson Hyland Knight Kirk King Kenway Kennedy Kelly Kane Nathanson Jennings Jacobs Jefferies Irwin Gilbert Glass Glover Goldberg Goldstein Goodman Goodwin Graham Grant Graves Gray Greenberg Gorney Griffin Halley Hunter Holloway Hoover Hutchins Hill Hines Holden Harvey Handler Cohen Collins Conrad Conroy Cook Conley Compton Cody Crouch Crosby Curtis Fields Farrell Felton Fisher Fleming Forrest Foster Fox Freeman Futterman Gardner Garrett Gates Garfield Gabriel Daniels Darling Easterbrook Edwards Edelstein Elliott Emerson Ericson Duncan Dickinson Alexander Allen Austin Bauer Bancroft Baker Bailey Banks Barks Bassett Brewster Brooks Breckenridge Booth Bloom Sherman Sheridan Billingsley Billings Bergman Bates Becker Bell Bellflower Bains Bean Cartwright Carpenter Buckland Burness Burnett Bush Butler French England Carroll Carter Cavanaugh Chaffin Chase Channing Chapman Arnold Fry Milton Sharp Durston Howell Mead Poole Ashton Brockbank Cooper Cursham Dixon Baxter Drake Garland Wells Hargreaves Houghton Haygarth Hurst Kingsford Lindsay Rawson Walden Walters Whitfield Bennett Cross Buxton Dyson McMillan Russell Scott Beauclerk Ward Howard Lloyd Tanner Nicholas Matthews Ellis Whyting Whittaker Barton Hawkins Garrovick Spector Reeves Vernon McNiven Rowley Sandford Fawcett Lockhart Lang Oliphant Wilkins Balfour Appleby Buchanan Yardley Shaw Stokes Allenby Cockburn Mundy Franklin Armstrong Chamberlain Powell Abbott Blair Burnside Schofield Farnsworth Ford Warner Porter Barksdale Polk Gibbons Archer Pickett Houston Whitfield Pearson Lucas Horner Bainbridge Rollins Casey Cochrane Merchant Bowden Douglas Muldoon Wickham Milligan Bradley Findley Spooner Harper Shepard Kingston Knox Colbeck Shields Burns Gibson Burton Crutchley Gilligan Bridges Richter Fowler Novak Longfield Seabrook Hazelton Kingsley Doggart Wilcox Hudson Hooks Hicks Cameron Hammond Knotts Jefferson Coffey Adams Babcock Baldwin Bannister Purcell Baumgartner Birch Blackwood Blake Bolander Bolton Brock Brannigan Burke Weyland Burrows Cairns Carlyle Carson Charlesworth Church Clancy Cullen Dufresne Bixby Featherstone Ferguson Foley Funk Gorman Haddock Grisdale Grimes Hoffmeyer Holt Ingram Kaiser Kearns Keeler Kellerman Kinnear Kurtz Kyle Laidlaw Lankshear Lessard Lowe MacKenzie MacNevin MacInnis Madigan Maloney Marsh McAllister McBain Myers Nicholson Olsen O'Malley Peacock Peckham Murdoch Prefontaine Pratt Popovic Pritchard Quackenbush Penebscott Pfaffenbach Ramsey Quincey Reilly Reinhart Renaud Rolston Shoebottom Skinner Sloan Snell Snider Sorensen Spiller Spurgeon Stanfield Stackhouse Stiles Sutherland Sutton Taggart Townsend Traynor Stark Strudwick MacArthur Barnes Atkins Ballard Biggs Baird Fredericks Humphry Colt Dillard Cunningham DeStefano Finks Fletcher Galloway Kirby Sutter Preston Tucker Kowalski Rabinowitz Feldman Katz Roykirk Decker Grishina Fedorov Komarov Pushkov Petrenko Shatalov Ivanov Kamensky Vasiliev Ulanov Volkov Gryaznov Dudnik Yerzov Zhirov Zhivenkov Kazakov Krutov Ivannikov Kolosov Kuzin Larionov Maksimushkin Markov Ostrovsky Polachev Rychenkov Romanov Sayanovich Statnik Sorokin Turgenev Titov Tvardovsky Antonov Skobelev Lazarev Makarov Dragomirov Alexseyev Liang Luo Kuang Lu Zheng Lin Xu Xie Wang Zhu Yang Mao Shen Hu Tan He Deng Wu Cheng Gao Wan Kong Pan Sima Zhuge Ouyang Situ Huang Zhao Zhang Müller Schmidt Schneider Fischer Weber Meyer Wagner Schulz Becker Hoffmann Bauer Brinkmann Brill Dietrich Erhard Grasser Dreyer Wolf Klein Richter Schäfer Neumann Braun Schwarz Krüger Stein Keller Schubert Baumann Ziegler Brandt Sauer Kreutz Bergmeister Andbert Martin Bernard Dubois Durand Leroy Moreau Lambert Dupont Leclerc Laurent Renard Tremblay Gagnon Roy Bouchard Gauthier Morin Lavoie Fortin Gagne Duval Hébert Deville Gerard Duchaine Jauvin Gilbert Bergeron Paquette Pelletier Rémy Giroud Bosquet Lebouef Péllissier Deveraux Sato Suzuki Takahashi Tanaka Watanabe Ito Nakamura Kobayashi Yamamoto Kato Yoshida Yamada Sasaki Yamaguchi Matsumoto Inoue Kimura Shimizu Hayashi Saito Yamazaki Nakajima Mori Abe Ikeda Hashimoto Ishikawa Yamashita Ogawa Ishii Hasegawa Goto Okada Fujita Sakamoto Murakami Nishimura Nakagawa Harada Okamoto Miura Takaya Amano Higuchi Ota Kumar Moorthi Shastri Prasad Acharya Swamy Pillai Gowda Nayak Desmukh Bhat Bhandary Poojary Upadhyay Chowta Naik Kulkarni Dodamani Patil Gupta Sharma Namboodiri Pannikar Potti Kutty Varma Sondharam Sooriyaprakash Chandran Vijay Venktaesan Puttappa Garcia Martinez Rodriguez Fernandez Sanchez Lopez Martin Perez Gonzalez Alvarez Gomez Diaz Dominguez Hernandez Ramirez Mendez Perez Vasquez Ruiz Aguera Alonso Batista Esguerra Flores Ibanez Moralez Riveros Rosario Velazco Torres Quesada Saldana Salazar Ortega Ortiz Solano Romero Barakat Abbas Abboud al-Ahdal al-Ajlani al-Bariqi al-Mubarak Adwam Akkad Alawi al-Asiri al-Atrash al-Dimashqi Bakir Hussein al-Hazmi al-Bishi El-Baz Ibrahim Ishak Ismail El-Farouk Hassan El-Ghazali Bilal Nadir Juhani Jawahir Hamidi al-Jazari al-Samarrai Salman Qasim Qudsi Qaderi al-Qadi Farrokhzad Madani Sassani Turani Khadem Ghorbani Jamshidi Rahimi Azikiwe Awolowo Balewa Akintola Nzeogwu Onwuatuegwu Okeke Okonkwo Babangida Buhari Dimka Ibori Jomo-Gbomo Iwu Bamgboshe Biobaku Tinibu Akinjide Akiloye Adeyemi Sekibo Bankole Nnamani Okadigbo Ironsi Ojukwu Chukwumereije Iweala Okonjo Gbadamosi Olanrewaju Madaki Oyinlola Onyejekwe Jakande Ngige Uba Ohakim Alakija Onobanjo Mbanefo Mbadinuju Ekwensi Gowon Saro-Wiwa Naidoo Swanepoel  Msibi Ngobese Ngema Masuku Khonjwayo Khumalo Kwayi Mambi Mbanjwa Mkhwemte Mtakwenda Ngwanya Nkwali Thwane Skhosana Tshangisa  Tshonyane Xhamela Xoko Zangwa Ndungwane Bhukhwana Dzana Gatyeni Gxarha Jwarha Khawuta Rossi Russo Ferrari Bianchi Ricci Marino Costa Giordano Mancini Rizzo Lombardi Moretti Ravelli Conti Gallo Bello Albricci Badoglio Cappello Garibaldi Saletta Pallavicino Pianelli Mambretti Marcuzzi Valeri Pezzaglia Balletti Bianconelli Antonelli Corsini D'Alessandro D'Agostino Delvecchio D'Antoni Fazio Fabbrini Gambadori Galvani Marchetti Mazzitelli Olivieri Pacini Quadrini";
 
+
+	$arrayUniversity['capability']  = array('Gouverneur'=>1,'Scientifique'=>3,'Amiral'=>6);
+    $arrayUniversity['lvlMax']      = array(
+         1 => array(0=>80,1=>13,2=>7,3=>0,4=>0),
+         2 => array(0=>80,1=>13,2=>5,3=>1,4=>1),
+         3 => array(0=>80,1=>13,2=>5,3=>1,4=>1),
+         4 => array(0=>80,1=>13,2=>5,3=>1,4=>1),
+         5 => array(0=>80,1=>13,2=>5,3=>1,4=>1),
+         6 => array(0=>80,1=>13,2=>5,3=>1,4=>1),
+         7 => array(0=>80,1=>13,2=>5,3=>1,4=>1),
+         8 => array(0=>80,1=>13,2=>5,3=>1,4=>1),
+         9 => array(0=>80,1=>13,2=>5,3=>1,4=>1),
+        10 => array(0=>80,1=>13,2=>5,3=>1,4=>1),
+
+    );
+
+    $arrayUniversity['bonus']['gouverneur'] = array(
+        'production'    => array(
+            'metal'     => array(
+                5,
+                10
+            ),
+            'crystal'   => array(
+                5,
+                10
+            ),
+            'deuterium' => array(
+                5,
+                10
+            ),
+            'credits'   => array(
+                5,
+                10
+            ),
+            'energie'   => array(
+                5,
+                10
+            )
+        ),
+        //'vitesse'       => array(
+        //    'batiment'  => array(
+        //        5,
+        //        10
+        //    ),
+        //    'vaisseaux' => array(
+        //        5,
+        //        10
+        //    ),
+        //    'defence'   => array(
+        //        5,
+        //        10
+        //    )
+        //),
+    );
 	$fleetStatus= array(0=>"En attente",1=>"Protection");
 
 	$transportable['chasseur'] = array(216,217,218,219,220,221,222,223,224);

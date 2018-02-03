@@ -585,3 +585,8 @@ h1
   margin-bottom: 4px;
   overflow: hidden;
 }
+
+.itemRecrut hr{
+  margin-bottom: 7px;
+  margin-top: 14px;
+}

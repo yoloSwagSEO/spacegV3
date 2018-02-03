@@ -28,29 +28,7 @@
                     </div>
                 </div>
                 <div class="row innerContent">
-                    <div class="col-md-4 itemRecrut">
-                        <div class="col-md-4 imgRecrut">
-                            <img src="styles/images/default_avatar.png" />
-                        </div>
-                        <div class="col-md-8 detailRecrut">
-                            <div class="function row">
-                                <div class="col-md-8">Gouverneur</div>
-                                <div class="col-md-4 text-right">Age</div>
-                            </div>
-                            <div class="name row">
-                                <div class="col-md-8">Nom Prenom</div>
-                                <div class="col-md-4 text-right">xx</div>
-                            </div>
-                            <div class="lvl">Lvl:
-                                <i class="fa fa-star star-gold" aria-hidden="true"></i>
-                                <i class="fa fa-star star-gold" aria-hidden="true"></i>
-                                <i class="fa fa-star star-gold" aria-hidden="true"></i>
-                                <i class="fa fa-star star-gold" aria-hidden="true"></i>
-                                <i class="fa fa-star star-gold" aria-hidden="true"></i>
-                            </div>
-                            <hr />
-                        </div>
-                    </div>
+                  {choiseList}
                 </div>
             </div>
         </div>

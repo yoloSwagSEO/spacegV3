@@ -1074,15 +1074,22 @@ div.zz {
 
     border: 1px solid black;
 
-    height: 174px;
+    height: 187px;
     background: url(../skins/xgproyect/img/bg_dark.png);
 }
 #colonie_gouv .gouverneur_content {
     border: 1px solid black;
     background: url(../skins/xgproyect/img/bg_dark.png);
-    margin-left: 6px;
-    margin-right: 6px;
-    height: 142px;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 160px;
+}
+
+#colonie_gouv .gouverneur_content img{
+    margin: auto;
+    width: 58px;
+    display: block;
+    margin-top: 49px;
 }
 
 #buildlistingUniv {
@@ -1267,6 +1274,11 @@ div.zz {
 }
 .itemRecrut{
     padding:0;
+    position: relative;
+}
+.itemRecrut .build{
+    position: absolute;
+    z-index: 10;
 }
 .imgRecrut{
     padding:0;
